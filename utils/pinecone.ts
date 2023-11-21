@@ -24,8 +24,6 @@ const getMatchesFromEmbeddings = async (embeddings: number[], topK: number, name
 
   // Get the Pinecone index
   const index = pinecone!.Index<Metadata>(indexName);
-
-  // Get the namespace
   const pineconeNamespace = index.namespace(namespace ?? '')
 
   try {
@@ -37,7 +35,7 @@ const getMatchesFromEmbeddings = async (embeddings: number[], topK: number, name
     })
     return queryResult.matches || []
   } catch (e) {
-    // Log the error and throw it
+
     console.log("Error querying embeddings: ", e)
     throw new Error(`Error querying embeddings: ${e}`)
   }
