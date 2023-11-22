@@ -65,7 +65,6 @@ def process_docs():
         pages = loader.load_and_split()
         os.remove(pdf_path)
         doc_strings = [{"content": page.page_content, "metadata": {"page_number": page.metadata['page']}} for page in pages]
-        # doc_strings = [{"page_content": page.page_content, "metadata": jsonify(page.metadata)} for page in pages]
         return jsonify(doc_strings)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
