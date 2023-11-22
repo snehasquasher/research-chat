@@ -6,6 +6,31 @@ function MyApp({ Component, pageProps }: { Component: React.ComponentType; pageP
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [selectedFileText, setSelectedFileText] = useState('');
 
+  const handleUpload = async () => {
+    if (selectedFile) {
+      const formData = new FormData();
+      formData.append('pdf', selectedFile);
+
+      try {
+        const response = await fetch('http://127.0.0.1:5328/api/processDocs', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+        // Handle the response data here
+
+      } catch (error) {
+        console.error('Error uploading file:', error);
+      }
+    }
+  };
+
   const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files.length > 0) {
       setSelectedFile(event.target.files[0]);
