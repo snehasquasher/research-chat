@@ -22,7 +22,7 @@ async def chat():
         prompt = [
             {
                 "role": "system",
-                "content": """AI assistant is a brand new, powerful, human-like artificial intelligence.
+                "content": f"""AI assistant is a brand new, powerful, human-like artificial intelligence.
                     The traits of AI include expert knowledge, helpfulness, cleverness, and articulateness.
                     AI is a well-behaved and well-mannered individual.
                     AI is always friendly, kind, and inspiring, and he is eager to provide vivid and thoughtful responses to the user.
@@ -38,7 +38,6 @@ async def chat():
                     """,
             },
         ]
-
         user_messages = [message for message in messages if message['role'] == 'user']
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",

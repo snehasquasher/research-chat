@@ -1,24 +1,24 @@
 from utils.get_matches import get_matches_from_embeddings
 from utils.embeddings import get_embeddings
 from dataclasses import dataclass
+import json
 
 @dataclass
 class Metadata:
-    url: str
-    text: str
+    page_number: int
+    doc_id: str
     chunk: str
     hashed: str
 
 async def get_context(message: str, file_name = str, max_tokens : int = 3000, min_score : float = 0.7, get_only_text : bool = True, top_k : int = 3):
     embedding = get_embeddings(message)
-    return embedding
     matches = await get_matches_from_embeddings(embedding, top_k, file_name)
-
+    matches = matches.matches
     qualifying_docs = []
     for match in matches:
         if match.score and match.score > min_score:
             try:
-                metadata = json.loads(match.metadata)  # Assuming match.metadata is a JSON string
+                metadata = match.metadata
                 qualifying_docs.append(Metadata(**metadata))
             except json.JSONDecodeError:
                 raise Exception("Invalid JSON")
