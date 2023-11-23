@@ -1,16 +1,14 @@
 from openai import OpenAI
 import os
 
-def getEmbeddings(input: string):
+def get_embeddings(input: str):
     try:
-        openai = OpenAI(apiKey = os.getenv("OPENAI_API_KEY"))
-        response = await openai.embeddings.create( 
+        openai = OpenAI(api_key = os.getenv("OPENAI_API_KEY"))
+        response = openai.embeddings.create( 
             model = "text-embedding-ada-002",
             input = input.replace("\n", " ")
         )
-
-        return response['data'][0]['embedding']
-
+        return response.data[0].embedding
+    
     except Exception as e:
-        console.log("Error calling OpenAI embedding API: ", e)
         raise e
