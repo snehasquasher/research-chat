@@ -1,12 +1,12 @@
 from flask import Flask, request, jsonify
 from openai import OpenAI
 import pinecone
-import scipdf
 import os
 from process_docs import upload_and_generate_embedding
 from dotenv import load_dotenv
-load_dotenv()
+from hashlib import md5
 
+load_dotenv()
 app = Flask(__name__)
 
 @app.route("/api/chat", methods = ["POST"])
@@ -39,17 +39,16 @@ def chat():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route("/api/clearIndex", methods = ["POST"])
+@app.route("/api/clear_index", methods = ["POST"])
 def clear_index():
     try:
-        pinecone.init(api_key=os.getenv("PINECONE_API_KEY"),
-                environment=os.getenv("PINECONE_ENVIRONMENT"))
-        index = pinecone.index(os.getenv("PINECONE_INDEX"))
-        namespace = os.getenv("PINECONE_NAMESPACE") if os.getenv("PINECONE_NAMESPACE") else ''
-        delete_response = index.delete(deleteAll = True, namespace=namespace)
-        return jsonify(delete_response)
+        pinecone.init(api_key=os.getenv("PINECONE_API_KEY"), environment=os.getenv("PINECONE_ENVIRONMENT"))
+        index = pinecone.Index(index_name = os.getenv("PINECONE_INDEX"))
+        delete_response = pinecone.delete_index(name=os.getenv("PINECONE_INDEX"))
+        return jsonify("Deleted Index Successfully"), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 @app.route("/api/generate_embeddings", methods = ["POST"])
 async def generate_embeddings():
