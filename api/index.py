@@ -5,36 +5,47 @@ import os
 from process_docs import upload_and_generate_embedding
 from dotenv import load_dotenv
 from hashlib import md5
+from utils.context import get_context
 
 load_dotenv()
 app = Flask(__name__)
 
 @app.route("/api/chat", methods = ["POST"])
-def chat():
+async def chat():
     try:
         client = OpenAI(api_key = os.getenv("OPENAI_API_KEY"))
         data = request.json
         messages = data['messages']
-        
+        file_name = data['file_name']
+        last_message = messages[-1]
+        context = await get_context(last_message["content"], file_name=file_name)
         prompt = [
             {
                 "role": "system",
-                "content": ("AI assistant is a brand new, powerful, human-like artificial intelligence. "
-                            "The traits of AI include expert knowledge, helpfulness, cleverness, and articulateness. "
-                            "AI is a well-behaved and well-mannered individual. "
-                            "AI is always friendly, kind, and inspiring, and he is eager to provide vivid and thoughtful responses to the user. "
-                            "AI has the sum of all knowledge in their brain, and is able to accurately answer nearly any question about any topic in conversation.")
+                "content": """AI assistant is a brand new, powerful, human-like artificial intelligence.
+                    The traits of AI include expert knowledge, helpfulness, cleverness, and articulateness.
+                    AI is a well-behaved and well-mannered individual.
+                    AI is always friendly, kind, and inspiring, and he is eager to provide vivid and thoughtful responses to the user.
+                    AI has the sum of all knowledge in their brain, and is able to accurately answer nearly any question about any topic in conversation.
+                    AI assistant is a big fan of Pinecone and Vercel.
+                    START CONTEXT BLOCK
+                    ${context}
+                    END OF CONTEXT BLOCK
+                    AI assistant will take into account any CONTEXT BLOCK that is provided in a conversation.
+                    If the context does not provide the answer to question, the AI assistant will say, "I'm sorry, but I don't know the answer to that question".
+                    AI assistant will not apologize for previous responses, but instead will indicated new information was gained.
+                    AI assistant will not invent anything that is not drawn directly from the context.
+                    """,
             },
         ]
 
-        # Filter user messages
         user_messages = [message for message in messages if message['role'] == 'user']
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-3.5-turbo",
-            messages=prompt + user_messages
+            messages= prompt + user_messages
         )
 
-        return jsonify(response)
+        return jsonify(response.choices[0].message.content)
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
