@@ -3,14 +3,16 @@ from openai import OpenAI
 import pinecone
 import scipdf
 import os
-from langchain.document_loaders import PyPDFLoader
+from process_docs import upload_and_generate_embedding
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 
 @app.route("/api/chat", methods = ["POST"])
 def chat():
     try:
-        client = OpenAI(apiKey = os.getenv("OPENAI_API_KEY"))
+        client = OpenAI(api_key = os.getenv("OPENAI_API_KEY"))
         data = request.json
         messages = data['messages']
         
@@ -47,24 +49,15 @@ def clear_index():
         delete_response = index.delete(deleteAll = True, namespace=namespace)
         return jsonify(delete_response)
     except Exception as e:
-        # Handle exceptions and return an error message
         return jsonify({"error": str(e)}), 500
 
-@app.route("/api/processDocs", methods = ["POST"])
-def process_docs():
+@app.route("/api/generate_embeddings", methods = ["POST"])
+async def generate_embeddings():
     try:
         if 'pdf' not in request.files:
             return 'No PDF file provided', 400
         pdf_file = request.files['pdf']
-        pdf_storage_dir = os.path.join(os.path.dirname(__file__), './tmp/pdf_storage')
-        os.makedirs(pdf_storage_dir, exist_ok=True)
-        pdf_path = os.path.join(pdf_storage_dir, pdf_file.filename)
-        pdf_file.save(pdf_path)
-
-        loader = PyPDFLoader(pdf_path)
-        pages = loader.load_and_split()
-        os.remove(pdf_path)
-        doc_strings = [{"content": page.page_content, "metadata": {"page_number": page.metadata['page']}} for page in pages]
-        return jsonify(doc_strings)
+        response = await upload_and_generate_embedding(pdf_file, os.getenv("PINECONE_INDEX"))
+        return jsonify(response)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
