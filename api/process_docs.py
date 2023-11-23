@@ -24,7 +24,7 @@ async def parse_pdf(pdf_file):
         loader = PyPDFLoader(pdf_path)
         pages = loader.load_and_split()
         os.remove(pdf_path)
-        doc_strings = [{"content": page.page_content, "metadata": {"page_number": page.metadata['page']}} for page in pages]
+        doc_strings = [{"content": page.page_content, "metadata": {"page_number": page.metadata['page'], "title": pdf_file.filename}} for page in pages]
         return doc_strings
     except Exception as e:
         raise e
@@ -35,14 +35,14 @@ async def upload_and_generate_embedding(file, index_name: str, options: SeedOpti
         parsed_pdf = await parse_pdf(file)
         index_list = pinecone.list_indexes()
         if index_name not in index_list:
-            await pinecone.create_index(name=index_name, dimension=1536)
+            pinecone.create_index(name=index_name, dimension=1536)
         index = pinecone.Index(index_name)
 
         text_splitter = RecursiveCharacterTextSplitter(chunk_size = options.chunk_size, chunk_overlap = options.chunk_overlap, length_function = len, is_separator_regex = False)
         chunked_pdf = await asyncio.gather(*[chunk_pdf(x, text_splitter) for x in parsed_pdf])
         chunked_pdf = [item for sublist in chunked_pdf for item in sublist]
         vectors = await asyncio.gather(*[embed_chunks(chunk) for chunk in chunked_pdf])
-        await chunked_upsert(index=index, vectors=vectors, namespace="")
+        await chunked_upsert(index=index, vectors=vectors)
         return vectors[0]
     except Exception as e:
         raise e
@@ -51,13 +51,15 @@ async def embed_chunks(doc):
     try:
         embedding = get_embeddings(doc["page_content"])
         hashed = md5(doc["page_content"].encode()).hexdigest()
+        hashed_doc_id = md5(doc["metadata"]["title"].encode()).hexdigest()
         return {
             "id": hashed,
             "values": embedding,
             "metadata": {
                 "chunk": doc["page_content"],
                 "hash": doc["metadata"]["hash"],
-                "page_number": doc["metadata"]["page_number"]
+                "page_number": doc["metadata"]["page_number"],
+                "doc_id": hashed_doc_id
             }
         }
     except Exception as e:
