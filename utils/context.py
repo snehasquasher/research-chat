@@ -9,7 +9,7 @@ class Metadata:
     chunk: str
     hash: str
 
-def get_context(message: str, namespace: str, max_tokens : int = 3000, min_score : float = 0.7, get_only_text : bool = True, top_k : int = 3):
+async def get_context(message: str, namespace: str, max_tokens : int = 3000, min_score : float = 0.7, get_only_text : bool = True, top_k : int = 3):
     embedding = await get_embeddings(message)
     matches = await get_matches_from_embeddings(embedding, top_k, namespace)
 
