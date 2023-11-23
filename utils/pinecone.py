@@ -1,7 +1,7 @@
 import pinecone
 import os
 
-def get_matches_from_embeddings(embeddings, top_k, namespace = ''):
+async def get_matches_from_embeddings(embeddings, top_k, namespace = ''):
     pinecone.init(
         api_key=os.getenv("PINECONE_API_KEY"), 
         environment=os.getenv("PINECONE_ENVIRONMENT"))
@@ -25,5 +25,4 @@ def get_matches_from_embeddings(embeddings, top_k, namespace = ''):
         )
         return query_result
     except Exception as e:
-        console.log("Error querying embeddings: ", e)
         raise Exception("Error querying embeddings: ${e}")
