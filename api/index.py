@@ -43,7 +43,6 @@ async def chat():
             model="gpt-3.5-turbo",
             messages= prompt + user_messages
         )
-
         return jsonify(response.choices[0].message.content)
 
     except Exception as e:
