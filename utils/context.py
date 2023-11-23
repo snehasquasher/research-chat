@@ -1,5 +1,5 @@
-from pinecone import get_matches_from_embeddings;
-from embeddings import getEmbeddings;
+from utils.get_matches import get_matches_from_embeddings
+from utils.embeddings import get_embeddings
 from dataclasses import dataclass
 
 @dataclass
@@ -7,11 +7,12 @@ class Metadata:
     url: str
     text: str
     chunk: str
-    hash: str
+    hashed: str
 
-async def get_context(message: str, namespace: str, max_tokens : int = 3000, min_score : float = 0.7, get_only_text : bool = True, top_k : int = 3):
-    embedding = await get_embeddings(message)
-    matches = await get_matches_from_embeddings(embedding, top_k, namespace)
+async def get_context(message: str, file_name = str, max_tokens : int = 3000, min_score : float = 0.7, get_only_text : bool = True, top_k : int = 3):
+    embedding = get_embeddings(message)
+    return embedding
+    matches = await get_matches_from_embeddings(embedding, top_k, file_name)
 
     qualifying_docs = []
     for match in matches:
