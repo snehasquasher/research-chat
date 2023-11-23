@@ -57,7 +57,7 @@ async def embed_chunks(doc):
             "values": embedding,
             "metadata": {
                 "chunk": doc["page_content"],
-                "hash": doc["metadata"]["hash"],
+                "hashed": doc["metadata"]["hashed"],
                 "page_number": doc["metadata"]["page_number"],
                 "doc_id": hashed_doc_id
             }
@@ -67,7 +67,7 @@ async def embed_chunks(doc):
         
 async def chunk_pdf(page, splitter):
     docs = splitter.create_documents([page["content"]])
-    proc_docs = [{"page_content": doc.page_content, "metadata": {**doc.metadata, **page["metadata"], "hash": md5(doc.page_content.encode()).hexdigest()}} for doc in docs]
+    proc_docs = [{"page_content": doc.page_content, "metadata": {**doc.metadata, **page["metadata"], "hashed": md5(doc.page_content.encode()).hexdigest()}} for doc in docs]
     return proc_docs
 
     
