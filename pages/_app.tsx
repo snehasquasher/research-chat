@@ -1,6 +1,7 @@
 // pages/_app.tsx
 import React, { useState } from 'react';
 import '../globals.css';
+import RootLayout from '../components/RootLayout';
 
 function MyApp({ Component, pageProps }: { Component: React.ComponentType; pageProps: any }) {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -44,7 +45,10 @@ function MyApp({ Component, pageProps }: { Component: React.ComponentType; pageP
   };
 
   return (
-    <div>
+    <RootLayout>
+      <Component {...pageProps} />
+    </RootLayout>
+    /* <div>
       <input type="file" onChange={handleFileChange} />
       {selectedFile && selectedFile.type === 'application/pdf' && (
         <div>
@@ -58,7 +62,7 @@ function MyApp({ Component, pageProps }: { Component: React.ComponentType; pageP
           <p>{selectedFileText}</p>
         </div>
       )}
-    </div>
+    </div>  */
   );
 }
 
