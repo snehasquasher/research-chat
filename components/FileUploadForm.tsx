@@ -48,9 +48,8 @@ const FileUploadForm = () => {
     <form className="w-full position-fixed"  onSubmit={handleSubmit}>
     <div className="flex justify-between">
         <CustomFileSelector
-            accept="application/pdf"
+            accept="application/pdf, text/plain"
             onChange={handleFileSelected}
-        
         />
         <button
             type="submit"
