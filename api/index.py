@@ -6,6 +6,7 @@ from process_docs import upload_and_generate_embedding
 from dotenv import load_dotenv
 from hashlib import md5
 from utils.context import get_context
+import sys
 
 load_dotenv()
 app = Flask(__name__)
@@ -69,3 +70,8 @@ async def generate_embeddings():
         return jsonify(response)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@app.route("/api/uploadFiles", methods = ['POST'])
+def upload_papers():
+    print("FILES: ", request.files, file=sys.stderr)
+    return redirect("/chat")
