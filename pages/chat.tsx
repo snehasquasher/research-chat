@@ -1,5 +1,5 @@
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useChat } from "ai/react";
 import va from "@vercel/analytics";
 import clsx from "clsx";
@@ -17,11 +17,18 @@ const examples = [
 export default function Chat() {
   const formRef = useRef<HTMLFormElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
-  const { asPath } = useRouter()
+  const [PDFCount, setPDFCount] = useState(0)
+  const { asPath } = useRouter();
   console.log(asPath);
   
   var parsedURL = url.parse(asPath, true);
-  const PDFCount = parseInt(String(parsedURL["query"]["num"]));
+  useEffect(() => {
+    if (parsedURL["query"]["num"] !== undefined) {
+      setPDFCount(parseInt(String(parsedURL["query"]["num"])));
+    }
+    
+  }, [])
+  
 
 
   const { messages, input, setInput, isLoading } = useChat({
@@ -42,13 +49,16 @@ export default function Chat() {
   });
 
   const handleSubmit = () => { /* removed async */
-    var formData = new FormData();
 
-    
+    let data = '{ "messages": [' +
+          '{"role": "user", "content": \"' + input + '\"}' +
+      '],' +
+      ' "file_name": "user-uploads/1.pdf" ' +
+    '}'
 
-    var req = fetch('/api/chatHelper', {
+    var req = fetch('/api/chat', {
         method: 'post',
-        body: input /* or aFile[0]*/
+        body: data /* or aFile[0]*/
     }); // returns a promise
 
     req.then(function(response) {
