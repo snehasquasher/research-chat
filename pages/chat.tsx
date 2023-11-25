@@ -1,6 +1,6 @@
 
-import React, { useRef, useState, useEffect } from "react";
-import { useChat } from "ai/react";
+import React, { FormEvent, useRef, useState, useEffect } from "react";
+import { useChat, Message } from "ai/react";
 import va from "@vercel/analytics";
 import clsx from "clsx";
 import ReactMarkdown from "react-markdown";
@@ -17,7 +17,9 @@ const examples = [
 export default function Chat() {
   const formRef = useRef<HTMLFormElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
-  const [PDFCount, setPDFCount] = useState(0)
+  const [PDFCount, setPDFCount] = useState(0);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [messageCount, setMessageCount] = useState(0);
   const { asPath } = useRouter();
   console.log(asPath);
   
@@ -28,10 +30,9 @@ export default function Chat() {
     }
     
   }, [])
-  
 
 
-  const { messages, input, setInput, isLoading } = useChat({
+  const { input, setInput, isLoading } = useChat({
     onResponse: (response) => {
       if (response.status === 429) {
         va.track("Rate limited");
@@ -48,33 +49,51 @@ export default function Chat() {
     },
   });
 
-  const handleSubmit = () => { /* removed async */
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => { /* removed async */
+    e.preventDefault(); // prevent reloading
+    let oldInput = input;
+    setInput("");
 
     let data = '{ "messages": [' +
-          '{"role": "user", "content": \"' + input + '\"}' +
+          '{"role": "user", "content": \"' + oldInput + '\"}' +
       '],' +
       ' "file_name": "user-uploads/1.pdf" ' +
     '}'
 
-    var req = fetch('/api/chat', {
+    let req = await fetch('/api/chat', {
         method: 'post',
         body: data /* or aFile[0]*/
     }); // returns a promise
 
-    req.then(function(response) {
-      // returns status + response headers
-      // but not yet the body, 
-      // for that call `response[text() || json() || arrayBuffer()]` <-- also promise
+    let response = await req.json();
+    console.log(response);
     
-      if (response.ok) {
+      if (req.ok) {
         // status code was 200-299
         console.log("OK")
+        const reqMessage: Message = {
+          id: messages.length.toString(),
+          role: 'user',
+          content: oldInput,
+        };
+        const resMessage: Message = {
+          id: (messages.length + 1).toString(),
+          role: 'assistant',
+          content: response,
+        };
+        let messagesCopy = messages;
+        messagesCopy.push(reqMessage);
+        messagesCopy.push(resMessage);
+        setMessages(messagesCopy);
+        console.log(messages);
+        setMessageCount(messages.length);
+        
+        
       } else {
         // status was something else
+        console.log("error");
       }
-    }, function(error) {
-      console.error('failed due to network error or cross domain')
-    })
+    
 
   }
 
@@ -96,7 +115,7 @@ export default function Chat() {
         >
         </a>
       </div>
-      {messages.length > 0 ? (
+      {messageCount > 0 ? (
         messages.map((message, i) => (
           <div
             key={i}
@@ -129,7 +148,7 @@ export default function Chat() {
           </div>
         ))
       ) : (
-        <div className="border-gray-200sm:mx-0 mx-5 mt-20 max-w-screen-md rounded-md border sm:w-full">
+         <div className="border-gray-200sm:mx-0 mx-5 mt-20 max-w-screen-md rounded-md border sm:w-full">
           <div className="flex flex-col space-y-4 p-7 sm:p-10">
             <h1 className="text-lg font-semibold ">
               Chat with your documents now!

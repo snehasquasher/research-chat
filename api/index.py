@@ -63,7 +63,6 @@ async def chat():
     try:
         
         client = OpenAI(api_key = os.getenv("OPENAI_API_KEY"))
-        print("HERE", file=sys.stderr)
         data = json.loads(request.data.decode("utf-8"))
         print(data, file=sys.stderr)
         messages = data['messages']
