@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from hashlib import md5
 from utils.context import get_context
 import sys
+from werkzeug.utils import secure_filename
 
 load_dotenv()
 app = Flask(__name__)
@@ -168,5 +169,11 @@ async def generate_embeddings():
 
 @app.route("/api/uploadFiles", methods = ['POST'])
 def upload_papers():
-    print("FILES: ", request.files, file=sys.stderr)
+    print("FILES: ", request.files, len(request.files), file=sys.stderr)
+    
+    for filename, file in request.files.items():
+        name = request.files[filename].name
+        print(name, file=sys.stderr)
+        file.save('user-uploads/' + secure_filename(name))
+        
     return redirect("/chat")
