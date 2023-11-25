@@ -16,7 +16,7 @@ export default function Chat() {
   const formRef = useRef<HTMLFormElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
-  const { messages, input, setInput, handleSubmit, isLoading } = useChat({
+  const { messages, input, setInput, isLoading } = useChat({
     onResponse: (response) => {
       if (response.status === 429) {
         va.track("Rate limited");
@@ -32,6 +32,31 @@ export default function Chat() {
       });
     },
   });
+
+  const handleSubmit = () => { /* removed async */
+    var formData = new FormData();
+
+    var req = fetch('/api/chatHelper', {
+        method: 'post',
+        body: input /* or aFile[0]*/
+    }); // returns a promise
+
+    req.then(function(response) {
+      // returns status + response headers
+      // but not yet the body, 
+      // for that call `response[text() || json() || arrayBuffer()]` <-- also promise
+    
+      if (response.ok) {
+        // status code was 200-299
+        console.log("OK")
+      } else {
+        // status was something else
+      }
+    }, function(error) {
+      console.error('failed due to network error or cross domain')
+    })
+
+  }
 
   const disabled = isLoading || input.length === 0;
 
@@ -123,7 +148,7 @@ export default function Chat() {
             required
             rows={1}
             autoFocus
-            placeholder="Send a message"
+            placeholder="Ask a question"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => {

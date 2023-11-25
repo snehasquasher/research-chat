@@ -7,7 +7,9 @@ from dotenv import load_dotenv
 from hashlib import md5
 from utils.context import get_context
 import sys
+import json
 from werkzeug.utils import secure_filename
+import requests
 
 load_dotenv()
 app = Flask(__name__)
@@ -55,6 +57,7 @@ async def chat():
     }
     ```
     """
+    print(request.json, file=sys.stderr)
     try:
         client = OpenAI(api_key = os.getenv("OPENAI_API_KEY"))
         data = request.json
@@ -83,12 +86,13 @@ async def chat():
         ]
 
         user_messages = [message for message in messages if message['role'] == 'user']
+        print(user_messages, file=sys.stderr)
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages= prompt + user_messages
         )
 
-        return jsonify(response.choices[0].message.content)
+        return jsonify(response.choices[0].message.content), 200
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -177,3 +181,19 @@ def upload_papers():
         file.save('user-uploads/' + secure_filename(name))
         
     return redirect("/chat")
+
+@app.route("/api/chatHelper", methods = ["POST"])
+def chat_helper():
+    if request.data == None:
+        return jsonify("empty message"), 300
+    else:
+        files = os.listdir('user-uploads')
+        if len(files) == 0:
+            return jsonify("no uploaded user files"), 400
+        
+        # for now, just do the first file
+        data = {}
+        data['messages'] = [{"role": "user", "content": str(request.data)}]
+        data['filename'] = files[0]
+        json_data = json.dumps(data)
+        return requests.post(request.url_root + '/api/chat', data=json_data)
