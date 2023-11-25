@@ -8,7 +8,6 @@ from hashlib import md5
 from utils.context import get_context
 import sys
 import json
-from werkzeug.utils import secure_filename
 import requests
 
 load_dotenv()
@@ -175,12 +174,16 @@ async def generate_embeddings():
 def upload_papers():
     print("FILES: ", request.files, len(request.files), file=sys.stderr)
     
+    # save PDFs to user-uploads folder
+    docID = 1
     for filename, file in request.files.items():
         name = request.files[filename].name
-        print(name, file=sys.stderr)
-        file.save('user-uploads/' + secure_filename(name))
-        
-    return redirect("/chat")
+        print("file ", str(docID), name, file=sys.stderr)
+        file.save('user-uploads/' + str(docID) + '.pdf')
+        docID += 1
+    
+    # return total number of PDFs
+    return jsonify(str(docID -1)), 200
 
 @app.route("/api/chatHelper", methods = ["POST"])
 def chat_helper():

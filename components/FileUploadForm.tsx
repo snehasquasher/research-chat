@@ -35,7 +35,11 @@ const FileUploadForm = () => {
       
         if (response.ok) {
           // status code was 200-299
-          location.href = "/chat"
+          response.json().then((data) => {
+            console.log(data);
+            location.href = "/chat" + '?num=' + data;
+          })
+          
         } else {
           // status was something else
         }
@@ -48,7 +52,7 @@ const FileUploadForm = () => {
     <form className="w-full position-fixed"  onSubmit={handleSubmit}>
     <div className="flex justify-between">
         <CustomFileSelector
-            accept="application/pdf, text/plain"
+            accept="application/pdf"
             onChange={handleFileSelected}
         />
         <button
