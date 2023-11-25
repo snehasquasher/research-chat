@@ -1,10 +1,12 @@
 
-import { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useChat } from "ai/react";
 import va from "@vercel/analytics";
 import clsx from "clsx";
 import ReactMarkdown from "react-markdown";
 import Textarea from "react-textarea-autosize";
+import * as url from "url";
+import { useRouter } from 'next/router'
 
 const examples = [
   "Compare and contrast the abstracts of the documents I uploaded.",
@@ -15,6 +17,12 @@ const examples = [
 export default function Chat() {
   const formRef = useRef<HTMLFormElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const { asPath } = useRouter()
+  console.log(asPath);
+  
+  var parsedURL = url.parse(asPath, true);
+  const PDFCount = parseInt(String(parsedURL["query"]["num"]));
+
 
   const { messages, input, setInput, isLoading } = useChat({
     onResponse: (response) => {
@@ -35,6 +43,8 @@ export default function Chat() {
 
   const handleSubmit = () => { /* removed async */
     var formData = new FormData();
+
+    
 
     var req = fetch('/api/chatHelper', {
         method: 'post',
@@ -131,7 +141,7 @@ export default function Chat() {
             ))}
           </div>
           <div className="flex flex-col space-y-4 p-7 sm:p-10">
-            <p>Your documents:</p>
+            <p>Total documents: {PDFCount}</p>
             
           </div>
         </div>
