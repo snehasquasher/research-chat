@@ -1,4 +1,4 @@
-from flask import request, json
+from flask import request, json, jsonify
 from index import app  # Import the app instance
 import requests 
 import sys
