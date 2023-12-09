@@ -54,13 +54,13 @@ const PDFPreview = ({ files }: Props) => {
             <li key={file.name}>
                {file.type === 'application/pdf' && (
                 <div>
-                  <h2>PDF Preview of {file.name}:</h2>
+                  <h2 className={`group rounded-lg mb-3 font-semibold`}>PDF Preview of {file.name}:</h2>
                   <embed src={URL.createObjectURL(file)} type="application/pdf" width="100%" height="500px" />
                 </div>
               )}
               {file.type === 'text/plain' && (
                 <div>
-                  <h2>Text File Preview of {file.name}:</h2>
+                  <h2 className={`group rounded-lg mb-3 font-semibold`}>Text File Preview of {file.name}:</h2>
                   <embed src={URL.createObjectURL(file)} type="text/plain" width="100%" height="500px" />
                 </div>
               )}

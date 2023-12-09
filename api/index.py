@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 from hashlib import md5
 from utils.context import get_context
 import sys
+import json
+import requests
 
 load_dotenv()
 app = Flask(__name__)
@@ -54,13 +56,20 @@ async def chat():
     }
     ```
     """
+    if os.getenv("OPENAI_API_KEY") == None:
+        print("ERROR: need to set API key", file=sys.stderr)
+        return jsonify("Must set API key"), 300
+    
     try:
+        
         client = OpenAI(api_key = os.getenv("OPENAI_API_KEY"))
-        data = request.json
+        data = json.loads(request.data.decode("utf-8"))
+        print(data, file=sys.stderr)
         messages = data['messages']
         file_name = data['file_name']
         last_message = messages[-1]
-        context = await get_context(last_message["content"], file_name=file_name)
+        # commented out because didn't seem to be used?
+        #context = await get_context(last_message["content"], file_name=file_name)
         prompt = [
             {
                 "role": "system",
@@ -80,16 +89,17 @@ async def chat():
                     """,
             },
         ]
-
         user_messages = [message for message in messages if message['role'] == 'user']
+        print("MESSAGES", user_messages, file=sys.stderr)
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages= prompt + user_messages
         )
-
-        return jsonify(response.choices[0].message.content)
+        print("RESPONSE", response.choices[0].message.content, file=sys.stderr)
+        return jsonify(response.choices[0].message.content), 200
 
     except Exception as e:
+        print("ERROR", file=sys.stderr)
         return jsonify({"error": str(e)}), 500
 
 @app.route("/api/clear_index", methods = ["POST"])
@@ -168,5 +178,31 @@ async def generate_embeddings():
 
 @app.route("/api/uploadFiles", methods = ['POST'])
 def upload_papers():
-    print("FILES: ", request.files, file=sys.stderr)
-    return redirect("/chat")
+    print("FILES: ", request.files, len(request.files), file=sys.stderr)
+    
+    # save PDFs to user-uploads folder
+    docID = 1
+    for filename, file in request.files.items():
+        name = request.files[filename].name
+        print("file ", str(docID), name, file=sys.stderr)
+        file.save('user-uploads/' + str(docID) + '.pdf')
+        docID += 1
+    
+    # return total number of PDFs
+    return jsonify(str(docID -1)), 200
+
+@app.route("/api/chatHelper", methods = ["POST"])
+def chat_helper():
+    if request.data == None:
+        return jsonify("empty message"), 300
+    else:
+        files = os.listdir('user-uploads')
+        if len(files) == 0:
+            return jsonify("no uploaded user files"), 400
+        
+        # for now, just do the first file
+        data = {}
+        data['messages'] = [{"role": "user", "content": str(request.data)}]
+        data['filename'] = files[0]
+        json_data = json.dumps(data)
+        return requests.post(request.url_root + '/api/chat', data=json_data)
