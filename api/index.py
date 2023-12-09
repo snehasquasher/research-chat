@@ -178,7 +178,7 @@ async def generate_embeddings():
                 success_files.append(response["filename"])
             else:
                 unsuccessful_files.append(request.files[file].filename)
-        return jsonify({"success": True, "files": success_files, "unsuccessful_uploads": unsuccessful_files}), 200
+        return jsonify({"success": True, "successful_uploads": success_files, "unsuccessful_uploads": unsuccessful_files}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
