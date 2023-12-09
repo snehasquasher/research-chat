@@ -23,7 +23,7 @@ async def chat():
     Request Body:
     -------------
     - messages (array): An array of message objects. Each object should have 'role' (user/system) and 'content'.
-    - file_name (string): A file name that is used for fetching context relevant to the conversation.
+    - filename (List[str]): A list of filenames that are used for fetching context relevant to the conversation.
 
     Process:
     --------
@@ -40,7 +40,7 @@ async def chat():
     Note:
     -----
     The 'messages' array must include the conversation history, where the last message is the user's latest input. 
-    The 'file_name' is used to fetch additional context for the conversation.
+    The 'filenames' is used to fetch additional context for the conversation.
 
     Example Usage:
     --------------
@@ -145,22 +145,22 @@ async def generate_embeddings():
 
     Request Body:
     -------------
-    The request must include a 'pdf' field in the form-data, containing the PDF file from which embeddings will be generated.
+    The request must include pdf files in the form-data, containing the PDF files from which embeddings will be generated.
 
     Process:
     --------
-    1. The function checks if a 'pdf' file is included in the request. If not, it returns a 400 status code with an error message.
-    2. If a PDF file is present, it calls the `upload_and_generate_embedding` function, passing the PDF file and an environment variable "PINECONE_INDEX".
-    3. The `upload_and_generate_embedding` function is responsible for handling the PDF file, generating embeddings, and potentially interacting with the Pinecone service or similar.
+    1. The function checks if any files are included in the request. If not, it returns a 400 status code with an error message.
+    2. If some files are present, it calls the `upload_and_generate_embedding` function, passing each file and an environment variable "PINECONE_INDEX".
+    3. The `upload_and_generate_embedding` function is responsible for handling each PDF file, generating embeddings, and potentially interacting with the Pinecone service or similar.
 
     Response:
     ---------
-    - Success: Returns a JSON response containing the generated embeddings.
+    - Success: Returns a JSON containing the list of successfully uploaded and unsuccessfully uploaded files.
     - Failure: If any exception occurs, the function returns a JSON response with the error message and a 500 status code.
 
     Note:
     -----
-    Ensure that the 'pdf' file is provided in the correct format and that the "PINECONE_INDEX" environment variable is properly set for the function to execute successfully.
+    Ensure that the files are provided in the correct PDF format and that the "PINECONE_INDEX" environment variable is properly set for the function to execute successfully.
     
     Example Usage:
     --------------
@@ -170,6 +170,8 @@ async def generate_embeddings():
     try:
         success_files = []
         unsuccessful_files = []
+        if not request.files:
+            return jsonify({"error": "No files uploaded."}), 400
         for file in request.files:    
             pdf_file = request.files[file]
             response = await upload_and_generate_embedding(pdf_file, os.getenv("PINECONE_INDEX"))
@@ -180,34 +182,3 @@ async def generate_embeddings():
         return jsonify({"success": True, "successful_uploads": success_files, "unsuccessful_uploads": unsuccessful_files}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-# @app.route("/api/uploadFiles", methods = ['POST'])
-# def upload_papers():
-#     print("FILES: ", request.files, len(request.files), file=sys.stderr)
-    
-#     # save PDFs to user-uploads folder
-#     docID = 1
-#     for filename, file in request.files.items():
-#         name = request.files[filename].name
-#         print("file ", str(docID), name, file=sys.stderr)
-#         file.save('user-uploads/' + str(docID) + '.pdf')
-#         docID += 1
-    
-#     # return total number of PDFs
-#     return jsonify(str(docID -1)), 200
-
-# @app.route("/api/chatHelper", methods = ["POST"])
-# def chat_helper():
-#     if request.data == None:
-#         return jsonify("empty message"), 300
-#     else:
-#         files = os.listdir('user-uploads')
-#         if len(files) == 0:
-#             return jsonify("no uploaded user files"), 400
-        
-#         # for now, just do the first file
-#         data = {}
-#         data['messages'] = [{"role": "user", "content": str(request.data)}]
-#         data['filename'] = files[0]
-#         json_data = json.dumps(data)
-#         return requests.post(request.url_root + '/api/chat', data=json_data)
