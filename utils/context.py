@@ -1,6 +1,7 @@
 from utils.get_matches import get_matches_from_embeddings
 from utils.embeddings import get_embeddings
 from dataclasses import dataclass
+from typing import List 
 import json
 
 @dataclass
@@ -10,9 +11,9 @@ class Metadata:
     chunk: str
     hashed: str
 
-async def get_context(message: str, file_name = str, max_tokens : int = 3000, min_score : float = 0.7, get_only_text : bool = True, top_k : int = 3):
+async def get_context(message: str, filenames = List[str], max_tokens : int = 3000, min_score : float = 0.7, get_only_text : bool = True, top_k : int = 3):
     embedding = get_embeddings(message)
-    matches = await get_matches_from_embeddings(embedding, top_k, file_name)
+    matches = await get_matches_from_embeddings(embedding, top_k, filenames)
     matches = matches.matches
     qualifying_docs = []
     for match in matches:

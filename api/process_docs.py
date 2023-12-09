@@ -46,7 +46,7 @@ async def upload_and_generate_embedding(file, index_name: str, options: SeedOpti
         await chunked_upsert(index=index, vectors=vectors)
         return {"success": True, "message": "Successfully uploaded file(s)", "filename": file.filename}
     except Exception as e:
-        raise e
+        return {"success": False, "message": e}
 
 async def embed_chunks(doc):
     try:

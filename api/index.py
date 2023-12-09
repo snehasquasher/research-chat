@@ -54,7 +54,7 @@ async def chat():
             {"role": "user", "content": "Hello, AI!"},
             ...
         ],
-        "file_name": "context_file.txt"
+        "filenames": ["context_file.txt"]
     }
     ```
     """
@@ -68,9 +68,9 @@ async def chat():
         data = json.loads(request.data.decode("utf-8"))
         print(data, file=sys.stderr)
         messages = data['messages']
-        file_name = data['file_name']
+        filenames = data['filenames']
         last_message = messages[-1]
-        context = await get_context(last_message["content"], file_name=file_name)
+        context = await get_context(last_message["content"], filenames=filenames)
         prompt = [
             {
                 "role": "system",
@@ -169,11 +169,16 @@ async def generate_embeddings():
 
     """
     try:
-        if 'pdf' not in request.files:
-            return 'No PDF file provided', 400
-        pdf_file = request.files['pdf']
-        response = await upload_and_generate_embedding(pdf_file, os.getenv("PINECONE_INDEX"))
-        return jsonify(response)
+        success_files = []
+        unsuccessful_files = []
+        for file in request.files:    
+            pdf_file = request.files[file]
+            response = await upload_and_generate_embedding(pdf_file, os.getenv("PINECONE_INDEX"))
+            if response["success"]:
+                success_files.append(response["filename"])
+            else:
+                unsuccessful_files.append(request.files[file].filename)
+        return jsonify({"success": True, "files": success_files, "unsuccessful_uploads": unsuccessful_files}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

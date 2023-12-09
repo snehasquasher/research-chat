@@ -2,7 +2,7 @@ import pinecone
 import os
 from hashlib import md5
 
-async def get_matches_from_embeddings(embeddings, top_k, file_name):
+async def get_matches_from_embeddings(embeddings, top_k, filenames):
     pinecone.init(
         api_key=os.getenv("PINECONE_API_KEY"), 
         environment=os.getenv("PINECONE_ENVIRONMENT"))
@@ -13,17 +13,17 @@ async def get_matches_from_embeddings(embeddings, top_k, file_name):
     
     indexes = pinecone.list_indexes()
     if index_name not in indexes:
-        raise ValueError("Index ${index_name} does not exist")
+        raise ValueError(f"Index {index_name} does not exist")
 
     index = pinecone.Index(index_name=index_name)
-    doc_id = md5(file_name.encode()).hexdigest()
+    doc_ids = [md5(file_name.encode()).hexdigest() for file_name in filenames]
     try:
         query_result = index.query(
             top_k=top_k,
             vector=embeddings,
             include_metadata=True,
-            filter={"doc_id": {"$eq": doc_id}}
+            filter={"doc_id": {"$in": doc_ids}}
         )
         return query_result
     except Exception as e:
-        raise Exception("Error querying embeddings: ${e}")
+        raise Exception(f"Error querying embeddings: {e}")
