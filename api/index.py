@@ -132,7 +132,6 @@ def clear_index():
     """
     try:
         pinecone.init(api_key=os.getenv("PINECONE_API_KEY"), environment=os.getenv("PINECONE_ENVIRONMENT"))
-        index = pinecone.Index(index_name = os.getenv("PINECONE_INDEX"))
         delete_response = pinecone.delete_index(name=os.getenv("PINECONE_INDEX"))
         return jsonify("Deleted Index Successfully"), 200
     except Exception as e:
