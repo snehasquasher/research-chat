@@ -16,13 +16,13 @@ async def get_matches_from_embeddings(embeddings, top_k, filenames):
         raise ValueError(f"Index {index_name} does not exist")
 
     index = pinecone.Index(index_name=index_name)
-    doc_ids = [md5(file_name.encode()).hexdigest() for file_name in filenames]
+    doc_ids = [md5(file_name.encode()).hexdigest() for file_name in filenames]  # hash all the file names
     try:
         query_result = index.query(
             top_k=top_k,
-            vector=embeddings,
+            vector=embeddings,              # query embeddings from the user's questions
             include_metadata=True,
-            filter={"doc_id": {"$in": doc_ids}}
+            filter={"doc_id": {"$in": doc_ids}}     # restrict querying to the list of documents passed in
         )
         return query_result
     except Exception as e:

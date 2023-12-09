@@ -33,7 +33,7 @@ async def parse_pdf(pdf_file):
 async def upload_and_generate_embedding(file, index_name: str, options: SeedOptions = SeedOptions()):
     try:
         pinecone.init(api_key=os.getenv("PINECONE_API_KEY"), environment=os.getenv("PINECONE_ENVIRONMENT"))
-        parsed_pdf = await parse_pdf(file)
+        parsed_pdf = await parse_pdf(file)      # returns list of parsed pdf pages, which have their own metadata
         index_list = pinecone.list_indexes()
         if index_name not in index_list:
             pinecone.create_index(name=index_name, dimension=1536)
