@@ -2,6 +2,7 @@ from flask import request, json, jsonify
 from index import app 
 import requests 
 import sys
+import os
 
 @app.route("/api/uploadFiles", methods = ['POST'])
 def upload_papers():
