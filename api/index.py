@@ -8,12 +8,10 @@ from hashlib import md5
 from utils.context import get_context
 import sys
 import json
-import requests
 
 
 load_dotenv()
 app = Flask(__name__)
-import routes
 
 @app.route("/api/chat", methods = ["POST"])
 async def chat():

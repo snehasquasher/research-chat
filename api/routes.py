@@ -1,5 +1,5 @@
 from flask import request, json, jsonify
-from index import app  # Import the app instance
+from index import app 
 import requests 
 import sys
 
