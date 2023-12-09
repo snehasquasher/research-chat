@@ -8,6 +8,7 @@ from langchain.document_loaders import PyPDFLoader
 from utils.truncateStringByBytes import truncate_string_by_bytes
 import asyncio
 from utils.embeddings import get_embeddings
+from flask import jsonify
 
 @dataclass
 class SeedOptions:
@@ -43,7 +44,7 @@ async def upload_and_generate_embedding(file, index_name: str, options: SeedOpti
         chunked_pdf = [item for sublist in chunked_pdf for item in sublist]
         vectors = await asyncio.gather(*[embed_chunks(chunk) for chunk in chunked_pdf])
         await chunked_upsert(index=index, vectors=vectors)
-        return vectors[0]
+        return {"success": True, "message": "Successfully uploaded file(s)", "filename": file.filename}
     except Exception as e:
         raise e
 
