@@ -20,9 +20,9 @@ def create_user_uploads_directory():
         os.makedirs(directory)
 
 
-
 @app.route("/api/uploadFiles", methods=["POST"])
 def upload_papers():
+    logging.debug("come to upload fiels ")
     try:
         create_user_uploads_directory()
 
