@@ -1,36 +1,87 @@
-from flask import request, json, jsonify
-from index import app 
+from flask import request, jsonify
+from index import app  # Import the app instance
 import requests 
 import sys
 import os
 
-@app.route("/api/uploadFiles", methods = ['POST'])
-def upload_papers():
-    print("FILES: ", request.files, len(request.files), file=sys.stderr)
-    
-    # save PDFs to user-uploads folder
-    docID = 1
-    for filename, file in request.files.items():
-        name = request.files[filename].name
-        print("file ", str(docID), name, file=sys.stderr)
-        # file.save('user-uploads/' + str(docID) + '.pdf')
-        docID += 1
-    
-    # return total number of PDFs
-    return jsonify(str(docID -1)), 200
+import logging 
 
-@app.route("/api/chatHelper", methods = ["POST"])
-def chat_helper():
-    if request.data == None:
-        return jsonify("empty message"), 300
-    else:
-        files = os.listdir('user-uploads')
-        if len(files) == 0:
-            return jsonify("no uploaded user files"), 400
+logging.basicConfig(
+    level=logging.DEBUG,  # Set the desired log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    format="%(asctime)s [%(levelname)s]: %(message)s",
+    handlers=[
+        logging.FileHandler("app.log"),  # Log to a file
+        logging.StreamHandler()  # Log to the console
+    ]
+)
+def create_user_uploads_directory():
+    directory = 'user-uploads'
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+
+
+@app.route("/api/uploadFiles", methods=["POST"])
+def upload_papers():
+    try:
+        create_user_uploads_directory()
+
+        uploaded_filenames = []
+        for file in request.files.getlist("files"):
+            logging.debug(file)
+            logging.debug(file.name)
+            if file and file.filename:
+                # Use secure_filename to prevent malicious filenames
+                filename = file.filename
+                filepath = os.path.join("user-uploads", filename)
+                file.save(filepath)
+                uploaded_filenames.append(filename)
+
+        return jsonify(uploaded_filenames), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/fetchFileNames", methods=['GET'])
+def fetch_file_names():
+    try:
+        # Define the directory path where files are uploaded
+        upload_directory = 'user-uploads'
+
+        # Check if the directory exists
+        if not os.path.exists(upload_directory):
+            return jsonify([]), 200  # Return an empty list if the directory doesn't exist
+
+        # List files in the directory and filter out subdirectories
+        uploaded_files = [f for f in os.listdir(upload_directory) if os.path.isfile(os.path.join(upload_directory, f))]
         
-        # for now, just do the first file
-        data = {}
-        data['messages'] = [{"role": "user", "content": str(request.data)}]
-        data['filename'] = files[0]
-        json_data = json.dumps(data)
-        return requests.post(request.url_root + '/api/chat', data=json_data)
+        return jsonify(uploaded_files), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/chatHelper", methods=["POST"])
+def chat_helper():
+    if not request.data:
+        return jsonify("empty message"), 300
+
+    try:
+        files = os.listdir('user-uploads')
+        if not files:
+            return jsonify("no uploaded user files"), 400
+
+        data = {
+            "messages": [{"role": "user", "content": request.get_data(as_text=True)}],
+            "filename": files[0]  # Currently using the first file
+        }
+
+        # Send this data to the /api/chat endpoint
+        chat_endpoint = request.url_root.rstrip('/') + '/api/chat'
+        chat_response = requests.post(chat_endpoint, json=data)
+        
+        if chat_response.status_code != 200:
+            return jsonify("Error in chat response"), chat_response.status_code
+
+        return jsonify(chat_response.json()), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500

@@ -9,23 +9,30 @@ from utils.truncateStringByBytes import truncate_string_by_bytes
 import asyncio
 from utils.embeddings import get_embeddings
 from flask import jsonify
+import logging 
 
+logging.basicConfig(
+    level=logging.DEBUG,  # Set the desired log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    format="%(asctime)s [%(levelname)s]: %(message)s",
+    handlers=[
+        logging.FileHandler("app.log"),  # Log to a file
+        logging.StreamHandler()  # Log to the console
+    ]
+)
 @dataclass
 class SeedOptions:
     chunk_size: int = 1500
     chunk_overlap: int = 50
 
 async def parse_pdf(pdf_file):
+    logging.debug(f"Type of pdf_file: {type(pdf_file)}")
     try:
-        pdf_storage_dir = os.path.join(os.path.dirname(__file__), './tmp/pdf_storage')
-        os.makedirs(pdf_storage_dir, exist_ok=True)
-        pdf_path = os.path.join(pdf_storage_dir, pdf_file.filename)
-        pdf_file.save(pdf_path)
+        pdf_path = os.path.join('user-uploads', pdf_file)
 
         loader = PyPDFLoader(pdf_path)
         pages = loader.load_and_split()
-        os.remove(pdf_path)
-        doc_strings = [{"content": page.page_content, "metadata": {"page_number": page.metadata['page'], "title": pdf_file.filename}} for page in pages]
+
+        doc_strings = [{"content": page.page_content, "metadata": {"page_number": page.metadata['page'], "title": pdf_file}} for page in pages]
         return doc_strings
     except Exception as e:
         raise e
@@ -33,20 +40,37 @@ async def parse_pdf(pdf_file):
 async def upload_and_generate_embedding(file, index_name: str, options: SeedOptions = SeedOptions()):
     try:
         pinecone.init(api_key=os.getenv("PINECONE_API_KEY"), environment=os.getenv("PINECONE_ENVIRONMENT"))
-        parsed_pdf = await parse_pdf(file)      # returns list of parsed pdf pages, which have their own metadata
+        logging.debug("Initialized Pinecone")
+        
+        parsed_pdf = await parse_pdf(file)
+        logging.debug("Parsed PDF")
+        
         index_list = pinecone.list_indexes()
+        logging.debug("List of indexes: %s", index_list)
+        
         if index_name not in index_list:
             pinecone.create_index(name=index_name, dimension=1536)
+            logging.debug("Created index: %s", index_name)
+        
         index = pinecone.Index(index_name)
-
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size = options.chunk_size, chunk_overlap = options.chunk_overlap, length_function = len, is_separator_regex = False)
+        logging.debug("Initialized Pinecone Index")
+        
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=options.chunk_size, chunk_overlap=options.chunk_overlap, length_function=len, is_separator_regex=False)
         chunked_pdf = await asyncio.gather(*[chunk_pdf(x, text_splitter) for x in parsed_pdf])
         chunked_pdf = [item for sublist in chunked_pdf for item in sublist]
+        logging.debug("Chunked PDF and obtained vectors")
+        
         vectors = await asyncio.gather(*[embed_chunks(chunk) for chunk in chunked_pdf])
+        logging.debug("Embedded chunks")
+        
         await chunked_upsert(index=index, vectors=vectors)
-        return {"success": True, "message": "Successfully uploaded file(s)", "filename": file.filename}
+        logging.debug("Upserted vectors into index")
+        
+        return {"success": True, "message": "Successfully uploaded file(s)", "filename": file}
     except Exception as e:
-        return {"success": False, "message": e}
+        # Log the error here
+        logging.debug("Error in upload_and_generate_embedding: %s", str(e))
+        return {"success": False, "message": str(e)}
 
 async def embed_chunks(doc):
     try:

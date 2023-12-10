@@ -8,11 +8,26 @@ from hashlib import md5
 from utils.context import get_context
 import sys
 import json
-
+import logging
+import os
+os.environ['FLASK_ENV'] = 'development'
+# Define the global variable here, at the top level
+processed_filenames = []
 
 load_dotenv()
 app = Flask(__name__)
+app.config['DEBUG'] = True
+logger = logging.getLogger(__name__)
 
+# Create a file handler
+handler = logging.FileHandler("app.log")
+
+# Add the handler to the logger
+logger.addHandler(handler)
+
+# Set the logging level
+logger.setLevel(logging.DEBUG)
+import routes
 @app.route("/api/chat", methods = ["POST"])
 async def chat():
     """
@@ -100,7 +115,6 @@ async def chat():
     except Exception as e:
         print("ERROR", file=sys.stderr)
         return jsonify({"error": str(e)}), 500
-
 @app.route("/api/clear_index", methods = ["POST"])
 def clear_index():
     """
@@ -135,7 +149,6 @@ def clear_index():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-
 @app.route("/api/generate_embeddings", methods = ["POST"])
 async def generate_embeddings():
     """
@@ -165,14 +178,21 @@ async def generate_embeddings():
     curl -X POST -F 'pdf=@path_to_pdf_file.pdf' http://<your_api_url>/api/generate_embeddings
 
     """
+    data = request.json
+    
+
+    if not data or "files" not in data:
+        logger.debug("Invalid data format or missing 'files' key")
+        return jsonify({"error": "Invalid data format or missing 'files' key"}), 400
+
     try:
         success_files = []
         unsuccessful_files = []
-        if not request.files:
-            return jsonify({"error": "No files uploaded."}), 400
-        for file in request.files:    
-            pdf_file = request.files[file]
-            response = await upload_and_generate_embedding(pdf_file, os.getenv("PINECONE_INDEX"))
+        # if not request.files:
+        #     return jsonify({"error": "No files uploaded."}), 400
+        
+        for file in data['files']:
+            response = await upload_and_generate_embedding(file, os.getenv("PINECONE_INDEX"))
             if response["success"]:
                 success_files.append(response["filename"])
             else:
