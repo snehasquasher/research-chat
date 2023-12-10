@@ -58,30 +58,3 @@ def fetch_file_names():
         return jsonify(uploaded_files), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-@app.route("/api/chatHelper", methods=["POST"])
-def chat_helper():
-    if not request.data:
-        return jsonify("empty message"), 300
-
-    try:
-        files = os.listdir('user-uploads')
-        if not files:
-            return jsonify("no uploaded user files"), 400
-
-        data = {
-            "messages": [{"role": "user", "content": request.get_data(as_text=True)}],
-            "filename": files[0]  # Currently using the first file
-        }
-
-        # Send this data to the /api/chat endpoint
-        chat_endpoint = request.url_root.rstrip('/') + '/api/chat'
-        chat_response = requests.post(chat_endpoint, json=data)
-        
-        if chat_response.status_code != 200:
-            return jsonify("Error in chat response"), chat_response.status_code
-
-        return jsonify(chat_response.json()), 200
-
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
