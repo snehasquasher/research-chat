@@ -1,6 +1,7 @@
 
 import React, { FormEvent, useRef, useState, useEffect } from "react";
 import { useChat, Message } from "ai/react";
+import { loadEvaluator } from "langchain/evaluation";
 import va from "@vercel/analytics";
 import clsx from "clsx";
 import ReactMarkdown from "react-markdown";
@@ -8,11 +9,13 @@ import Textarea from "react-textarea-autosize";
 import * as url from "url";
 import { useRouter } from 'next/router';
 import ScoreDisplay from '../components/ScoreDisplayCard';
+
 const examples = [
   "Compare and contrast the abstracts of the documents I uploaded.",
   "Summarize the comments of my first document.",
   "What are some common limitations found in these research papers?",
 ];
+
 
 export default function Chat() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -49,6 +52,38 @@ export default function Chat() {
 
   }, []);
   console.log(asPath);
+
+  const evaluateAnswers = async (context: string, answer: string, question: string) => {
+    try {
+        const response = await fetch('/api/evaluate-answers', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ context, answer, question })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Evaluation failed: ${response.status}`);
+        }
+
+        const {
+            faithfulness_score,
+            context_relevance_score,
+            answer_relevance_score
+        } = await response.json();
+
+        // Update state or perform any necessary actions with the scores
+        setFaithfulnessScore(faithfulness_score);
+        setContextRelevanceScore(context_relevance_score);
+        setAnswerRelevanceScore(answer_relevance_score);
+    } catch (error) {
+        console.error('Error evaluating answers:', error);
+        // Handle the error or provide a default score
+    }
+};
+
+
 
   const { input, setInput, isLoading } = useChat({
     onResponse: (response) => {
@@ -97,6 +132,8 @@ export default function Chat() {
     if (req.ok) {
       // status code was 200-299
       console.log("OK");
+      const ai_response = response.response; // Extracting AI's response
+      const ai_context = response.context;  
       const reqMessage: Message = {
         id: messages.length.toString(),
         role: 'user',
@@ -105,7 +142,7 @@ export default function Chat() {
       const resMessage: Message = {
         id: (messages.length + 1).toString(),
         role: 'assistant',
-        content: response,
+        content: ai_response,
       };
       let messagesCopy = messages;
       messagesCopy.push(reqMessage);
@@ -113,7 +150,7 @@ export default function Chat() {
       setMessages(messagesCopy);
       console.log(messages);
       setMessageCount(messages.length);
-  
+      await evaluateAnswers(ai_context, ai_response, oldInput); // Update scores based on the latest response
     } else {
       // status was something else
       console.log("error");
@@ -142,13 +179,13 @@ export default function Chat() {
       messages.map((message, i) => (
         <div key={i} className={clsx(
           "flex flex-col items-center w-full border-b border-gray-200 py-8",
-          message.role === "user" ? "bg-white" : "bg-gray-100",
+          message.role === "user" ? "bg-purple" : "bg-black-100",
         )}>
           <div className="w-full max-w-screen-md px-5 sm:px-0">
             <div
               className={clsx(
-                "p-1.5 text-white",
-                message.role === "assistant" ? "bg-green-500" : "bg-black",
+                "p-1.5 text-black",
+                message.role === "assistant" ? "bg-violet-200" : "bg-black",
               )}
             ></div>
             <ReactMarkdown
@@ -163,7 +200,7 @@ export default function Chat() {
             </ReactMarkdown>
           </div>
           {message.role === "assistant" && (
-            <div className="flex w-full max-w-screen-md justify-center space-x-4 px-5 sm:px-0">
+            <div className="flex w-full max-w-screen-md justify-center space-x-4 px-5 pt-8 margin-top sm:px-0">
               <ScoreDisplay label="Faithfulness" score={faithfulnessScore} />
               <ScoreDisplay label="Context Relevance" score={contextRelevanceScore} />
               <ScoreDisplay label="Answer Relevance" score={answerRelevanceScore} />
