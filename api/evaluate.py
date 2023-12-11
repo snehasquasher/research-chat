@@ -27,7 +27,7 @@ client = Client(api_key=api_key)
 
 @app.route('/api/evaluate-answers', methods=['POST'])
 def evaluate_answers():
-    logging.debug('comes here to evaluare')
+    logging.debug('Request received for answer evaluation')
     data = request.json
     context = data['context']
     answer = data['answer']
@@ -48,17 +48,34 @@ def evaluate_answers():
     })
 
 def evaluate_faithfulness(client, model_name, context, answer):
-    prompt = f"How faithful is this answer to the provided context? Rate on a scale of 0 to 1.\nContext: {context}\nAnswer: {answer}"
+    prompt = (
+        "Please rate the faithfulness of the answers to their contexts on a scale from 0 to 1, where 0 is completely unfaithful and 1 is completely faithful.\n"
+        "Example 1:\nContext: The sky is blue.\nAnswer: The sky is blue.\nRating: 1\n"
+        "Example 2:\nContext: The sky is blue.\nAnswer: The sky is often cloudy.\nRating: 0.5\n"
+        "Example 3:\nContext: Apples are usually red.\nAnswer: Oranges are orange.\nRating: 0\n"
+        f"Your Turn:\nContext: {context}\nAnswer: {answer}\nRating:"
+    )
     return get_evaluation_score(client, model_name, prompt)
 
 def evaluate_context_relevance(client, model_name, context, answer):
-    prompt = f"How relevant is this answer to the provided context? Rate on a scale of 0 to 1.\nContext: {context}\nAnswer: {answer}"
+    prompt = (
+        "Please rate the context relevance of the answers on a scale from 0 to 1, where 0 is not relevant and 1 is highly relevant.\n"
+        "Example 1:\nContext: History of the Roman Empire.\nAnswer: Julius Caesar was a Roman ruler.\nRating: 1\n"
+        "Example 2:\nContext: History of the Roman Empire.\nAnswer: The Roman Empire was in Africa.\nRating: 0.5\n"
+        "Example 3:\nContext: Computer Programming Basics.\nAnswer: Apples grow on trees.\nRating: 0\n"
+        f"Your Turn:\nContext: {context}\nAnswer: {answer}\nRating:"
+    )
     return get_evaluation_score(client, model_name, prompt)
 
 def evaluate_answer_relevance(client, model_name, question, answer):
-    prompt = f"How relevant is this answer to the following question? Rate on a scale of 0 to 1.\nQuestion: {question}\nAnswer: {answer}"
+    prompt = (
+        "Please rate the relevance of the answers to the questions on a scale from 0 to 1, where 0 is not relevant and 1 is highly relevant.\n"
+        "Example 1:\nQuestion: What is the capital of France?\nAnswer: Paris is the capital of France.\nRating: 1\n"
+        "Example 2:\nQuestion: What is the capital of France?\nAnswer: France is in Europe.\nRating: 0.5\n"
+        "Example 3:\nQuestion: What is the capital of France?\nAnswer: Elephants are the largest land animals.\nRating: 0\n"
+        f"Your Turn:\nQuestion: {question}\nAnswer: {answer}\nRating:"
+    )
     return get_evaluation_score(client, model_name, prompt)
-
 def get_evaluation_score(client, model_name, prompt):
     try:
         response = client.completions.create(model=model_name, prompt=prompt, max_tokens=60)
