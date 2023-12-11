@@ -1,0 +1,703 @@
+2023-12-10 11:40:42,005 [INFO]: 127.0.0.1 - - [10/Dec/2023 11:40:42] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 11:40:42,018 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 11:40:42,206 [INFO]: 127.0.0.1 - - [10/Dec/2023 11:40:42] "POST /api/generate_embeddings HTTP/1.1" 200 -
+2023-12-10 11:44:53,378 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 11:44:53,378 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 11:45:07,784 [INFO]: 127.0.0.1 - - [10/Dec/2023 11:45:07] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 11:45:07,799 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 11:45:07,905 [DEBUG]: Error in upload_and_generate_embedding:
+2023-12-10 11:45:07,906 [INFO]: 127.0.0.1 - - [10/Dec/2023 11:45:07] "POST /api/generate_embeddings HTTP/1.1" 200 -
+2023-12-10 11:49:06,408 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 11:49:06,408 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 11:49:28,291 [INFO]: 127.0.0.1 - - [10/Dec/2023 11:49:28] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 11:49:28,303 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 11:49:28,468 [DEBUG]: Initialized Pinecone
+2023-12-10 11:49:28,469 [DEBUG]: Error in upload_and_generate_embedding: '_io.BufferedReader' object has no attribute 'filename'
+2023-12-10 11:49:28,471 [INFO]: 127.0.0.1 - - [10/Dec/2023 11:49:28] "POST /api/generate_embeddings HTTP/1.1" 200 -
+2023-12-10 11:52:36,546 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 11:52:36,546 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 11:52:43,009 [INFO]: 127.0.0.1 - - [10/Dec/2023 11:52:43] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 11:52:43,026 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 11:52:43,144 [DEBUG]: Initialized Pinecone
+2023-12-10 11:52:43,144 [DEBUG]: Error in upload_and_generate_embedding: join() argument must be str, bytes, or os.PathLike object, not 'BufferedReader'
+2023-12-10 11:52:43,145 [INFO]: 127.0.0.1 - - [10/Dec/2023 11:52:43] "POST /api/generate_embeddings HTTP/1.1" 200 -
+2023-12-10 11:54:06,720 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 11:54:06,720 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 11:54:59,070 [INFO]: 127.0.0.1 - - [10/Dec/2023 11:54:59] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 11:54:59,085 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 11:54:59,220 [DEBUG]: Initialized Pinecone
+2023-12-10 11:54:59,220 [DEBUG]: Error in upload_and_generate_embedding: join() argument must be str, bytes, or os.PathLike object, not 'BufferedReader'
+2023-12-10 11:54:59,221 [INFO]: 127.0.0.1 - - [10/Dec/2023 11:54:59] "POST /api/generate_embeddings HTTP/1.1" 200 -
+2023-12-10 11:55:25,490 [INFO]: 127.0.0.1 - - [10/Dec/2023 11:55:25] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 11:55:25,504 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 11:55:25,632 [DEBUG]: Initialized Pinecone
+2023-12-10 11:55:25,632 [DEBUG]: Error in upload_and_generate_embedding: join() argument must be str, bytes, or os.PathLike object, not 'BufferedReader'
+2023-12-10 11:55:25,634 [INFO]: 127.0.0.1 - - [10/Dec/2023 11:55:25] "POST /api/generate_embeddings HTTP/1.1" 200 -
+2023-12-10 11:57:14,764 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 11:57:14,764 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 11:57:20,207 [INFO]: 127.0.0.1 - - [10/Dec/2023 11:57:20] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 11:57:20,220 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 11:57:20,425 [DEBUG]: Initialized Pinecone
+2023-12-10 11:57:20,426 [DEBUG]: Error in upload_and_generate_embedding: '_io.BufferedReader' object has no attribute 'save'
+2023-12-10 11:57:20,428 [INFO]: 127.0.0.1 - - [10/Dec/2023 11:57:20] "POST /api/generate_embeddings HTTP/1.1" 200 -
+2023-12-10 12:01:22,873 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:01:22,873 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:01:31,447 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:01:31] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:01:31,457 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 12:01:31,677 [DEBUG]: Initialized Pinecone
+2023-12-10 12:01:31,678 [DEBUG]: Error in upload_and_generate_embedding: '_io.BufferedReader' object has no attribute 'save'
+2023-12-10 12:01:31,679 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:01:31] "POST /api/generate_embeddings HTTP/1.1" 200 -
+2023-12-10 12:04:31,131 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:04:31,131 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:04:48,305 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:04:48] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:04:48,317 [DEBUG]: Using selector: KqueueSelector
+<_io.BufferedReader name='user-uploads/2305.06983.pdf'>
+2023-12-10 12:04:48,318 [DEBUG]: <_io.BufferedReader name='user-uploads/2305.06983.pdf'>
+2023-12-10 12:04:48,462 [DEBUG]: Initialized Pinecone
+2023-12-10 12:04:48,463 [DEBUG]: Error in upload_and_generate_embedding: '_io.BufferedReader' object has no attribute 'save'
+2023-12-10 12:04:48,464 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:04:48] "POST /api/generate_embeddings HTTP/1.1" 200 -
+2023-12-10 12:05:52,756 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:05:52,756 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:06:06,649 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:06:06] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:06:06,665 [DEBUG]: Using selector: KqueueSelector
+<_io.BufferedReader name='user-uploads/2305.06983.pdf'>
+2023-12-10 12:06:06,667 [DEBUG]: <_io.BufferedReader name='user-uploads/2305.06983.pdf'>
+2023-12-10 12:06:06,801 [DEBUG]: Initialized Pinecone
+2023-12-10 12:06:06,801 [DEBUG]: Type of pdf_file: <class '_io.BufferedReader'>
+2023-12-10 12:06:06,802 [DEBUG]: Error in upload_and_generate_embedding: '_io.BufferedReader' object has no attribute 'save'
+2023-12-10 12:06:06,806 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:06:06] "POST /api/generate_embeddings HTTP/1.1" 200 -
+2023-12-10 12:11:19,815 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:11:19,815 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:11:28,236 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:11:28] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:11:28,260 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 12:11:28,262 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:11:28] "[35m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 500 -
+2023-12-10 12:13:38,065 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:13:38,065 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:13:42,864 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:13:42] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:13:42,873 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 12:13:42,874 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:13:42] "[31m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 400 -
+2023-12-10 12:14:48,806 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:14:48,807 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:14:54,164 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:14:54] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:14:54,176 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 12:14:54,178 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:14:54] "[31m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 400 -
+2023-12-10 12:15:46,279 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:15:46,280 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:15:51,652 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:15:51] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:15:51,662 [DEBUG]: Using selector: KqueueSelector
+Invalid data format or missing 'files' key
+2023-12-10 12:15:51,663 [DEBUG]: Invalid data format or missing 'files' key
+2023-12-10 12:15:51,664 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:15:51] "[31m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 400 -
+2023-12-10 12:16:54,071 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:16:54,072 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:16:58,674 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:16:58] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:16:58,689 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 12:16:58,692 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:16:58] "[31m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 400 -
+2023-12-10 12:17:39,819 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:17:39,819 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:17:47,433 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:17:47] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:17:47,443 [DEBUG]: Using selector: KqueueSelector
+Invalid data format or mkkissing 'files' key
+2023-12-10 12:17:47,444 [DEBUG]: Invalid data format or mkkissing 'files' key
+2023-12-10 12:17:47,445 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:17:47] "[31m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 400 -
+2023-12-10 12:18:10,789 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:18:10,789 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:18:15,974 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:18:15] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:18:15,987 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 12:18:15,989 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:18:15] "[35m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 500 -
+2023-12-10 12:19:44,355 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:19:44,355 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:19:49,590 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:19:49] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:19:49,603 [DEBUG]: Using selector: KqueueSelector
+user-uploads/2305.06983.pdf
+2023-12-10 12:19:49,605 [DEBUG]: user-uploads/2305.06983.pdf
+2023-12-10 12:19:49,606 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:19:49] "[35m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 500 -
+2023-12-10 12:22:44,873 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:22:44,873 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:22:49,445 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:22:49] "[35m[1mPOST /api/uploadFiles HTTP/1.1[0m" 500 -
+2023-12-10 12:26:23,755 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:26:23,755 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:26:29,247 [DEBUG]: <FileStorage: '2305.06983.pdf' ('application/pdf')>
+2023-12-10 12:26:29,250 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:26:29] "[35m[1mPOST /api/uploadFiles HTTP/1.1[0m" 500 -
+2023-12-10 12:27:58,033 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:27:58,033 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:28:03,420 [DEBUG]: <FileStorage: '2305.06983.pdf' ('application/pdf')>
+2023-12-10 12:28:03,421 [DEBUG]: files
+2023-12-10 12:28:03,422 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:28:03] "[35m[1mPOST /api/uploadFiles HTTP/1.1[0m" 500 -
+2023-12-10 12:33:59,216 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:33:59,217 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:34:10,897 [DEBUG]: <FileStorage: 'AI_Foundations_Pset1_Final.pdf' ('application/pdf')>
+2023-12-10 12:34:10,897 [DEBUG]: files
+2023-12-10 12:34:10,899 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:34:10] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:34:10,914 [DEBUG]: Using selector: KqueueSelector
+AI_Foundations_Pset1_Final.pdf
+2023-12-10 12:34:10,915 [DEBUG]: AI_Foundations_Pset1_Final.pdf
+2023-12-10 12:34:10,917 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:34:10] "[35m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 500 -
+2023-12-10 12:36:11,867 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:36:11,867 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:36:16,816 [DEBUG]: <FileStorage: 'AI_Foundations_Pset1_Final.pdf' ('application/pdf')>
+2023-12-10 12:36:16,816 [DEBUG]: files
+2023-12-10 12:36:16,818 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:36:16] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:36:16,834 [DEBUG]: Using selector: KqueueSelector
+data
+2023-12-10 12:36:16,836 [DEBUG]: data
+AI_Foundations_Pset1_Final.pdf
+2023-12-10 12:36:16,842 [DEBUG]: AI_Foundations_Pset1_Final.pdf
+2023-12-10 12:36:16,843 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:36:16] "[35m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 500 -
+2023-12-10 12:38:12,662 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:38:12,662 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:38:17,366 [DEBUG]: <FileStorage: '2305.06983.pdf' ('application/pdf')>
+2023-12-10 12:38:17,367 [DEBUG]: files
+2023-12-10 12:38:17,369 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:38:17] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:38:17,379 [DEBUG]: Using selector: KqueueSelector
+2305.06983.pdf
+2023-12-10 12:38:17,388 [DEBUG]: 2305.06983.pdf
+2023-12-10 12:38:17,389 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:38:17] "[35m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 500 -
+2023-12-10 12:40:29,269 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:40:29,269 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:40:34,078 [DEBUG]: <FileStorage: 'AI_Foundations_Pset1_Final.pdf' ('application/pdf')>
+2023-12-10 12:40:34,079 [DEBUG]: files
+2023-12-10 12:40:34,080 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:40:34] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:40:34,091 [DEBUG]: Using selector: KqueueSelector
+files
+2023-12-10 12:40:34,092 [DEBUG]: files
+data
+2023-12-10 12:40:34,092 [DEBUG]: data
+2023-12-10 12:40:34,093 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:40:34] "[35m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 500 -
+2023-12-10 12:41:20,766 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:41:20,766 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:41:26,272 [DEBUG]: <FileStorage: 'AI_Foundations_Pset1_Final.pdf' ('application/pdf')>
+2023-12-10 12:41:26,272 [DEBUG]: files
+2023-12-10 12:41:26,274 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:41:26] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:41:26,290 [DEBUG]: Using selector: KqueueSelector
+AI_Foundations_Pset1_Final.pdf
+2023-12-10 12:41:26,292 [DEBUG]: AI_Foundations_Pset1_Final.pdf
+2023-12-10 12:41:26,294 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:41:26] "[35m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 500 -
+2023-12-10 12:41:57,288 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:41:57,289 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:42:02,365 [DEBUG]: <FileStorage: '2305.06983.pdf' ('application/pdf')>
+2023-12-10 12:42:02,365 [DEBUG]: files
+2023-12-10 12:42:02,367 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:42:02] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:42:02,381 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 12:42:02,598 [DEBUG]: Initialized Pinecone
+2023-12-10 12:42:02,598 [DEBUG]: Type of pdf_file: <class 'str'>
+2023-12-10 12:42:02,598 [DEBUG]: Error in upload_and_generate_embedding: 'str' object has no attribute 'name'
+2023-12-10 12:42:02,599 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:42:02] "[35m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 500 -
+2023-12-10 12:43:10,785 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:43:10,786 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:43:15,338 [DEBUG]: <FileStorage: 'AI_Foundations_Pset1_Final.pdf' ('application/pdf')>
+2023-12-10 12:43:15,338 [DEBUG]: files
+2023-12-10 12:43:15,340 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:43:15] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:43:15,355 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 12:43:15,470 [DEBUG]: Initialized Pinecone
+2023-12-10 12:43:15,470 [DEBUG]: Type of pdf_file: <class 'str'>
+2023-12-10 12:43:15,470 [DEBUG]: Error in upload_and_generate_embedding: 'str' object has no attribute 'save'
+2023-12-10 12:43:15,472 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:43:15] "[35m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 500 -
+2023-12-10 12:45:26,588 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:45:26,588 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:45:33,646 [DEBUG]: <FileStorage: 'AI_Foundations_Pset1_Final.pdf' ('application/pdf')>
+2023-12-10 12:45:33,646 [DEBUG]: files
+2023-12-10 12:45:33,649 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:45:33] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:45:33,661 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 12:45:33,770 [DEBUG]: Initialized Pinecone
+2023-12-10 12:45:33,771 [DEBUG]: Type of pdf_file: <class 'str'>
+2023-12-10 12:45:33,890 [DEBUG]: Parsed PDF
+2023-12-10 12:45:34,114 [DEBUG]: List of indexes: ['research-chat-index']
+2023-12-10 12:45:34,115 [DEBUG]: Initialized Pinecone Index
+2023-12-10 12:45:34,117 [DEBUG]: Chunked PDF and obtained vectors
+2023-12-10 12:45:34,118 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 12:45:34,119 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 12:45:34,147 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x12fcf6160>, 'json_data': {'input': 'CPSC 488/588 - AI Foundation Models HW 1 Page 1 CPSC 488/588 AI Foundation Models Fall 2023 HW 1 Instructions: copy this project at https://www.overleaf.com/read/gjvcgrzjyxfm , complete the solutions, and return your solutions in pdf format. Full Name: Sneha Netid: ss3993 1.Q1 Warmup. this part is about refreshing your calculus on calculating derivatives of functions. (a) Given the function: f(x) = sin(3 x2+ 4 cos( x)) find∂f/∂x using the chain rule. Solution:∂f ∂x= cos(3 x2+ 4 cos( x))·(6x−4 sin( x)) (b) Given the function: f(x) =etanh(2 x3−5x2+x) find∂f/∂x using the chain rule. Recall:∂tanh ( x) ∂(x)= 1−tanh2(x) = sech2(x) Solution:∂f ∂x=etanh(2 x3−5x2+x)·sech2(2x3−5x2+x)·\x00 6x2−10x+ 1\x01 (c) Consider the function: f(x, y, z ) =x2sin(yz) +eyz−z3y find partial derivatives of the function with respect to each variable separately. Solution:∂f ∂x= 2xsin(yz), ∂f ∂y=x2zcos(yz) +zeyz−z3, ∂f ∂z=x2ycos(yz) +yeyz−3z2y. 2.Q2 Matrix calculus. Recall that matrices are a way of organizing data into rows and columns. Answer the following questions: (a) Consider a function given by: f(x) =cTAx (1) where x=\uf8ee \uf8f0x0 x1 x2\uf8f9 \uf8fb', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 12:45:34,250 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 12:45:34,289 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x12fcab910>
+2023-12-10 12:45:34,289 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x1179f1490> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 12:45:34,306 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x117556050>
+2023-12-10 12:45:34,306 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 12:45:34,307 [DEBUG]: send_request_headers.complete
+2023-12-10 12:45:34,307 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 12:45:34,307 [DEBUG]: send_request_body.complete
+2023-12-10 12:45:34,307 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 12:45:34,513 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 17:45:34 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'25'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999704'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'3ms'), (b'x-request-id', b'ca69a08074cbc3a9ba3598d4b7b50afb'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=MBoLMvtSpzhMZ6wVAZ23nq0Eiqcw4KRE7dJ_vpaMERE-1702230334-1-Af45K2dHdHToWT4vPpdWI1i0g6tsCfZmuhJ2i9KZx0wlnT5bnYx/u+jA6KSP2K8/nRTepusUON60e2u39Sn+uZk=; path=/; expires=Sun, 10-Dec-23 18:15:34 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=qeBTcp40ek.PMpxlyniup6PE53.miW8u8.upBnFkOo8-1702230334464-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83374d657ef618ee-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 12:45:34,516 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 12:45:34,516 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 12:45:34,517 [DEBUG]: receive_response_body.complete
+2023-12-10 12:45:34,518 [DEBUG]: response_closed.started
+2023-12-10 12:45:34,518 [DEBUG]: response_closed.complete
+2023-12-10 12:45:34,518 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 12:45:34,525 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 12:45:34,526 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 12:45:34,551 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x12fd34360>, 'json_data': {'input': 'CPSC 488/588 - AI Foundation Models HW 1 Page 2 is a column vector of variables, c=\x022 3 1\x03 is a constant vector, and A=\uf8ee \uf8f0a00a01a02 a10a11a12 a20a21a22\uf8f9 \uf8fb is a integer valued matrix, Derive the gradient of fwith respect to x. Solution: Given the function f(x) =\x022 3 1\x03\uf8ee \uf8f0a00a01a02 a10a11a12 a20a21a22\uf8f9 \uf8fb\uf8ee \uf8f0x0 x1 x2\uf8f9 \uf8fb we can expand Axas: Ax=\uf8ee \uf8f0a00x0+a01x1+a02x2 a10x0+a11x1+a12x2 a20x0+a21x1+a22x2\uf8f9 \uf8fb The function f(x) expands to: f(x) = 2a00x0+ 3a10x0+a20x0+ 2a01x1+ 3a11x1+a21x1+ 2a02x2+ 3a12x2+a22x2 Differentiating with respect to the components of x, we get: ∂f(x) ∂x0= 2a00+ 3a10+a20 ∂f(x) ∂x1= 2a01+ 3a11+a21 ∂f(x) ∂x2= 2a02+ 3a12+a22 (b) Given the function f=x⊤·A·x+c·sin(y)⊤·x where •Ais a symmetric matrix •cis a scalar •xis a vector •yis a vector Derive the gradients with respect to xandy. Solution: Gradient with respect to x: Using the identity ∇x(xTAx) = (A+AT)xand we also know that Ais symmetric (i.e., A=AT), so the derivative can be simplified to 2 Ax.', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 12:45:34,590 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 12:45:34,601 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x12fccecd0>
+2023-12-10 12:45:34,602 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x1179f12e0> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 12:45:34,620 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x12fccdb90>
+2023-12-10 12:45:34,620 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 12:45:34,621 [DEBUG]: send_request_headers.complete
+2023-12-10 12:45:34,621 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 12:45:34,621 [DEBUG]: send_request_body.complete
+2023-12-10 12:45:34,621 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 12:45:34,789 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 17:45:34 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'61'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999742'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'3ms'), (b'x-request-id', b'487af024f2dc1463fea46a87b173fe14'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=s7AGnYWSRxaTr.Mb7tvqzWDOsjn4u2D0d3hWJ2ZxmW4-1702230334-0-ATA/a/splXtf7tfVZEYRIfl1CoWnlU/yIyNiJib8hcsWvbju5SZ3d7I91HWIHQi7EMj8OtsjM5s3wI0NFZe7QTI=; path=/; expires=Sun, 10-Dec-23 18:15:34 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=eWchc0qKq6anFEmEoL9uM61dGZv8rBbysdONxKSksFk-1702230334790-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83374d677f9641bd-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 12:45:34,791 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 12:45:34,792 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 12:45:34,793 [DEBUG]: receive_response_body.complete
+2023-12-10 12:45:34,793 [DEBUG]: response_closed.started
+2023-12-10 12:45:34,793 [DEBUG]: response_closed.complete
+2023-12-10 12:45:34,794 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 12:45:34,798 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 12:45:34,799 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 12:45:34,828 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x12fd534c0>, 'json_data': {'input': 'CPSC 488/588 - AI Foundation Models HW 1 Page 3 ∂f ∂x= 2Ax+csin(y) ∂f ∂y=cxcos(y) (c) Given the function g=x⊤By+dtanh(z)⊤x where •Bis an arbitrary matrix •dis a scalar •xis a vector •yis a vector of the same dimension as x •zis a vector Derive the gradients with respect to x,y, and z. Hint: recall∂tanh( x) ∂(x)= 1−tanh2(x) = sech2(x) Solution: 1. Gradient with respect to x: ∂g ∂x=By+dtanh( z) 2. Gradient with respect to y: ∂g ∂y=BTx 3. Gradient with respect to z: ∂g ∂z=d·sech2(z)·x 3.Q3 Automatic differentiation (a) Consider the following function: f(x1, x2, x3, x4) =1 2exp(x1+x2 2)−(x3∗x2 4) i. draw the computation graph corresponding to this function and fill in the gradient values for all of the intermediate nodes and the leaves in the computation graph. Assume the values for x1, x2, x3, x4are−1,2,4,−3 respectively. ii.Solution: iii. Derive the gradients of fwith respect to its inputs ∇fusing symbolic differentiation and chain rule.', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 12:45:34,871 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 12:45:34,890 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x12fd5cd10>
+2023-12-10 12:45:34,890 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x1179f1760> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 12:45:34,911 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x12fd5cc50>
+2023-12-10 12:45:34,912 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 12:45:34,912 [DEBUG]: send_request_headers.complete
+2023-12-10 12:45:34,912 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 12:45:34,912 [DEBUG]: send_request_body.complete
+2023-12-10 12:45:34,912 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 12:45:35,062 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 17:45:35 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'33'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999750'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'3ms'), (b'x-request-id', b'c2e993f04f825e0ddfb182d642ffbc49'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=cMrsECYKEaaSXCnT3nFdYXWMozFgXAU2gNi0SDFwehA-1702230335-1-AW4T4JIsc6UlYW2coOCpYzs7m024U1xjF8EovoN97NiZGi7JddpJprNQE5o3Pu57a8yCZfnwOgePXOvrHzt9T34=; path=/; expires=Sun, 10-Dec-23 18:15:35 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=EfmmSrIUmEnK6RBOUHGWtHPv4Zs5l9_LYEkw_Sl2xg4-1702230335063-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83374d694d11c452-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 12:45:35,063 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 12:45:35,064 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 12:45:35,064 [DEBUG]: receive_response_body.complete
+2023-12-10 12:45:35,064 [DEBUG]: response_closed.started
+2023-12-10 12:45:35,064 [DEBUG]: response_closed.complete
+2023-12-10 12:45:35,065 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 12:45:35,067 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 12:45:35,068 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 12:45:35,088 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x12fd7e7a0>, 'json_data': {'input': 'CPSC 488/588 - AI Foundation Models HW 1 Page 4 Solution: ∂f ∂x1=1 2exp(x1+x2 2) = 1/2∗exp(3) = exp(3)/2 ∂f ∂x2=x2exp(x1+x2 2) = 2∗exp(3) ∂f ∂x3=−x2 4=−9 ∂f ∂x4=−2x3x4= 24 4.Q4Explain the reason behind using negative sampling in the SkipGram word embeddings model. Solution: In a naive implementation of the SkipGram model, for each training example, we would update weights for all words in the vocabulary using softmax. By using negative sampling, instead of computing the softmax over all words in the vocabulary, we only need to compute it for the actual context word and a small set of negative samples. This greatly reduces the computational burden.Furthermore, negative sampling indirectly also sends implicit negative information which as a result the model implicitly gains information about what words are unlikely to appear in the context improving word vector quality. 5.Q5 transformer (a) In the multi-head self-attention operation, what is the cost of computation (in terms of number of number of FLoating point OPerations)? Assume bis batch size, mis sequence length, dis the model dimension, and his the number of attention heads. Assume the dimensionality of keys and queries are d/2h. Note: You need to derive the answer, just providing the final answer is not sufficient. Solution: Scaled Dot Product Attention: Dot product for one head: b ×m×m×d 2h Forhheads: b×m×m×d=bm2d Applying Softmax: Softmax operations: b ×m×m×h≈bm2h Computing the weighted average: For one head: b ×m×m×d', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 12:45:35,119 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 12:45:35,144 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x12fd82550>
+2023-12-10 12:45:35,144 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x1179f1a30> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 12:45:35,171 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x12fd824d0>
+2023-12-10 12:45:35,171 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 12:45:35,171 [DEBUG]: send_request_headers.complete
+2023-12-10 12:45:35,171 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 12:45:35,171 [DEBUG]: send_request_body.complete
+2023-12-10 12:45:35,171 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 12:45:35,343 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 17:45:35 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'27'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999616'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'4ms'), (b'x-request-id', b'aa25837fc887bce604d596a78c64ce11'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=K3Iiwjj8q_6.meivCeXO7nf3BYRTlKwypm.18MgHS8o-1702230335-1-AQHjK5LSAjr1XtaB7Ci1muTggxoplSE6HGKBJ1c0Xtim8zTeJ7W6Owp7kxWHO9JCKE4HEKyJAAgHiGieUOBhPRg=; path=/; expires=Sun, 10-Dec-23 18:15:35 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=LfPdOAXm8Jne4OGjT0XMp94v7mEsnPAl_uj0bOLlzsg-1702230335343-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83374d6afa7a424f-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 12:45:35,345 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 12:45:35,346 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 12:45:35,380 [DEBUG]: receive_response_body.complete
+2023-12-10 12:45:35,381 [DEBUG]: response_closed.started
+2023-12-10 12:45:35,381 [DEBUG]: response_closed.complete
+2023-12-10 12:45:35,381 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 12:45:35,385 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 12:45:35,387 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 12:45:35,418 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x12fdae020>, 'json_data': {'input': 'For one head: b ×m×m×d 2h Forhheads: b×m×m×d=bm2d Output projection: Output operations: 2 ×b×m×d×d= 2bm2d Total FLOPs: Total operations: 3bmd2+bm2d+bm2h+bm2d+ 2bm2d= 4bmd2+ 3bm2d+bm2h', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 12:45:35,462 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 12:45:35,559 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x12fdb1110>
+2023-12-10 12:45:35,559 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x1179f1e20> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 12:45:35,573 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x12fdb1d10>
+2023-12-10 12:45:35,573 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 12:45:35,574 [DEBUG]: send_request_headers.complete
+2023-12-10 12:45:35,574 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 12:45:35,574 [DEBUG]: send_request_body.complete
+2023-12-10 12:45:35,574 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 12:45:35,709 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 17:45:35 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'21'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999952'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'0s'), (b'x-request-id', b'bca0b36bff50bd42b5b072d5cf3316f5'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=Dj4QX1XRqcaj4NQ8fNCatP2PXu_q_w4abFNOhauvy7g-1702230335-0-AQUqJAyTbHZH5p8kx5EDm88TJsHkUawzHp/eryjQnHpeqwYj02E8Wn88FNKQ/HR6VFZ7+vsQEBZRSpuTExXPWjc=; path=/; expires=Sun, 10-Dec-23 18:15:35 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=SYdQLkPLU0v_W0vp230dnTWyIkGbZaDjUYpxYA9mh2o-1702230335709-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83374d6d6f85425f-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 12:45:35,712 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 12:45:35,712 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 12:45:35,714 [DEBUG]: receive_response_body.complete
+2023-12-10 12:45:35,714 [DEBUG]: response_closed.started
+2023-12-10 12:45:35,714 [DEBUG]: response_closed.complete
+2023-12-10 12:45:35,715 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 12:45:35,720 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 12:45:35,722 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 12:45:35,754 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x12fdd9120>, 'json_data': {'input': 'CPSC 488/588 - AI Foundation Models HW 1 Page 5 (b) What is the cost of computation in terms of number of FLoating point Operations for multi-head attention in the backward pass, when the model is being trained? (use the same assumptions as the above questions). Solution: 1. Projection to Q, K, V: 6bmd2 2. Scaled Dot Product Attention: 2bm2d 3. Applying Softmax: bm2h 4. Computing the weighted average: 2bm2d 5. Output projection: 4bm2d Total Backward FLOPs: 6bmd2+ 9bm2d+bm2h (c) What is the cost of computation in terms of number of FLoating point Operations for Grouped Query Attention where G=k/4 is the number of groups? Solution: 1. Projection to Q, K, V: 3bmd2 2. Grouping Queries and Dot Product:bm2d 2 3. Applying Softmax: bm2h 4. Computing the weighted average:bm2d 2 Total FLOPs for Grouped Query Attention: 4bmd2+bm2h', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 12:45:35,799 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 12:45:35,812 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x12fde0dd0>
+2023-12-10 12:45:35,812 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x1179f2210> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 12:45:35,827 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x12fde0d10>
+2023-12-10 12:45:35,827 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 12:45:35,827 [DEBUG]: send_request_headers.complete
+2023-12-10 12:45:35,827 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 12:45:35,827 [DEBUG]: send_request_body.complete
+2023-12-10 12:45:35,827 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 12:45:35,968 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 17:45:35 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'26'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999793'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'2ms'), (b'x-request-id', b'968a036761e6e98de7819d891a87c2b5'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=.tOeM7Jlcr5vK4OiXvOJLykOKIldGMUa.Rb4UPUIbAI-1702230335-0-ASrActxEnGKxRg8uEPA6s+wFr133EmMh2z7XyIsQw04ZmbM3y99Rws5hDBQJaW8m079GdL8LlZSTZt1ksj1+uVU=; path=/; expires=Sun, 10-Dec-23 18:15:35 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=OxR_xLaHDrsRfITgbI2.P0GQdsbm1RFwZE_aRPLtXNE-1702230335968-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83374d6efcee1760-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 12:45:35,970 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 12:45:35,970 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 12:45:35,978 [DEBUG]: receive_response_body.complete
+2023-12-10 12:45:35,978 [DEBUG]: response_closed.started
+2023-12-10 12:45:35,979 [DEBUG]: response_closed.complete
+2023-12-10 12:45:35,980 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 12:45:35,982 [DEBUG]: Embedded chunks
+2023-12-10 12:45:36,612 [DEBUG]: Upserted vectors into index
+2023-12-10 12:45:36,613 [DEBUG]: Error in upload_and_generate_embedding: 'str' object has no attribute 'filename'
+2023-12-10 12:45:36,618 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:45:36] "[35m[1mPOST /api/generate_embeddings HTTP/1.1[0m" 500 -
+2023-12-10 12:46:55,773 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:46:55,774 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:47:03,228 [DEBUG]: <FileStorage: 'AI_Foundations_Pset1_Final.pdf' ('application/pdf')>
+2023-12-10 12:47:03,228 [DEBUG]: files
+2023-12-10 12:47:03,230 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:47:03] "POST /api/uploadFiles HTTP/1.1" 200 -
+2023-12-10 12:47:03,240 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 12:47:03,345 [DEBUG]: Initialized Pinecone
+2023-12-10 12:47:03,345 [DEBUG]: Type of pdf_file: <class 'str'>
+2023-12-10 12:47:03,452 [DEBUG]: Parsed PDF
+2023-12-10 12:47:03,648 [DEBUG]: List of indexes: ['research-chat-index']
+2023-12-10 12:47:03,649 [DEBUG]: Initialized Pinecone Index
+2023-12-10 12:47:03,650 [DEBUG]: Chunked PDF and obtained vectors
+2023-12-10 12:47:03,651 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 12:47:03,651 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 12:47:03,669 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x11c152020>, 'json_data': {'input': 'CPSC 488/588 - AI Foundation Models HW 1 Page 1 CPSC 488/588 AI Foundation Models Fall 2023 HW 1 Instructions: copy this project at https://www.overleaf.com/read/gjvcgrzjyxfm , complete the solutions, and return your solutions in pdf format. Full Name: Sneha Netid: ss3993 1.Q1 Warmup. this part is about refreshing your calculus on calculating derivatives of functions. (a) Given the function: f(x) = sin(3 x2+ 4 cos( x)) find∂f/∂x using the chain rule. Solution:∂f ∂x= cos(3 x2+ 4 cos( x))·(6x−4 sin( x)) (b) Given the function: f(x) =etanh(2 x3−5x2+x) find∂f/∂x using the chain rule. Recall:∂tanh ( x) ∂(x)= 1−tanh2(x) = sech2(x) Solution:∂f ∂x=etanh(2 x3−5x2+x)·sech2(2x3−5x2+x)·\x00 6x2−10x+ 1\x01 (c) Consider the function: f(x, y, z ) =x2sin(yz) +eyz−z3y find partial derivatives of the function with respect to each variable separately. Solution:∂f ∂x= 2xsin(yz), ∂f ∂y=x2zcos(yz) +zeyz−z3, ∂f ∂z=x2ycos(yz) +yeyz−3z2y. 2.Q2 Matrix calculus. Recall that matrices are a way of organizing data into rows and columns. Answer the following questions: (a) Consider a function given by: f(x) =cTAx (1) where x=\uf8ee \uf8f0x0 x1 x2\uf8f9 \uf8fb', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 12:47:03,761 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 12:47:03,849 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11c109ad0>
+2023-12-10 12:47:03,849 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x11c041490> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 12:47:03,864 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10f7fff90>
+2023-12-10 12:47:03,865 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 12:47:03,865 [DEBUG]: send_request_headers.complete
+2023-12-10 12:47:03,865 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 12:47:03,865 [DEBUG]: send_request_body.complete
+2023-12-10 12:47:03,865 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 12:47:04,033 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 17:47:04 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'30'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999704'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'3ms'), (b'x-request-id', b'8b22b74315eacd3070144331df932741'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=gXA1oKUFVknOvtYcbZd9Iy9e.ObmR9w_o1DS6FdN3hQ-1702230424-0-AXsOFdM4w7iKZM7BOIPic/TB1XGLxsA/RDeSUd0GLITE2i+BrbgmGrOotLmWOw8GssOio0vSpTylgkOTwliy9nk=; path=/; expires=Sun, 10-Dec-23 18:17:04 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=LorGRVrU5Z04iaGgvtdH1zVaRqnQDh_xRJBp.9zo1ok-1702230424033-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83374f953cbe726b-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 12:47:04,035 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 12:47:04,035 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 12:47:04,036 [DEBUG]: receive_response_body.complete
+2023-12-10 12:47:04,036 [DEBUG]: response_closed.started
+2023-12-10 12:47:04,036 [DEBUG]: response_closed.complete
+2023-12-10 12:47:04,036 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 12:47:04,039 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 12:47:04,040 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 12:47:04,058 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x11c194220>, 'json_data': {'input': 'CPSC 488/588 - AI Foundation Models HW 1 Page 2 is a column vector of variables, c=\x022 3 1\x03 is a constant vector, and A=\uf8ee \uf8f0a00a01a02 a10a11a12 a20a21a22\uf8f9 \uf8fb is a integer valued matrix, Derive the gradient of fwith respect to x. Solution: Given the function f(x) =\x022 3 1\x03\uf8ee \uf8f0a00a01a02 a10a11a12 a20a21a22\uf8f9 \uf8fb\uf8ee \uf8f0x0 x1 x2\uf8f9 \uf8fb we can expand Axas: Ax=\uf8ee \uf8f0a00x0+a01x1+a02x2 a10x0+a11x1+a12x2 a20x0+a21x1+a22x2\uf8f9 \uf8fb The function f(x) expands to: f(x) = 2a00x0+ 3a10x0+a20x0+ 2a01x1+ 3a11x1+a21x1+ 2a02x2+ 3a12x2+a22x2 Differentiating with respect to the components of x, we get: ∂f(x) ∂x0= 2a00+ 3a10+a20 ∂f(x) ∂x1= 2a01+ 3a11+a21 ∂f(x) ∂x2= 2a02+ 3a12+a22 (b) Given the function f=x⊤·A·x+c·sin(y)⊤·x where •Ais a symmetric matrix •cis a scalar •xis a vector •yis a vector Derive the gradients with respect to xandy. Solution: Gradient with respect to x: Using the identity ∇x(xTAx) = (A+AT)xand we also know that Ais symmetric (i.e., A=AT), so the derivative can be simplified to 2 Ax.', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 12:47:04,096 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 12:47:04,175 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11c1309d0>
+2023-12-10 12:47:04,175 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x11c0412e0> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 12:47:04,191 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11c1308d0>
+2023-12-10 12:47:04,192 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 12:47:04,192 [DEBUG]: send_request_headers.complete
+2023-12-10 12:47:04,192 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 12:47:04,192 [DEBUG]: send_request_body.complete
+2023-12-10 12:47:04,192 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 12:47:04,334 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 17:47:04 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'29'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999742'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'3ms'), (b'x-request-id', b'f0c0e3604604f4c85c6d0f5f11dbe19f'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=v544NM6e4_0ksbC7_68RS_OUcbkunlhqB2XI0D590Kc-1702230424-0-AaOEvrX0J/v8+dyxDbeHorjEHr3ajC9KYKa7gOKejKdJMICHwu8Z5kKdL/6EJ6x/3lgAJIf5Yw3Zof4aNBA/H4Q=; path=/; expires=Sun, 10-Dec-23 18:17:04 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=qXMRnxVASl2o7vcr94uEsY1OdXA4JgzAT7wRH8Msa.k-1702230424332-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83374f974d3441c1-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 12:47:04,338 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 12:47:04,338 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 12:47:04,341 [DEBUG]: receive_response_body.complete
+2023-12-10 12:47:04,341 [DEBUG]: response_closed.started
+2023-12-10 12:47:04,341 [DEBUG]: response_closed.complete
+2023-12-10 12:47:04,342 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 12:47:04,351 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 12:47:04,353 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 12:47:04,375 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x11c1af380>, 'json_data': {'input': 'CPSC 488/588 - AI Foundation Models HW 1 Page 3 ∂f ∂x= 2Ax+csin(y) ∂f ∂y=cxcos(y) (c) Given the function g=x⊤By+dtanh(z)⊤x where •Bis an arbitrary matrix •dis a scalar •xis a vector •yis a vector of the same dimension as x •zis a vector Derive the gradients with respect to x,y, and z. Hint: recall∂tanh( x) ∂(x)= 1−tanh2(x) = sech2(x) Solution: 1. Gradient with respect to x: ∂g ∂x=By+dtanh( z) 2. Gradient with respect to y: ∂g ∂y=BTx 3. Gradient with respect to z: ∂g ∂z=d·sech2(z)·x 3.Q3 Automatic differentiation (a) Consider the following function: f(x1, x2, x3, x4) =1 2exp(x1+x2 2)−(x3∗x2 4) i. draw the computation graph corresponding to this function and fill in the gradient values for all of the intermediate nodes and the leaves in the computation graph. Assume the values for x1, x2, x3, x4are−1,2,4,−3 respectively. ii.Solution: iii. Derive the gradients of fwith respect to its inputs ∇fusing symbolic differentiation and chain rule.', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 12:47:04,415 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 12:47:04,427 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11c1b5550>
+2023-12-10 12:47:04,427 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x11c041760> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 12:47:04,440 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11c1b54d0>
+2023-12-10 12:47:04,440 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 12:47:04,441 [DEBUG]: send_request_headers.complete
+2023-12-10 12:47:04,441 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 12:47:04,441 [DEBUG]: send_request_body.complete
+2023-12-10 12:47:04,441 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 12:47:04,587 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 17:47:04 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'24'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999750'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'3ms'), (b'x-request-id', b'5f32c659d1d5df86ab675afd008332d3'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=QDo.sfgyY.1bxIhRtuxBD4GV_NNM2fIpmQSD7W4i5ds-1702230424-1-AcQC4F0kmsoohypHelKC+FxIDARDfOp8zMw1Hm4kTbu8a4h2kXH09tRsv2j2qzoUgZwwbG6ULFgutklpW3qPW0k=; path=/; expires=Sun, 10-Dec-23 18:17:04 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=aDB4dLJ_HBc5i1yfWD9Ljn8aoDIYdNWZ2psZ12ioqMw-1702230424586-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83374f98d9a441ed-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 12:47:04,589 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 12:47:04,590 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 12:47:04,591 [DEBUG]: receive_response_body.complete
+2023-12-10 12:47:04,591 [DEBUG]: response_closed.started
+2023-12-10 12:47:04,591 [DEBUG]: response_closed.complete
+2023-12-10 12:47:04,591 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 12:47:04,594 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 12:47:04,596 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 12:47:04,621 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x11c1e2660>, 'json_data': {'input': 'CPSC 488/588 - AI Foundation Models HW 1 Page 4 Solution: ∂f ∂x1=1 2exp(x1+x2 2) = 1/2∗exp(3) = exp(3)/2 ∂f ∂x2=x2exp(x1+x2 2) = 2∗exp(3) ∂f ∂x3=−x2 4=−9 ∂f ∂x4=−2x3x4= 24 4.Q4Explain the reason behind using negative sampling in the SkipGram word embeddings model. Solution: In a naive implementation of the SkipGram model, for each training example, we would update weights for all words in the vocabulary using softmax. By using negative sampling, instead of computing the softmax over all words in the vocabulary, we only need to compute it for the actual context word and a small set of negative samples. This greatly reduces the computational burden.Furthermore, negative sampling indirectly also sends implicit negative information which as a result the model implicitly gains information about what words are unlikely to appear in the context improving word vector quality. 5.Q5 transformer (a) In the multi-head self-attention operation, what is the cost of computation (in terms of number of number of FLoating point OPerations)? Assume bis batch size, mis sequence length, dis the model dimension, and his the number of attention heads. Assume the dimensionality of keys and queries are d/2h. Note: You need to derive the answer, just providing the final answer is not sufficient. Solution: Scaled Dot Product Attention: Dot product for one head: b ×m×m×d 2h Forhheads: b×m×m×d=bm2d Applying Softmax: Softmax operations: b ×m×m×h≈bm2h Computing the weighted average: For one head: b ×m×m×d', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 12:47:04,662 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 12:47:04,700 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11c1ded90>
+2023-12-10 12:47:04,700 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x11c041a30> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 12:47:04,715 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11c1ded10>
+2023-12-10 12:47:04,715 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 12:47:04,716 [DEBUG]: send_request_headers.complete
+2023-12-10 12:47:04,716 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 12:47:04,716 [DEBUG]: send_request_body.complete
+2023-12-10 12:47:04,716 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 12:47:04,865 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 17:47:04 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'26'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999616'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'4ms'), (b'x-request-id', b'6fe6181a63961b98de568e230e6f5803'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=AAc11LpvhlknyaSjzPJdayV5bB33158kS7N0rU.KIzA-1702230424-1-AeNwfR0fJuRttrSXYGWcw8EFMS/WFWKSmOaIaRhPFjbG+aqeW4qZ/LeAgORMHqWByhki4voMUOpKrJQU3uW7Nv8=; path=/; expires=Sun, 10-Dec-23 18:17:04 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=58h0eK2DcqLHVrnoQAp6OOg19Pbyo9L0Sk_AK8j8rck-1702230424864-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83374f9a8b998ccc-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 12:47:04,867 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 12:47:04,868 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 12:47:04,869 [DEBUG]: receive_response_body.complete
+2023-12-10 12:47:04,870 [DEBUG]: response_closed.started
+2023-12-10 12:47:04,870 [DEBUG]: response_closed.complete
+2023-12-10 12:47:04,870 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 12:47:04,875 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 12:47:04,877 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 12:47:04,901 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x1343f9ee0>, 'json_data': {'input': 'For one head: b ×m×m×d 2h Forhheads: b×m×m×d=bm2d Output projection: Output operations: 2 ×b×m×d×d= 2bm2d Total FLOPs: Total operations: 3bmd2+bm2d+bm2h+bm2d+ 2bm2d= 4bmd2+ 3bm2d+bm2h', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 12:47:04,942 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 12:47:04,956 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1343fda50>
+2023-12-10 12:47:04,956 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x11c041e20> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 12:47:04,971 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1343fd9d0>
+2023-12-10 12:47:04,971 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 12:47:04,971 [DEBUG]: send_request_headers.complete
+2023-12-10 12:47:04,971 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 12:47:04,971 [DEBUG]: send_request_body.complete
+2023-12-10 12:47:04,971 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 12:47:05,217 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 17:47:05 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'46'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999952'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'0s'), (b'x-request-id', b'dedec976628f8937ae719babb84854ce'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=313TNBRtFiFFcpXVxbJ_O3kKVWM.0ke0GRv0tnaLgVI-1702230425-0-ARTCZCNIDmyc7DR0YkFPkMWWDhTHFuc7Kcp5k31B/v0XaGFXr0I/tJU2vAP7XULaeYZV8svnPpdksv/auQndarg=; path=/; expires=Sun, 10-Dec-23 18:17:05 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=ObtMLo1P5rs2DU23rUCPK70bxyf7TH.FALKtOHkTnuE-1702230425126-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83374f9c2b4b0f7d-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 12:47:05,219 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 12:47:05,219 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 12:47:05,225 [DEBUG]: receive_response_body.complete
+2023-12-10 12:47:05,225 [DEBUG]: response_closed.started
+2023-12-10 12:47:05,225 [DEBUG]: response_closed.complete
+2023-12-10 12:47:05,225 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 12:47:05,229 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 12:47:05,230 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 12:47:05,263 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x13442cfe0>, 'json_data': {'input': 'CPSC 488/588 - AI Foundation Models HW 1 Page 5 (b) What is the cost of computation in terms of number of FLoating point Operations for multi-head attention in the backward pass, when the model is being trained? (use the same assumptions as the above questions). Solution: 1. Projection to Q, K, V: 6bmd2 2. Scaled Dot Product Attention: 2bm2d 3. Applying Softmax: bm2h 4. Computing the weighted average: 2bm2d 5. Output projection: 4bm2d Total Backward FLOPs: 6bmd2+ 9bm2d+bm2h (c) What is the cost of computation in terms of number of FLoating point Operations for Grouped Query Attention where G=k/4 is the number of groups? Solution: 1. Projection to Q, K, V: 3bmd2 2. Grouping Queries and Dot Product:bm2d 2 3. Applying Softmax: bm2h 4. Computing the weighted average:bm2d 2 Total FLOPs for Grouped Query Attention: 4bmd2+bm2h', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 12:47:05,303 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 12:47:05,312 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x134431550>
+2023-12-10 12:47:05,313 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x11c042210> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 12:47:05,325 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1344314d0>
+2023-12-10 12:47:05,325 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 12:47:05,325 [DEBUG]: send_request_headers.complete
+2023-12-10 12:47:05,325 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 12:47:05,325 [DEBUG]: send_request_body.complete
+2023-12-10 12:47:05,325 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 12:47:05,502 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 17:47:05 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'27'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999793'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'2ms'), (b'x-request-id', b'b7335a0ea5e8457a78509b14ab752b09'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=CJVBbq37oFiqUjbvap7C6Z7BDTdUDCigIPNZVLDt6ow-1702230425-0-AXJBIVWkduBDLubo2RR0aHHj/1VCN1HPG35PXbxjPB3RmZNpEUsCr+OA8UkfMokC4bEqY7WKtYr1/gTXHKNCwfU=; path=/; expires=Sun, 10-Dec-23 18:17:05 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=x7FUQvOtSbA._FiSuvCUF0w6cYSLyzHY8F8oKRelE6k-1702230425501-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83374f9e5c30c409-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 12:47:05,503 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 12:47:05,504 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 12:47:05,504 [DEBUG]: receive_response_body.complete
+2023-12-10 12:47:05,505 [DEBUG]: response_closed.started
+2023-12-10 12:47:05,505 [DEBUG]: response_closed.complete
+2023-12-10 12:47:05,505 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 12:47:05,507 [DEBUG]: Embedded chunks
+2023-12-10 12:47:05,929 [DEBUG]: Upserted vectors into index
+2023-12-10 12:47:05,932 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:47:05] "POST /api/generate_embeddings HTTP/1.1" 200 -
+2023-12-10 12:53:25,498 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:53:25] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-10 12:53:40,252 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:53:40] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-10 12:53:45,566 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 12:53:45,572 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 12:53:45,575 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 12:53:45,601 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:53:45] "[35m[1mPOST /api/chat HTTP/1.1[0m" 500 -
+2023-12-10 12:55:08,242 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:55:08,242 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:55:17,539 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:55:17] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-10 12:55:24,781 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 12:55:24,785 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 12:55:24,787 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+data
+2023-12-10 12:55:24,811 [DEBUG]: data
+2023-12-10 12:55:24,813 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:55:24] "[35m[1mPOST /api/chat HTTP/1.1[0m" 500 -
+2023-12-10 12:55:59,853 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:55:59,853 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 12:58:12,212 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:58:12] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-10 12:58:16,808 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 12:58:16,818 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 12:58:16,820 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+data
+2023-12-10 12:58:16,845 [DEBUG]: data
+2023-12-10 12:58:16,853 [INFO]: 127.0.0.1 - - [10/Dec/2023 12:58:16] "[35m[1mPOST /api/chat HTTP/1.1[0m" 500 -
+2023-12-10 12:59:59,016 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 12:59:59,016 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 13:00:13,746 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 13:00:13,746 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 13:00:27,562 [INFO]: 127.0.0.1 - - [10/Dec/2023 13:00:27] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-10 13:00:33,913 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 13:00:33,918 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 13:00:33,920 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+[{'role': 'user', 'content': 'Compare and contrast the abstracts of the documents I uploaded.'}]
+2023-12-10 13:00:33,945 [DEBUG]: [{'role': 'user', 'content': 'Compare and contrast the abstracts of the documents I uploaded.'}]
+{}
+2023-12-10 13:00:33,945 [DEBUG]: {}
+2023-12-10 13:00:33,946 [INFO]: 127.0.0.1 - - [10/Dec/2023 13:00:33] "[35m[1mPOST /api/chat HTTP/1.1[0m" 500 -
+2023-12-10 13:01:15,339 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 13:01:15,339 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 13:01:23,511 [INFO]: 127.0.0.1 - - [10/Dec/2023 13:01:23] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-10 13:01:26,950 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 13:01:26,955 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 13:01:26,957 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+[{'role': 'user', 'content': 'Compare and contrast the abstracts of the documents I uploaded.'}]
+2023-12-10 13:01:26,984 [DEBUG]: [{'role': 'user', 'content': 'Compare and contrast the abstracts of the documents I uploaded.'}]
+2023-12-10 13:01:26,985 [INFO]: 127.0.0.1 - - [10/Dec/2023 13:01:26] "[35m[1mPOST /api/chat HTTP/1.1[0m" 500 -
+2023-12-10 13:09:21,129 [INFO]: 127.0.0.1 - - [10/Dec/2023 13:09:21] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-10 13:13:18,658 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 13:13:18,659 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 13:13:24,479 [INFO]: 127.0.0.1 - - [10/Dec/2023 13:13:24] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-10 13:13:29,838 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 13:13:29,842 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 13:13:29,844 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 13:13:29,870 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 13:13:29,870 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 13:13:29,887 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x119548220>, 'json_data': {'input': 'Summarize the comments of my first document.', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 13:13:29,985 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 13:13:30,021 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1194fd650>
+2023-12-10 13:13:30,022 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x1194f07a0> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 13:13:30,036 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11955f110>
+2023-12-10 13:13:30,037 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 13:13:30,037 [DEBUG]: send_request_headers.complete
+2023-12-10 13:13:30,037 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 13:13:30,037 [DEBUG]: send_request_body.complete
+2023-12-10 13:13:30,037 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 13:13:30,311 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 18:13:30 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'22'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999988'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'0s'), (b'x-request-id', b'71e4db8e598781e38a6789dfd42c3e4f'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=kIiWVbdZRWXpFsQmb9D2oxzYmDUM7MoXg.XJiAW_tSg-1702232010-0-AYv2HKBboacjwSmbArAlXycF2RS5NoLUe0QI1AZZjGbga62UPpOcZlR6ZUzxjsPqjdKR5FFliCPheQSsyaR8j58=; path=/; expires=Sun, 10-Dec-23 18:43:30 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=vgUp1WL8EZ4mSL33E9TFyN4Qe.FsiKvMWj8CcQbw2Nc-1702232010305-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8337764ec82b4231-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 13:13:30,314 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 13:13:30,315 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 13:13:30,319 [DEBUG]: receive_response_body.complete
+2023-12-10 13:13:30,319 [DEBUG]: response_closed.started
+2023-12-10 13:13:30,320 [DEBUG]: response_closed.complete
+2023-12-10 13:13:30,320 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 13:13:31,459 [DEBUG]: Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'AI assistant is a brand new, powerful, human-like artificial intelligence.\n                    The traits of AI include expert knowledge, helpfulness, cleverness, and articulateness.\n                    AI is a well-behaved and well-mannered individual.\n                    AI is always friendly, kind, and inspiring, and he is eager to provide vivid and thoughtful responses to the user.\n                    AI has the sum of all knowledge in their brain, and is able to accurately answer nearly any question about any topic in conversation.\n                    AI assistant is a big fan of Pinecone and Vercel.\n                    START CONTEXT BLOCK\n                    CPSC 488/588 - AI Foundation Models HW 1 Page 1\nCPSC 488/588 AI Foundation Models\nFall 2023\nHW 1\nInstructions: copy this project at https://www.overleaf.com/read/gjvcgrzjyxfm ,\ncomplete the solutions, and return your solutions in pdf format.\nFull Name: Sneha\nNetid: ss3993\n1.Q1\nWarmup. this part is about refreshing your calculus on calculating derivatives of functions.\n(a) Given the function:\nf(x) = sin(3 x2+ 4 cos( x))\nfind∂f/∂x using the chain rule.\nSolution:∂f\n∂x= cos(3 x2+ 4 cos( x))·(6x−4 sin( x))\n(b) Given the function:\nf(x) =etanh(2 x3−5x2+x)\nfind∂f/∂x using the chain rule.\nRecall:∂tanh ( x)\n∂(x)= 1−tanh2(x) = sech2(x)\nSolution:∂f\n∂x=etanh(2 x3−5x2+x)·sech2(2x3−5x2+x)·\x00\n6x2−10x+ 1\x01\n(c) Consider the function:\nf(x, y, z ) =x2sin(yz) +eyz−z3y\nfind partial derivatives of the function with respect to each variable separately.\nSolution:∂f\n∂x= 2xsin(yz),\n∂f\n∂y=x2zcos(yz) +zeyz−z3,\n∂f\n∂z=x2ycos(yz) +yeyz−3z2y.\n2.Q2 Matrix calculus. Recall that matrices are a way of organizing data into rows and columns.\nAnswer the following questions:\n(a) Consider a function given by:\nf(x) =cTAx (1)\nwhere\nx=\uf8ee\n\uf8f0x0\nx1\nx2\uf8f9\n\uf8fb\nCPSC 488/588 - AI Foundation Models HW 1 Page 4\nSolution:\n∂f\n∂x1=1\n2exp(x1+x2\n2) = 1/2∗exp(3) = exp(3)/2\n∂f\n∂x2=x2exp(x1+x2\n2) = 2∗exp(3)\n∂f\n∂x3=−x2\n4=−9\n∂f\n∂x4=−2x3x4= 24\n4.Q4Explain the reason behind using negative sampling in the SkipGram word embeddings model.\nSolution: In a naive implementation of the SkipGram model, for each training example, we would\nupdate weights for all words in the vocabulary using softmax. By using negative sampling, instead\nof computing the softmax over all words in the vocabulary, we only need to compute it for the\nactual context word and a small set of negative samples. This greatly reduces the computational\nburden.Furthermore, negative sampling indirectly also sends implicit negative information which\nas a result the model implicitly gains information about what words are unlikely to appear in the\ncontext improving word vector quality.\n5.Q5 transformer\n(a) In the multi-head self-attention operation, what is the cost of computation (in terms of number\nof number of FLoating point OPerations)? Assume bis batch size, mis sequence length, dis the\nmodel dimension, and his the number of attention heads. Assume the dimensionality of keys and\nqueries are d/2h.\nNote: You need to derive the answer, just providing the final answer is not sufficient.\nSolution:\nScaled Dot Product Attention:\nDot product for one head: b ×m×m×d\n2h\nForhheads: b×m×m×d=bm2d\nApplying Softmax:\nSoftmax operations: b ×m×m×h≈bm2h\nComputing the weighted average:\nFor one head: b ×m×m×d\nCPSC 488/588 - AI Foundation Models HW 1 Page 5\n(b) What is the cost of computation in terms of number of FLoating point Operations for multi-head\nattention in the backward pass, when the model is being trained? (use the same assumptions as\nthe above questions).\nSolution:\n1. Projection to Q, K, V: 6bmd2\n2. Scaled Dot Product Attention: 2bm2d\n3. Applying Softmax: bm2h\n4. Comput\n                    END OF CONTEXT BLOCK\n                    AI assistant will take into account any CONTEXT BLOCK that is provided in a conversation.\n                    If the context does not provide the answer to question, the AI assistant will say, "I\'m sorry, but I don\'t know the answer to that question".\n                    AI assistant will not apologize for previous responses, but instead will indicated new information was gained.\n                    AI assistant will not invent anything that is not drawn directly from the context.\n                    '}, {'role': 'user', 'content': 'Summarize the comments of my first document.'}], 'model': 'gpt-3.5-turbo'}}
+2023-12-10 13:13:31,505 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 13:13:31,515 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1195a0d50>
+2023-12-10 13:13:31,516 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x1194f0710> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 13:13:31,528 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1195784d0>
+2023-12-10 13:13:31,529 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 13:13:31,529 [DEBUG]: send_request_headers.complete
+2023-12-10 13:13:31,529 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 13:13:31,529 [DEBUG]: send_request_body.complete
+2023-12-10 13:13:31,529 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 13:13:33,509 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 18:13:33 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-0613'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'1520'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'160000'), (b'x-ratelimit-limit-tokens_usage_based', b'160000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'158885'), (b'x-ratelimit-remaining-tokens_usage_based', b'158885'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'418ms'), (b'x-ratelimit-reset-tokens_usage_based', b'418ms'), (b'x-request-id', b'183dc85197cedf81bfbefb40ef5368bd'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=OcrEea.9TUQ9KN8nmeNKt_bCStCDJu2l06EqVouC5nc-1702232013-0-ATMceuhzx3ps8A6pwLiYMMg7+IFn0iQXUJJauNzmnyf43IGQMLAE5HgeO9dIYiGxf9J+rqALLDlFfAmJivkQjCM=; path=/; expires=Sun, 10-Dec-23 18:43:33 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=yPzPAacewPDiT67KstMkBUlvOoNX2pw1F6.XOsM0Avw-1702232013505-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'833776581aec8cb4-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 13:13:33,510 [INFO]: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-10 13:13:33,510 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 13:13:33,511 [DEBUG]: receive_response_body.complete
+2023-12-10 13:13:33,511 [DEBUG]: response_closed.started
+2023-12-10 13:13:33,511 [DEBUG]: response_closed.complete
+2023-12-10 13:13:33,511 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-10 13:13:33,514 [INFO]: 127.0.0.1 - - [10/Dec/2023 13:13:33] "POST /api/chat HTTP/1.1" 200 -
+2023-12-10 13:13:54,815 [INFO]: 127.0.0.1 - - [10/Dec/2023 13:13:54] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-10 13:14:04,686 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 13:14:04,691 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 13:14:04,693 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 13:14:04,722 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 13:14:04,723 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 13:14:04,738 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x1195e1f80>, 'json_data': {'input': 'what was the first uestion in AI foundations pset? ', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 13:14:04,779 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 13:14:04,792 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1195e4cd0>
+2023-12-10 13:14:04,792 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x1194f0cb0> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 13:14:04,804 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1195e4c90>
+2023-12-10 13:14:04,805 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 13:14:04,805 [DEBUG]: send_request_headers.complete
+2023-12-10 13:14:04,805 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 13:14:04,805 [DEBUG]: send_request_body.complete
+2023-12-10 13:14:04,805 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 13:14:04,936 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 18:14:04 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'19'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999987'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'0s'), (b'x-request-id', b'87d73a111e6762449edaa5f982459a13'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=r.wqxpQk01xRFG5XammCJ3stQOcPlnOaxJvVwYsd3mI-1702232044-0-AbOT3hkm5cFTUfO09MoKfY81+PLaNgLgTEP6/HdM3nIaMTx3mp/4U0a6yQZy6i4uvvN5BLAuqOkjA7hDhdExgx4=; path=/; expires=Sun, 10-Dec-23 18:44:04 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=7t812fKwss2ksvd1PiDwNbYZCBsPPI__m7xCuZ2IIR8-1702232044930-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8337772808c6c3f8-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 13:14:04,937 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 13:14:04,937 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 13:14:04,947 [DEBUG]: receive_response_body.complete
+2023-12-10 13:14:04,947 [DEBUG]: response_closed.started
+2023-12-10 13:14:04,947 [DEBUG]: response_closed.complete
+2023-12-10 13:14:04,947 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 13:14:05,433 [DEBUG]: Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'AI assistant is a brand new, powerful, human-like artificial intelligence.\n                    The traits of AI include expert knowledge, helpfulness, cleverness, and articulateness.\n                    AI is a well-behaved and well-mannered individual.\n                    AI is always friendly, kind, and inspiring, and he is eager to provide vivid and thoughtful responses to the user.\n                    AI has the sum of all knowledge in their brain, and is able to accurately answer nearly any question about any topic in conversation.\n                    AI assistant is a big fan of Pinecone and Vercel.\n                    START CONTEXT BLOCK\n                    CPSC 488/588 - AI Foundation Models HW 1 Page 1\nCPSC 488/588 AI Foundation Models\nFall 2023\nHW 1\nInstructions: copy this project at https://www.overleaf.com/read/gjvcgrzjyxfm ,\ncomplete the solutions, and return your solutions in pdf format.\nFull Name: Sneha\nNetid: ss3993\n1.Q1\nWarmup. this part is about refreshing your calculus on calculating derivatives of functions.\n(a) Given the function:\nf(x) = sin(3 x2+ 4 cos( x))\nfind∂f/∂x using the chain rule.\nSolution:∂f\n∂x= cos(3 x2+ 4 cos( x))·(6x−4 sin( x))\n(b) Given the function:\nf(x) =etanh(2 x3−5x2+x)\nfind∂f/∂x using the chain rule.\nRecall:∂tanh ( x)\n∂(x)= 1−tanh2(x) = sech2(x)\nSolution:∂f\n∂x=etanh(2 x3−5x2+x)·sech2(2x3−5x2+x)·\x00\n6x2−10x+ 1\x01\n(c) Consider the function:\nf(x, y, z ) =x2sin(yz) +eyz−z3y\nfind partial derivatives of the function with respect to each variable separately.\nSolution:∂f\n∂x= 2xsin(yz),\n∂f\n∂y=x2zcos(yz) +zeyz−z3,\n∂f\n∂z=x2ycos(yz) +yeyz−3z2y.\n2.Q2 Matrix calculus. Recall that matrices are a way of organizing data into rows and columns.\nAnswer the following questions:\n(a) Consider a function given by:\nf(x) =cTAx (1)\nwhere\nx=\uf8ee\n\uf8f0x0\nx1\nx2\uf8f9\n\uf8fb\nCPSC 488/588 - AI Foundation Models HW 1 Page 2\nis a column vector of variables,\nc=\x022 3 1\x03\nis a constant vector, and\nA=\uf8ee\n\uf8f0a00a01a02\na10a11a12\na20a21a22\uf8f9\n\uf8fb\nis a integer valued matrix,\nDerive the gradient of fwith respect to x.\nSolution: Given the function\nf(x) =\x022 3 1\x03\uf8ee\n\uf8f0a00a01a02\na10a11a12\na20a21a22\uf8f9\n\uf8fb\uf8ee\n\uf8f0x0\nx1\nx2\uf8f9\n\uf8fb\nwe can expand Axas:\nAx=\uf8ee\n\uf8f0a00x0+a01x1+a02x2\na10x0+a11x1+a12x2\na20x0+a21x1+a22x2\uf8f9\n\uf8fb\nThe function f(x) expands to:\nf(x) = 2a00x0+ 3a10x0+a20x0+ 2a01x1+ 3a11x1+a21x1+ 2a02x2+ 3a12x2+a22x2\nDifferentiating with respect to the components of x, we get:\n∂f(x)\n∂x0= 2a00+ 3a10+a20\n∂f(x)\n∂x1= 2a01+ 3a11+a21\n∂f(x)\n∂x2= 2a02+ 3a12+a22\n(b) Given the function\nf=x⊤·A·x+c·sin(y)⊤·x\nwhere\n•Ais a symmetric matrix\n•cis a scalar\n•xis a vector\n•yis a vector\nDerive the gradients with respect to xandy.\nSolution:\nGradient with respect to x:\nUsing the identity ∇x(xTAx) = (A+AT)xand we also know that Ais symmetric (i.e., A=AT),\nso the derivative can be simplified to 2 Ax.\nCPSC 488/588 - AI Foundation Models HW 1 Page 5\n(b) What is the cost of computation in terms of number of FLoating point Operations for multi-head\nattention in the backward pass, when the model is being trained? (use the same assumptions as\nthe above questions).\nSolution:\n1. Projection to Q, K, V: 6bmd2\n2. Scaled Dot Product Attention: 2bm2d\n3. Applying Softmax: bm2h\n4. Computing the weighted average: 2bm2d\n5. Output projection: 4bm2d\nTotal Backward FLOPs: 6bmd2+ 9bm2d+bm2h\n(c) What is the cost of computation in terms of number of FLoating point Operations for Grouped\nQuery Attention where G=k/4 is the number of groups?\nSolution:\n1. Projection to Q, K, V: 3bmd2\n2. Grouping Queries and Dot Product:bm2d\n2\n3. Applying Softmax: bm2h\n4. Computing the weighted average:bm2d\n2\nTotal FLOPs for Grouped Query Attention: 4bmd2+bm2h\n                    END OF CONTEXT BLOCK\n                    AI assistant will take into account any CONTEXT BLOCK that is provided in a conversation.\n                    If the context does not provide the answer to question, the AI assistant will say, "I\'m sorry, but I don\'t know the answer to that question".\n                    AI assistant will not apologize for previous responses, but instead will indicated new information was gained.\n                    AI assistant will not invent anything that is not drawn directly from the context.\n                    '}, {'role': 'user', 'content': 'what was the first uestion in AI foundations pset? '}], 'model': 'gpt-3.5-turbo'}}
+2023-12-10 13:14:05,482 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 13:14:05,495 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1195f5c90>
+2023-12-10 13:14:05,495 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x1194f0a70> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 13:14:05,510 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1195f68d0>
+2023-12-10 13:14:05,510 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 13:14:05,511 [DEBUG]: send_request_headers.complete
+2023-12-10 13:14:05,511 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 13:14:05,511 [DEBUG]: send_request_body.complete
+2023-12-10 13:14:05,511 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 13:14:06,906 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 18:14:06 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-0613'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'1043'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'160000'), (b'x-ratelimit-limit-tokens_usage_based', b'160000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'158897'), (b'x-ratelimit-remaining-tokens_usage_based', b'158897'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'413ms'), (b'x-ratelimit-reset-tokens_usage_based', b'413ms'), (b'x-request-id', b'120720dd225a7d4f0d8b4e5df7d8123e'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=fiAfyVMeKgnXn39KLhapvcdCthFG.VnN30_.XC5OBbc-1702232046-1-AUMX7yg156mCP2iqwN3qIOm3LBVT+NUpaBLiByw31bXvXOxk5dY5m63mn6vpIetvbJD+cy5QSXA2qtxNTWIYzLY=; path=/; expires=Sun, 10-Dec-23 18:44:06 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=Ul9gBIn9xR4RTNJP7hchCMxvQS9fSGWYy7hUvg9pb3o-1702232046899-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8337772c7c38332c-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 13:14:06,908 [INFO]: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-10 13:14:06,909 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 13:14:06,909 [DEBUG]: receive_response_body.complete
+2023-12-10 13:14:06,910 [DEBUG]: response_closed.started
+2023-12-10 13:14:06,910 [DEBUG]: response_closed.complete
+2023-12-10 13:14:06,910 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-10 13:14:06,917 [INFO]: 127.0.0.1 - - [10/Dec/2023 13:14:06] "POST /api/chat HTTP/1.1" 200 -
+2023-12-10 13:17:58,262 [INFO]: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5328
+2023-12-10 13:17:58,262 [INFO]: [33mPress CTRL+C to quit[0m
+2023-12-10 13:18:06,870 [INFO]: 127.0.0.1 - - [10/Dec/2023 13:18:06] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-10 13:18:10,403 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 13:18:10,406 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 13:18:10,409 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 13:18:10,432 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 13:18:10,433 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 13:18:10,453 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x117a100e0>, 'json_data': {'input': 'Compare and contrast the abstracts of the documents I uploaded.', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 13:18:10,550 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 13:18:10,565 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x117a2b810>
+2023-12-10 13:18:10,565 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x1179b0830> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 13:18:10,580 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x117a2b850>
+2023-12-10 13:18:10,580 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 13:18:10,581 [DEBUG]: send_request_headers.complete
+2023-12-10 13:18:10,581 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 13:18:10,581 [DEBUG]: send_request_body.complete
+2023-12-10 13:18:10,581 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 13:18:10,707 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 18:18:10 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'18'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999985'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'0s'), (b'x-request-id', b'2aaa09f3f5c3bc0a8840913299e0245f'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=5MI_htnrUgCjuMWKtj8Grx1AF.CTOMRZq1NuHQOxqx8-1702232290-1-AUEABcVSdOZ7LwAS7snZpkBvj9gqIfbXCykofr4e1vnev0FCF8K8NmDMkphwCIXt3ACQ7INf/C55EJ/KCGjXzqE=; path=/; expires=Sun, 10-Dec-23 18:48:10 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=xN1vQcp0qlrtC8YXT7ra58xNMWKhtmXwwx_wFe94uhc-1702232290700-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83377d282b41424b-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 13:18:10,709 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 13:18:10,709 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 13:18:10,715 [DEBUG]: receive_response_body.complete
+2023-12-10 13:18:10,715 [DEBUG]: response_closed.started
+2023-12-10 13:18:10,715 [DEBUG]: response_closed.complete
+2023-12-10 13:18:10,716 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 13:18:11,132 [DEBUG]: Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'AI assistant is a brand new, powerful, human-like artificial intelligence.\n                    The traits of AI include expert knowledge, helpfulness, cleverness, and articulateness.\n                    AI is a well-behaved and well-mannered individual.\n                    AI is always friendly, kind, and inspiring, and he is eager to provide vivid and thoughtful responses to the user.\n                    AI has the sum of all knowledge in their brain, and is able to accurately answer nearly any question about any topic in conversation.\n                    AI assistant is a big fan of Pinecone and Vercel.\n                    START CONTEXT BLOCK\n                    CPSC 488/588 - AI Foundation Models HW 1 Page 1\nCPSC 488/588 AI Foundation Models\nFall 2023\nHW 1\nInstructions: copy this project at https://www.overleaf.com/read/gjvcgrzjyxfm ,\ncomplete the solutions, and return your solutions in pdf format.\nFull Name: Sneha\nNetid: ss3993\n1.Q1\nWarmup. this part is about refreshing your calculus on calculating derivatives of functions.\n(a) Given the function:\nf(x) = sin(3 x2+ 4 cos( x))\nfind∂f/∂x using the chain rule.\nSolution:∂f\n∂x= cos(3 x2+ 4 cos( x))·(6x−4 sin( x))\n(b) Given the function:\nf(x) =etanh(2 x3−5x2+x)\nfind∂f/∂x using the chain rule.\nRecall:∂tanh ( x)\n∂(x)= 1−tanh2(x) = sech2(x)\nSolution:∂f\n∂x=etanh(2 x3−5x2+x)·sech2(2x3−5x2+x)·\x00\n6x2−10x+ 1\x01\n(c) Consider the function:\nf(x, y, z ) =x2sin(yz) +eyz−z3y\nfind partial derivatives of the function with respect to each variable separately.\nSolution:∂f\n∂x= 2xsin(yz),\n∂f\n∂y=x2zcos(yz) +zeyz−z3,\n∂f\n∂z=x2ycos(yz) +yeyz−3z2y.\n2.Q2 Matrix calculus. Recall that matrices are a way of organizing data into rows and columns.\nAnswer the following questions:\n(a) Consider a function given by:\nf(x) =cTAx (1)\nwhere\nx=\uf8ee\n\uf8f0x0\nx1\nx2\uf8f9\n\uf8fb\nCPSC 488/588 - AI Foundation Models HW 1 Page 4\nSolution:\n∂f\n∂x1=1\n2exp(x1+x2\n2) = 1/2∗exp(3) = exp(3)/2\n∂f\n∂x2=x2exp(x1+x2\n2) = 2∗exp(3)\n∂f\n∂x3=−x2\n4=−9\n∂f\n∂x4=−2x3x4= 24\n4.Q4Explain the reason behind using negative sampling in the SkipGram word embeddings model.\nSolution: In a naive implementation of the SkipGram model, for each training example, we would\nupdate weights for all words in the vocabulary using softmax. By using negative sampling, instead\nof computing the softmax over all words in the vocabulary, we only need to compute it for the\nactual context word and a small set of negative samples. This greatly reduces the computational\nburden.Furthermore, negative sampling indirectly also sends implicit negative information which\nas a result the model implicitly gains information about what words are unlikely to appear in the\ncontext improving word vector quality.\n5.Q5 transformer\n(a) In the multi-head self-attention operation, what is the cost of computation (in terms of number\nof number of FLoating point OPerations)? Assume bis batch size, mis sequence length, dis the\nmodel dimension, and his the number of attention heads. Assume the dimensionality of keys and\nqueries are d/2h.\nNote: You need to derive the answer, just providing the final answer is not sufficient.\nSolution:\nScaled Dot Product Attention:\nDot product for one head: b ×m×m×d\n2h\nForhheads: b×m×m×d=bm2d\nApplying Softmax:\nSoftmax operations: b ×m×m×h≈bm2h\nComputing the weighted average:\nFor one head: b ×m×m×d\nCPSC 488/588 - AI Foundation Models HW 1 Page 3\n∂f\n∂x= 2Ax+csin(y)\n∂f\n∂y=cxcos(y)\n(c) Given the function\ng=x⊤By+dtanh(z)⊤x\nwhere\n•Bis an arbitrary matrix\n•dis a scalar\n•xis a vector\n•yis a vector of the same dimension as x\n•zis a vector\nDerive the gradients with respect to x,y, and z.\nHint: recall∂tanh( x)\n∂(x)= 1−tanh2(x) = sech2(x)\nSolution:\n1. Gradient with respect to x:\n∂g\n                    END OF CONTEXT BLOCK\n                    AI assistant will take into account any CONTEXT BLOCK that is provided in a conversation.\n                    If the context does not provide the answer to question, the AI assistant will say, "I\'m sorry, but I don\'t know the answer to that question".\n                    AI assistant will not apologize for previous responses, but instead will indicated new information was gained.\n                    AI assistant will not invent anything that is not drawn directly from the context.\n                    '}, {'role': 'user', 'content': 'Compare and contrast the abstracts of the documents I uploaded.'}], 'model': 'gpt-3.5-turbo'}}
+2023-12-10 13:18:11,180 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 13:18:11,190 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x117a2c290>
+2023-12-10 13:18:11,190 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x1179b0710> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 13:18:11,203 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x117a2f990>
+2023-12-10 13:18:11,203 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 13:18:11,204 [DEBUG]: send_request_headers.complete
+2023-12-10 13:18:11,204 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 13:18:11,204 [DEBUG]: send_request_body.complete
+2023-12-10 13:18:11,204 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 13:18:12,885 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 18:18:12 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-0613'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'1321'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'160000'), (b'x-ratelimit-limit-tokens_usage_based', b'160000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'158873'), (b'x-ratelimit-remaining-tokens_usage_based', b'158873'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'422ms'), (b'x-ratelimit-reset-tokens_usage_based', b'422ms'), (b'x-request-id', b'd10ef51b6203ed6fac688b9067df414c'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=TNHMgbuKY_hDW2pgE.9u21qzgnDaz5_JT.KohjlVXHo-1702232292-0-ATFwS8OJWZ6rLz+IP6PGYEV8/Y3gHNlLXtQ3jBuHjLFkia/0AR9Nm6oO0xab9vMaiXwnyh/6b1q5PGKgxymTdMw=; path=/; expires=Sun, 10-Dec-23 18:48:12 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=ZwtAjppxJ5ozI1NimwIGJhfNO8LjNMBR48WRexfnFRE-1702232292878-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83377d2c08a74234-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 13:18:12,887 [INFO]: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-10 13:18:12,887 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 13:18:12,888 [DEBUG]: receive_response_body.complete
+2023-12-10 13:18:12,888 [DEBUG]: response_closed.started
+2023-12-10 13:18:12,888 [DEBUG]: response_closed.complete
+2023-12-10 13:18:12,888 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-10 13:18:12,895 [INFO]: 127.0.0.1 - - [10/Dec/2023 13:18:12] "POST /api/chat HTTP/1.1" 200 -
+2023-12-10 13:18:27,974 [DEBUG]: Using selector: KqueueSelector
+2023-12-10 13:18:27,976 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 13:18:27,978 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 13:18:28,005 [DEBUG]: load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-10 13:18:28,006 [DEBUG]: load_verify_locations cafile='/usr/local/lib/python3.11/site-packages/certifi/cacert.pem'
+2023-12-10 13:18:28,023 [DEBUG]: Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x117a9dda0>, 'json_data': {'input': 'what was the first question on AI foudnations ', 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2023-12-10 13:18:28,060 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 13:18:28,071 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x117aa2190>
+2023-12-10 13:18:28,072 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x1179b0cb0> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 13:18:28,086 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x117aa2110>
+2023-12-10 13:18:28,086 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 13:18:28,087 [DEBUG]: send_request_headers.complete
+2023-12-10 13:18:28,087 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 13:18:28,087 [DEBUG]: send_request_body.complete
+2023-12-10 13:18:28,087 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 13:18:28,222 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 18:18:28 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'19'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'5000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'4999989'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'0s'), (b'x-request-id', b'a7bfda17ccb693509ef21ed5df719916'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=.coIWwqKR9daKtPDaCj1kwQ4FCEbzXxN5UVBqMIjHbA-1702232308-0-AWBXwpk3FhgHjISUs0hmxhx3YRFSflDWpA8yc1QTkS5WPLZ0Rrfdaf7AbVg1NSwxTlL44BOwygThxWQNsrZFfO0=; path=/; expires=Sun, 10-Dec-23 18:48:28 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=mx7c1JN_bTMl5_myP0BUNFg89WHeKz1lewoMAh9EEm0-1702232308216-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83377d959a5e5e71-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 13:18:28,223 [INFO]: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2023-12-10 13:18:28,224 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 13:18:28,232 [DEBUG]: receive_response_body.complete
+2023-12-10 13:18:28,232 [DEBUG]: response_closed.started
+2023-12-10 13:18:28,232 [DEBUG]: response_closed.complete
+2023-12-10 13:18:28,232 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/embeddings "200 OK"
+2023-12-10 13:18:28,713 [DEBUG]: Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'AI assistant is a brand new, powerful, human-like artificial intelligence.\n                    The traits of AI include expert knowledge, helpfulness, cleverness, and articulateness.\n                    AI is a well-behaved and well-mannered individual.\n                    AI is always friendly, kind, and inspiring, and he is eager to provide vivid and thoughtful responses to the user.\n                    AI has the sum of all knowledge in their brain, and is able to accurately answer nearly any question about any topic in conversation.\n                    AI assistant is a big fan of Pinecone and Vercel.\n                    START CONTEXT BLOCK\n                    CPSC 488/588 - AI Foundation Models HW 1 Page 1\nCPSC 488/588 AI Foundation Models\nFall 2023\nHW 1\nInstructions: copy this project at https://www.overleaf.com/read/gjvcgrzjyxfm ,\ncomplete the solutions, and return your solutions in pdf format.\nFull Name: Sneha\nNetid: ss3993\n1.Q1\nWarmup. this part is about refreshing your calculus on calculating derivatives of functions.\n(a) Given the function:\nf(x) = sin(3 x2+ 4 cos( x))\nfind∂f/∂x using the chain rule.\nSolution:∂f\n∂x= cos(3 x2+ 4 cos( x))·(6x−4 sin( x))\n(b) Given the function:\nf(x) =etanh(2 x3−5x2+x)\nfind∂f/∂x using the chain rule.\nRecall:∂tanh ( x)\n∂(x)= 1−tanh2(x) = sech2(x)\nSolution:∂f\n∂x=etanh(2 x3−5x2+x)·sech2(2x3−5x2+x)·\x00\n6x2−10x+ 1\x01\n(c) Consider the function:\nf(x, y, z ) =x2sin(yz) +eyz−z3y\nfind partial derivatives of the function with respect to each variable separately.\nSolution:∂f\n∂x= 2xsin(yz),\n∂f\n∂y=x2zcos(yz) +zeyz−z3,\n∂f\n∂z=x2ycos(yz) +yeyz−3z2y.\n2.Q2 Matrix calculus. Recall that matrices are a way of organizing data into rows and columns.\nAnswer the following questions:\n(a) Consider a function given by:\nf(x) =cTAx (1)\nwhere\nx=\uf8ee\n\uf8f0x0\nx1\nx2\uf8f9\n\uf8fb\nCPSC 488/588 - AI Foundation Models HW 1 Page 2\nis a column vector of variables,\nc=\x022 3 1\x03\nis a constant vector, and\nA=\uf8ee\n\uf8f0a00a01a02\na10a11a12\na20a21a22\uf8f9\n\uf8fb\nis a integer valued matrix,\nDerive the gradient of fwith respect to x.\nSolution: Given the function\nf(x) =\x022 3 1\x03\uf8ee\n\uf8f0a00a01a02\na10a11a12\na20a21a22\uf8f9\n\uf8fb\uf8ee\n\uf8f0x0\nx1\nx2\uf8f9\n\uf8fb\nwe can expand Axas:\nAx=\uf8ee\n\uf8f0a00x0+a01x1+a02x2\na10x0+a11x1+a12x2\na20x0+a21x1+a22x2\uf8f9\n\uf8fb\nThe function f(x) expands to:\nf(x) = 2a00x0+ 3a10x0+a20x0+ 2a01x1+ 3a11x1+a21x1+ 2a02x2+ 3a12x2+a22x2\nDifferentiating with respect to the components of x, we get:\n∂f(x)\n∂x0= 2a00+ 3a10+a20\n∂f(x)\n∂x1= 2a01+ 3a11+a21\n∂f(x)\n∂x2= 2a02+ 3a12+a22\n(b) Given the function\nf=x⊤·A·x+c·sin(y)⊤·x\nwhere\n•Ais a symmetric matrix\n•cis a scalar\n•xis a vector\n•yis a vector\nDerive the gradients with respect to xandy.\nSolution:\nGradient with respect to x:\nUsing the identity ∇x(xTAx) = (A+AT)xand we also know that Ais symmetric (i.e., A=AT),\nso the derivative can be simplified to 2 Ax.\nCPSC 488/588 - AI Foundation Models HW 1 Page 5\n(b) What is the cost of computation in terms of number of FLoating point Operations for multi-head\nattention in the backward pass, when the model is being trained? (use the same assumptions as\nthe above questions).\nSolution:\n1. Projection to Q, K, V: 6bmd2\n2. Scaled Dot Product Attention: 2bm2d\n3. Applying Softmax: bm2h\n4. Computing the weighted average: 2bm2d\n5. Output projection: 4bm2d\nTotal Backward FLOPs: 6bmd2+ 9bm2d+bm2h\n(c) What is the cost of computation in terms of number of FLoating point Operations for Grouped\nQuery Attention where G=k/4 is the number of groups?\nSolution:\n1. Projection to Q, K, V: 3bmd2\n2. Grouping Queries and Dot Product:bm2d\n2\n3. Applying Softmax: bm2h\n4. Computing the weighted average:bm2d\n2\nTotal FLOPs for Grouped Query Attention: 4bmd2+bm2h\n                    END OF CONTEXT BLOCK\n                    AI assistant will take into account any CONTEXT BLOCK that is provided in a conversation.\n                    If the context does not provide the answer to question, the AI assistant will say, "I\'m sorry, but I don\'t know the answer to that question".\n                    AI assistant will not apologize for previous responses, but instead will indicated new information was gained.\n                    AI assistant will not invent anything that is not drawn directly from the context.\n                    '}, {'role': 'user', 'content': 'what was the first question on AI foudnations '}], 'model': 'gpt-3.5-turbo'}}
+2023-12-10 13:18:28,758 [DEBUG]: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-10 13:18:28,769 [DEBUG]: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x117ab85d0>
+2023-12-10 13:18:28,769 [DEBUG]: start_tls.started ssl_context=<ssl.SSLContext object at 0x1179b0950> server_hostname='api.openai.com' timeout=5.0
+2023-12-10 13:18:28,784 [DEBUG]: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x117ab9190>
+2023-12-10 13:18:28,784 [DEBUG]: send_request_headers.started request=<Request [b'POST']>
+2023-12-10 13:18:28,784 [DEBUG]: send_request_headers.complete
+2023-12-10 13:18:28,784 [DEBUG]: send_request_body.started request=<Request [b'POST']>
+2023-12-10 13:18:28,784 [DEBUG]: send_request_body.complete
+2023-12-10 13:18:28,784 [DEBUG]: receive_response_headers.started request=<Request [b'POST']>
+2023-12-10 13:18:30,012 [DEBUG]: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 10 Dec 2023 18:18:30 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-0613'), (b'openai-organization', b'credicle'), (b'openai-processing-ms', b'1101'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'160000'), (b'x-ratelimit-limit-tokens_usage_based', b'160000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'158898'), (b'x-ratelimit-remaining-tokens_usage_based', b'158898'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'413ms'), (b'x-ratelimit-reset-tokens_usage_based', b'413ms'), (b'x-request-id', b'a7795a2594bbae01bdde3920f46cceff'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=7dzk1WekLehE6S_jHAIjLvvyPwQJiAdxMr2jf6Pdhcg-1702232310-0-AZSbGS9jU3w8SQ85mHiFDlzBVR24yKjnOCd2VR6zBACiSBQr460lWr8tmX5ctjNOofAON4risdgZYnzMzrir3DQ=; path=/; expires=Sun, 10-Dec-23 18:48:30 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=Nfh4Yk3.CvDnHz3QPg7t01i2qPbkXu40B04wmAw3JN8-1702232310004-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'83377d99ecb45e67-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-10 13:18:30,014 [INFO]: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-10 13:18:30,015 [DEBUG]: receive_response_body.started request=<Request [b'POST']>
+2023-12-10 13:18:30,015 [DEBUG]: receive_response_body.complete
+2023-12-10 13:18:30,016 [DEBUG]: response_closed.started
+2023-12-10 13:18:30,016 [DEBUG]: response_closed.complete
+2023-12-10 13:18:30,016 [DEBUG]: HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-10 13:18:30,023 [INFO]: 127.0.0.1 - - [10/Dec/2023 13:18:30] "POST /api/chat HTTP/1.1" 200 -

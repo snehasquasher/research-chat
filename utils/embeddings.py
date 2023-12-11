@@ -1,9 +1,10 @@
-from openai import OpenAI
+import openai
 import os
 
 def get_embeddings(input: str):
     try:
-        openai = OpenAI(api_key = os.getenv("OPENAI_API_KEY"))
+        api_key = os.getenv("OPENAI_API_KEY")
+        openai.api_key = api_key  # Set t
         response = openai.embeddings.create( 
             model = "text-embedding-ada-002",
             input = input.replace("\n", " ")

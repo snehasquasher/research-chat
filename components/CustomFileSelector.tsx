@@ -9,6 +9,7 @@ const CustomFileSelector = (props: Props) => {
 		<input
 			{...props}
 			type="file"
+      name="files"
 			multiple
 			className={classNames({
 				// Modify the Button shape, spacing, and colors using the `file`: directive
