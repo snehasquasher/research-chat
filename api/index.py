@@ -28,6 +28,7 @@ logger.addHandler(handler)
 # Set the logging level
 logger.setLevel(logging.DEBUG)
 import routes
+import evaluate
 @app.route("/api/chat", methods = ["POST"])
 async def chat():
     """
@@ -110,7 +111,10 @@ async def chat():
             messages= prompt + user_messages
         )
         print("RESPONSE", response.choices[0].message.content, file=sys.stderr)
-        return jsonify(response.choices[0].message.content), 200
+        return jsonify({
+            "response": response.choices[0].message.content,
+            "context": context
+        }), 200
 
     except Exception as e:
         print("ERROR", file=sys.stderr)
