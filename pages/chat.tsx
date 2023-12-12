@@ -1,5 +1,6 @@
 
 import React, { FormEvent, useRef, useState, useEffect } from "react";
+import { Context } from "@/components/Context";
 import { useChat, Message } from "ai/react";
 import { loadEvaluator } from "langchain/evaluation";
 import va from "@vercel/analytics";
@@ -12,7 +13,7 @@ import ScoreDisplay from '../components/ScoreDisplayCard';
 
 const examples = [
   "Compare and contrast the abstracts of the documents I uploaded.",
-  "Summarize the comments of my first document.",
+  "Summarize the contents of my first document.",
   "What are some common limitations found in these research papers?",
 ];
 
@@ -29,6 +30,7 @@ export default function Chat() {
   const [answerRelevanceScore, setAnswerRelevanceScore] = useState(0);
   const [uploadedFileNames, setUploadedFileNames] = useState([]);
   const [selectedFiles, setSelectedFiles] = useState([]);
+  const [context, setContext] = useState<string[] | null>(null);
 
   useEffect(() => {
     // Fetch the list of uploaded file names and set them as selected
@@ -161,6 +163,9 @@ export default function Chat() {
 
   return (
     <main className="flex flex-col items-center justify-between pb-40">
+       <div className="absolute transform translate-x-full transition-transform duration-500 ease-in-out right-0 w-2/3 h-full bg-gray-700 overflow-y-auto lg:static lg:translate-x-0 lg:w-2/5 lg:mx-2 rounded-lg">
+          <Context className="" selected={context} />
+        </div>
       <div className="absolute top-5 hidden w-full justify-between px-5 sm:flex">
         <a
           href="/deploy"
