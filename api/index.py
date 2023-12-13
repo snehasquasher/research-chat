@@ -1,7 +1,7 @@
-from flask import Flask, request, jsonify, redirect
+from flask import Flask, request, jsonify
 from openai import OpenAI
 import pinecone
-import os
+from langchain.vectorstores import Pinecone
 from process_docs import upload_and_generate_embedding
 from dotenv import load_dotenv
 from hashlib import md5
@@ -10,25 +10,23 @@ import sys
 import json
 import logging
 import os
+
 os.environ['FLASK_ENV'] = 'development'
-# Define the global variable here, at the top level
+
+# Global variable to keep track of uploaded files
 processed_filenames = []
 
+# Load env variables
 load_dotenv()
 app = Flask(__name__)
+
+# Set up logging
 app.config['DEBUG'] = True
 logger = logging.getLogger(__name__)
-
-# Create a file handler
 handler = logging.FileHandler("app.log")
-
-# Add the handler to the logger
 logger.addHandler(handler)
-
-# Set the logging level
 logger.setLevel(logging.DEBUG)
-import routes
-import evaluate
+
 @app.route("/api/chat", methods = ["POST"])
 async def chat():
     """
@@ -80,7 +78,6 @@ async def chat():
         
         client = OpenAI(api_key = os.getenv("OPENAI_API_KEY"))
         data = json.loads(request.data.decode("utf-8"))
-        print(data, file=sys.stderr)
         messages = data['messages']
         filenames = data['filenames']
         last_message = messages[-1]
@@ -105,12 +102,10 @@ async def chat():
             },
         ]
         user_messages = [message for message in messages if message['role'] == 'user']
-        print("MESSAGES", user_messages, file=sys.stderr)
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages= prompt + user_messages
         )
-        print("RESPONSE", response.choices[0].message.content, file=sys.stderr)
         return jsonify({
             "response": response.choices[0].message.content,
             "context": context
@@ -119,6 +114,7 @@ async def chat():
     except Exception as e:
         print("ERROR", file=sys.stderr)
         return jsonify({"error": str(e)}), 500
+
 @app.route("/api/clear_index", methods = ["POST"])
 def clear_index():
     """
@@ -184,7 +180,6 @@ async def generate_embeddings():
     """
     data = request.json
     
-
     if not data or "files" not in data:
         logger.debug("Invalid data format or missing 'files' key")
         return jsonify({"error": "Invalid data format or missing 'files' key"}), 400
@@ -192,8 +187,6 @@ async def generate_embeddings():
     try:
         success_files = []
         unsuccessful_files = []
-        # if not request.files:
-        #     return jsonify({"error": "No files uploaded."}), 400
         
         for file in data['files']:
             response = await upload_and_generate_embedding(file, os.getenv("PINECONE_INDEX"))
