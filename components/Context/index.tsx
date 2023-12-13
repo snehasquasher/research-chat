@@ -47,6 +47,7 @@ export const Context: React.FC<ContextProps> = ({ className, selected, uploads }
       className={`flex flex-col border-2 overflow-y-auto rounded-lg border-gray-500 w-full ${className}`}
     >
       <div className="flex flex-col items-start sticky top-0 w-full">
+        <div className="space-y-4 p-7 sm:p-4 text-xl font-semibold text-white">Your Documents </div>
         <div className="flex flex-col items-start lg:flex-row w-full lg:flex-wrap p-2">
           {buttons}
         </div>
@@ -67,6 +68,7 @@ export const Context: React.FC<ContextProps> = ({ className, selected, uploads }
           <DropdownLabel htmlFor="splittingMethod">
             Splitting Method:
           </DropdownLabel>
+         
           <div className="relative w-full">
             <select
               id="splittingMethod"

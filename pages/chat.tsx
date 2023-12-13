@@ -168,10 +168,9 @@ export default function Chat() {
 
   return (
     <selectedPDFsContext.Provider value={selectedValue}>
-    <main className="flex flex-col items-center justify-between pb-40">
-       <div className="absolute transform translate-x-full transition-transform duration-500 ease-in-out right-0 w-2/3 h-full bg-gray-700 overflow-y-auto lg:static lg:translate-x-0 lg:w-2/5 lg:mx-2 rounded-lg">
-          <Context className="" selected={selectedPDFs} uploads={selectedFiles} />
-        </div>
+    <main className="flex flex-row justify-between">
+       
+    <div className="p-5 flex flex-col items-center justify-between pb-40">
       <div className="absolute top-5 hidden w-full justify-between px-5 sm:flex">
         <a
           href="/deploy"
@@ -247,7 +246,7 @@ export default function Chat() {
           </div>
         </div>
       )}
-      <div className="fixed bottom-0 flex w-full flex-col items-center space-y-3 bg-gradient-to-b from-transparent via-gray-100 to-gray-100 p-5 pb-3 sm:px-0">
+      <div className="fixed-bottom flex w-full flex-col items-center space-y-3 bg-gradient-to-b from-transparent via-gray-100 to-gray-100 p-5 pb-3 sm:px-0">
         <form
           ref={formRef}
           onSubmit={handleSubmit}
@@ -323,6 +322,10 @@ export default function Chat() {
           .
         </p>
       </div>
+      </div>
+      <div className="absolute top-5 transform  ease-in-out right-0 w-1/3 h-full bg-gray-700 overflow-y-auto lg:static lg:translate-x-0 lg:w-2/5 lg:mx-2 rounded-lg">
+          <Context className="" selected={selectedPDFs} uploads={selectedFiles} />
+        </div>
     </main>
     </selectedPDFsContext.Provider>
   );
