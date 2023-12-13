@@ -29,8 +29,7 @@ export default function Chat() {
   const [faithfulnessScore, setFaithfulnessScore] = useState(0);
   const [contextRelevanceScore, setContextRelevanceScore] = useState(0);
   const [answerRelevanceScore, setAnswerRelevanceScore] = useState(0);
-  const [uploadedFileNames, setUploadedFileNames] = useState([]);
-  const [selectedFiles, setSelectedFiles] = useState([]);
+  const [uploadedFiles, setUploadedFiles] = useState([]);
   const [context, setContext] = useState<string[] | null>(null);
 
   const [selectedPDFs, setSelectedPDFs] = useState<string[]>([]);
@@ -43,7 +42,8 @@ export default function Chat() {
         const response = await fetch('/api/fetchFileNames');
         if (response.ok) {
           const files = await response.json();
-          setSelectedFiles(files); // Set fetched files as selected
+          setUploadedFiles(files); // Set fetched files as selected
+          setSelectedPDFs(files);
           setPDFCount(files.length); // Update PDFCount based on the number of files
           console.log("FILES: ", files);
         } else {
@@ -113,15 +113,17 @@ export default function Chat() {
     let oldInput = input;
     setInput("");
   
-    // Check if any elements in selectedFiles are None
-    if (selectedFiles.some(file => !file)) {
+    // Check if any elements in uploadedFiles are None
+    if (selectedPDFs.some(file => !file)) {
       console.error("Selected files contain None values");
       return; // Don't proceed with the request
     }
+
+    console.log("selected PDFs for this response: ", selectedPDFs)
   
     let data = JSON.stringify({
       messages: [{ role: "user", content: oldInput }],
-      filenames: selectedFiles // Send array of selected filenames
+      filenames: selectedPDFs // Send array of selected filenames
     });
   
     let req = await fetch('/api/chat', {
@@ -164,7 +166,7 @@ export default function Chat() {
   }
   
   const disabled = isLoading || input.length === 0;
-  console.log("SELECTED FILES: ", selectedFiles)
+  console.log("UPLOADED FILES: ", uploadedFiles)
 
   return (
     <selectedPDFsContext.Provider value={selectedValue}>
@@ -323,8 +325,8 @@ export default function Chat() {
         </p>
       </div>
       </div>
-      <div className="absolute top-5 transform  ease-in-out right-0 w-1/3 h-full bg-gray-700 overflow-y-auto lg:static lg:translate-x-0 lg:w-2/5 lg:mx-2 rounded-lg">
-          <Context className="" selected={selectedPDFs} uploads={selectedFiles} />
+      <div className="sticky-top top-5 transform  ease-in-out right-0 w-1/3 h-full bg-gray-700 lg:static lg:translate-x-0 lg:w-2/5 lg:mx-2 rounded-lg">
+          <Context className="" selected={selectedPDFs} uploads={uploadedFiles} />
         </div>
     </main>
     </selectedPDFsContext.Provider>
