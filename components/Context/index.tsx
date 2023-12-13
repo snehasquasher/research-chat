@@ -1,5 +1,4 @@
 import React, { ChangeEvent, useCallback, useEffect, useState} from "react";
-import { urls } from "./urls";
 import UrlButton from "./UrlButton";
 import { Card, ICard } from "./Card";
 import { clearIndex, crawlDocument } from "./utils";
@@ -8,17 +7,12 @@ import { Button } from "./Button";
 interface ContextProps {
   className: string;
   selected: string[] | null;
-  uploads: []
+  uploads: Array<string>
 }
 
 export const Context: React.FC<ContextProps> = ({ className, selected, uploads }) => {
-  console.log("params ", uploads);
-  const [entries, setEntries] = useState([]);
-  if (entries === undefined) {
-    setEntries(uploads);
-  }
-  
-  console.log("UPLOADS ", entries);
+  /*const [entries, setEntries] = useState([]);*/
+  console.log("UPLOADS ", uploads);
   const [cards, setCards] = useState<ICard[]>([]);
 
   const [splittingMethod, setSplittingMethod] = useState("markdown");
@@ -26,10 +20,10 @@ export const Context: React.FC<ContextProps> = ({ className, selected, uploads }
   const [overlap, setOverlap] = useState(1);
 
   // Scroll to selected card
-  useEffect(() => {
+  /*useEffect(() => {
     const element = selected && document.getElementById(selected[0]);
     element?.scrollIntoView({ behavior: "smooth" });
-  }, [selected]);
+  }, [selected]);*/
 
   const DropdownLabel: React.FC<
     React.PropsWithChildren<{ htmlFor: string }>
@@ -43,6 +37,7 @@ export const Context: React.FC<ContextProps> = ({ className, selected, uploads }
     <div className="" key={`${key}-${entry}`}>
       <UrlButton
         entry={entry}
+        selected={selected}
       />
     </div>
   ));
@@ -115,12 +110,12 @@ export const Context: React.FC<ContextProps> = ({ className, selected, uploads }
           )}
         </div>
       </div>
-      <div className="flex flex-wrap w-full">
+      {/*<div className="flex flex-wrap w-full">
         {cards &&
           cards.map((card, key) => (
             <Card key={key} card={card} selected={selected} />
           ))}
-      </div>
+      </div>*/}
     </div>
   );
 };

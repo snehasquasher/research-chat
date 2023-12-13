@@ -10,6 +10,7 @@ import Textarea from "react-textarea-autosize";
 import * as url from "url";
 import { useRouter } from 'next/router';
 import ScoreDisplay from '../components/ScoreDisplayCard';
+import selectedPDFsContext from '../context/selected-context'
 
 const examples = [
   "Compare and contrast the abstracts of the documents I uploaded.",
@@ -32,6 +33,9 @@ export default function Chat() {
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [context, setContext] = useState<string[] | null>(null);
 
+  const [selectedPDFs, setSelectedPDFs] = useState<string[]>([]);
+  const selectedValue = { selectedPDFs, setSelectedPDFs };
+
   useEffect(() => {
     // Fetch the list of uploaded file names and set them as selected
     const fetchUploadedFiles = async () => {
@@ -41,7 +45,7 @@ export default function Chat() {
           const files = await response.json();
           setSelectedFiles(files); // Set fetched files as selected
           setPDFCount(files.length); // Update PDFCount based on the number of files
-          console.log(files);
+          console.log("FILES: ", files);
         } else {
           console.error('Failed to fetch uploaded files');
         }
@@ -163,9 +167,10 @@ export default function Chat() {
   console.log("SELECTED FILES: ", selectedFiles)
 
   return (
+    <selectedPDFsContext.Provider value={selectedValue}>
     <main className="flex flex-col items-center justify-between pb-40">
        <div className="absolute transform translate-x-full transition-transform duration-500 ease-in-out right-0 w-2/3 h-full bg-gray-700 overflow-y-auto lg:static lg:translate-x-0 lg:w-2/5 lg:mx-2 rounded-lg">
-          <Context className="" selected={context} uploads={selectedFiles} />
+          <Context className="" selected={selectedPDFs} uploads={selectedFiles} />
         </div>
       <div className="absolute top-5 hidden w-full justify-between px-5 sm:flex">
         <a
@@ -319,5 +324,6 @@ export default function Chat() {
         </p>
       </div>
     </main>
+    </selectedPDFsContext.Provider>
   );
 }
