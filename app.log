@@ -2263,3 +2263,17 @@ data
 2023-12-12 17:03:01,877 [INFO]: 127.0.0.1 - - [12/Dec/2023 17:03:01] "GET /api/fetchFileNames HTTP/1.1" 200 -
 2023-12-12 17:04:04,288 [INFO]: 127.0.0.1 - - [12/Dec/2023 17:04:04] "GET /api/fetchFileNames HTTP/1.1" 200 -
 2023-12-12 17:05:03,566 [INFO]: 127.0.0.1 - - [12/Dec/2023 17:05:03] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-12 17:08:28,372 [INFO]: 127.0.0.1 - - [12/Dec/2023 17:08:28] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-12 17:08:37,525 [INFO]: 127.0.0.1 - - [12/Dec/2023 17:08:37] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-12 17:08:47,773 [INFO]: 127.0.0.1 - - [12/Dec/2023 17:08:47] "[33mPOST /api/crawl HTTP/1.1[0m" 404 -
+2023-12-12 18:38:46,435 [INFO]: 127.0.0.1 - - [12/Dec/2023 18:38:46] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-12 18:38:52,591 [INFO]: 127.0.0.1 - - [12/Dec/2023 18:38:52] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-12 18:39:43,248 [INFO]: 127.0.0.1 - - [12/Dec/2023 18:39:43] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-12 18:40:57,773 [INFO]: 127.0.0.1 - - [12/Dec/2023 18:40:57] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-12 18:43:48,154 [INFO]: 127.0.0.1 - - [12/Dec/2023 18:43:48] "[33mPOST /api/clearIndex HTTP/1.1[0m" 404 -
+2023-12-12 18:43:51,075 [INFO]: 127.0.0.1 - - [12/Dec/2023 18:43:51] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-12 18:44:23,385 [INFO]: 127.0.0.1 - - [12/Dec/2023 18:44:23] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-12 18:44:54,300 [INFO]: 127.0.0.1 - - [12/Dec/2023 18:44:54] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-12 18:48:03,566 [INFO]: 127.0.0.1 - - [12/Dec/2023 18:48:03] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-12 18:50:41,502 [INFO]: 127.0.0.1 - - [12/Dec/2023 18:50:41] "GET /api/fetchFileNames HTTP/1.1" 200 -
+2023-12-12 19:01:28,542 [INFO]: 127.0.0.1 - - [12/Dec/2023 19:01:28] "GET /api/fetchFileNames HTTP/1.1" 200 -

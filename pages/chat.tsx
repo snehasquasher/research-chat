@@ -160,11 +160,12 @@ export default function Chat() {
   }
   
   const disabled = isLoading || input.length === 0;
+  console.log("SELECTED FILES: ", selectedFiles)
 
   return (
     <main className="flex flex-col items-center justify-between pb-40">
        <div className="absolute transform translate-x-full transition-transform duration-500 ease-in-out right-0 w-2/3 h-full bg-gray-700 overflow-y-auto lg:static lg:translate-x-0 lg:w-2/5 lg:mx-2 rounded-lg">
-          <Context className="" selected={context} />
+          <Context className="" selected={context} uploads={selectedFiles} />
         </div>
       <div className="absolute top-5 hidden w-full justify-between px-5 sm:flex">
         <a

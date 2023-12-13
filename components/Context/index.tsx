@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
+import React, { ChangeEvent, useCallback, useEffect, useState} from "react";
 import { urls } from "./urls";
 import UrlButton from "./UrlButton";
 import { Card, ICard } from "./Card";
@@ -8,10 +8,17 @@ import { Button } from "./Button";
 interface ContextProps {
   className: string;
   selected: string[] | null;
+  uploads: []
 }
 
-export const Context: React.FC<ContextProps> = ({ className, selected }) => {
-  const [entries, setEntries] = useState(urls);
+export const Context: React.FC<ContextProps> = ({ className, selected, uploads }) => {
+  console.log("params ", uploads);
+  const [entries, setEntries] = useState([]);
+  if (entries === undefined) {
+    setEntries(uploads);
+  }
+  
+  console.log("UPLOADS ", entries);
   const [cards, setCards] = useState<ICard[]>([]);
 
   const [splittingMethod, setSplittingMethod] = useState("markdown");
@@ -32,20 +39,10 @@ export const Context: React.FC<ContextProps> = ({ className, selected }) => {
     </label>
   );
 
-  const buttons = entries.map((entry, key) => (
-    <div className="" key={`${key}-${entry.loading}`}>
+  const buttons = uploads.map((entry, key) => (
+    <div className="" key={`${key}-${entry}`}>
       <UrlButton
         entry={entry}
-        onClick={() =>
-          crawlDocument(
-            entry.url,
-            setEntries,
-            setCards,
-            splittingMethod,
-            chunkSize,
-            overlap
-          )
-        }
       />
     </div>
   ));
@@ -65,7 +62,7 @@ export const Context: React.FC<ContextProps> = ({ className, selected }) => {
               backgroundColor: "#4f6574",
               color: "white",
             }}
-            onClick={() => clearIndex(setEntries, setCards)}
+            //onClick={void}
           >
             Clear Index
           </Button>
