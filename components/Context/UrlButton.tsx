@@ -21,8 +21,8 @@ const UrlButton: FC<IURLButtonProps> = ({ entry, selected}) => {
   const { selectedPDFs, setSelectedPDFs } = useContext(selectedPDFsContext);
   function handleClick() {
     if (!selectedPDFs.includes(entry)) {
-      selectedPDFs.push(entry)
-      setSelectedPDFs(selectedPDFs)
+
+      setSelectedPDFs([...selectedPDFs, entry])
       console.log('PDF added. selected: ', selectedPDFs);
     }
     else {
