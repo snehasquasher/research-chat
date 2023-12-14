@@ -4,13 +4,13 @@ import { Card, ICard } from "./Card";
 //import { clearIndex, crawlDocument } from "./utils";
 
 import { Button } from "./Button";
-interface ContextProps {
+interface ContextPanelProps {
   className: string;
   selected: string[] | null;
   uploads: Array<string>
 }
 
-export const Context: React.FC<ContextProps> = ({ className, selected, uploads }) => {
+export const ContextPanel: React.FC<ContextPanelProps> = ({ className, selected, uploads }) => {
   /*const [entries, setEntries] = useState([]);*/
   console.log("UPLOADS ", uploads);
   const [cards, setCards] = useState<ICard[]>([]);
@@ -54,6 +54,22 @@ export const Context: React.FC<ContextProps> = ({ className, selected, uploads }
     console.log(response);
   
     if (req.ok) {
+      // status code was 200-299
+      console.log("OK");
+    }
+    else {
+      // status was something else
+      console.log("error");
+    }
+
+    let reqDeleteFiles = await fetch('/api/clearFileNames', {
+      method: 'post',
+    });
+  
+    let resDeleteFiles = await reqDeleteFiles.json();
+    console.log(resDeleteFiles);
+  
+    if (reqDeleteFiles.ok) {
       // status code was 200-299
       console.log("OK");
     }

@@ -1,6 +1,6 @@
 
 import React, { FormEvent, useRef, useState, useEffect } from "react";
-import { Context } from "@/components/Context";
+import { ContextPanel } from "@/components/Context/Panel";
 import { useChat, Message } from "ai/react";
 import { loadEvaluator } from "langchain/evaluation";
 import va from "@vercel/analytics";
@@ -30,7 +30,6 @@ export default function Chat() {
   const [contextRelevanceScore, setContextRelevanceScore] = useState(0);
   const [answerRelevanceScore, setAnswerRelevanceScore] = useState(0);
   const [uploadedFiles, setUploadedFiles] = useState([]);
-  const [context, setContext] = useState<string[] | null>(null);
 
   const [selectedPDFs, setSelectedPDFs] = useState<string[]>([]);
   const selectedValue = { selectedPDFs, setSelectedPDFs };
@@ -326,7 +325,7 @@ export default function Chat() {
       </div>
       </div>
       <div className="sticky-top top-5 transform  ease-in-out right-0 w-1/3 h-full bg-gray-700 lg:static lg:translate-x-0 lg:w-2/5 lg:mx-2 rounded-lg">
-          <Context className="" selected={selectedPDFs} uploads={uploadedFiles} />
+          <ContextPanel className="" selected={selectedPDFs} uploads={uploadedFiles} />
         </div>
     </main>
     </selectedPDFsContext.Provider>
