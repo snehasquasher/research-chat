@@ -37,7 +37,7 @@ const UrlButton: FC<IURLButtonProps> = ({ entry, selected}) => {
   <div key={entry} className="pr-2 lg:flex-grow">
     <Button
       className={`relative overflow-hidden w-full my-1 lg:my-2 mx-2 ${selectedPDFs && selectedPDFs.includes(entry) 
-        ? "bg-gray-800" : "bg-gray-400"}`}
+        ? "bg-zinc-800" : "bg-zinc-400"}`}
       style={{color: "white"}}
       onClick={handleClick}
     >

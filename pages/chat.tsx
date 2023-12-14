@@ -43,7 +43,7 @@ export default function Chat() {
         if (response.ok) {
           const files = await response.json();
           setUploadedFiles(files); // Set fetched files as selected
-          setSelectedPDFs(files);
+          setSelectedPDFs(files); // default: set all uploads as selected
           setPDFCount(files.length); // Update PDFCount based on the number of files
           console.log("FILES: ", files);
         } else {
