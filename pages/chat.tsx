@@ -1,5 +1,6 @@
 
 import React, { FormEvent, useRef, useState, useEffect } from "react";
+import { Context } from "@/components/Context";
 import { useChat, Message } from "ai/react";
 import { loadEvaluator } from "langchain/evaluation";
 import va from "@vercel/analytics";
@@ -9,10 +10,11 @@ import Textarea from "react-textarea-autosize";
 import * as url from "url";
 import { useRouter } from 'next/router';
 import ScoreDisplay from '../components/ScoreDisplayCard';
+import selectedPDFsContext from '../context/selected-context'
 
 const examples = [
   "Compare and contrast the abstracts of the documents I uploaded.",
-  "Summarize the comments of my first document.",
+  "Summarize the contents of my first document.",
   "What are some common limitations found in these research papers?",
 ];
 
@@ -27,8 +29,11 @@ export default function Chat() {
   const [faithfulnessScore, setFaithfulnessScore] = useState(0);
   const [contextRelevanceScore, setContextRelevanceScore] = useState(0);
   const [answerRelevanceScore, setAnswerRelevanceScore] = useState(0);
-  const [uploadedFileNames, setUploadedFileNames] = useState([]);
-  const [selectedFiles, setSelectedFiles] = useState([]);
+  const [uploadedFiles, setUploadedFiles] = useState([]);
+  const [context, setContext] = useState<string[] | null>(null);
+
+  const [selectedPDFs, setSelectedPDFs] = useState<string[]>([]);
+  const selectedValue = { selectedPDFs, setSelectedPDFs };
 
   useEffect(() => {
     // Fetch the list of uploaded file names and set them as selected
@@ -37,9 +42,10 @@ export default function Chat() {
         const response = await fetch('/api/fetchFileNames');
         if (response.ok) {
           const files = await response.json();
-          setSelectedFiles(files); // Set fetched files as selected
+          setUploadedFiles(files); // Set fetched files as selected
+          setSelectedPDFs(files);
           setPDFCount(files.length); // Update PDFCount based on the number of files
-          console.log(files);
+          console.log("FILES: ", files);
         } else {
           console.error('Failed to fetch uploaded files');
         }
@@ -107,15 +113,17 @@ export default function Chat() {
     let oldInput = input;
     setInput("");
   
-    // Check if any elements in selectedFiles are None
-    if (selectedFiles.some(file => !file)) {
+    // Check if any elements in uploadedFiles are None
+    if (selectedPDFs.some(file => !file)) {
       console.error("Selected files contain None values");
       return; // Don't proceed with the request
     }
+
+    console.log("selected PDFs for this response: ", selectedPDFs)
   
     let data = JSON.stringify({
       messages: [{ role: "user", content: oldInput }],
-      filenames: selectedFiles // Send array of selected filenames
+      filenames: selectedPDFs // Send array of selected filenames
     });
   
     let req = await fetch('/api/chat', {
@@ -158,9 +166,13 @@ export default function Chat() {
   }
   
   const disabled = isLoading || input.length === 0;
+  console.log("UPLOADED FILES: ", uploadedFiles)
 
   return (
-    <main className="flex flex-col items-center justify-between pb-40">
+    <selectedPDFsContext.Provider value={selectedValue}>
+    <main className="flex flex-row justify-between">
+       
+    <div className="p-5 flex flex-col items-center justify-between pb-40">
       <div className="absolute top-5 hidden w-full justify-between px-5 sm:flex">
         <a
           href="/deploy"
@@ -236,7 +248,7 @@ export default function Chat() {
           </div>
         </div>
       )}
-      <div className="fixed bottom-0 flex w-full flex-col items-center space-y-3 bg-gradient-to-b from-transparent via-gray-100 to-gray-100 p-5 pb-3 sm:px-0">
+      <div className="fixed-bottom flex w-full flex-col items-center space-y-3 bg-gradient-to-b from-transparent via-gray-100 to-gray-100 p-5 pb-3 sm:px-0">
         <form
           ref={formRef}
           onSubmit={handleSubmit}
@@ -312,6 +324,11 @@ export default function Chat() {
           .
         </p>
       </div>
+      </div>
+      <div className="sticky-top top-5 transform  ease-in-out right-0 w-1/3 h-full bg-gray-700 lg:static lg:translate-x-0 lg:w-2/5 lg:mx-2 rounded-lg">
+          <Context className="" selected={selectedPDFs} uploads={uploadedFiles} />
+        </div>
     </main>
+    </selectedPDFsContext.Provider>
   );
 }
