@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useCallback, useEffect, useState} from "react";
 import UrlButton from "./UrlButton";
 import { Card, ICard } from "./Card";
+import { useRouter } from 'next/router';
 //import { clearIndex, crawlDocument } from "./utils";
 
 import { Button } from "./Button";
@@ -13,8 +14,7 @@ interface ContextPanelProps {
 export const ContextPanel: React.FC<ContextPanelProps> = ({ className, selected, uploads }) => {
   /*const [entries, setEntries] = useState([]);*/
   console.log("UPLOADS ", uploads);
-  const [cards, setCards] = useState<ICard[]>([]);
-
+  const router = useRouter();
   const [splittingMethod, setSplittingMethod] = useState("markdown");
   const [chunkSize, setChunkSize] = useState(256);
   const [overlap, setOverlap] = useState(1);
@@ -77,6 +77,8 @@ export const ContextPanel: React.FC<ContextPanelProps> = ({ className, selected,
       // status was something else
       console.log("error");
     }
+
+    router.push("/")
   }
 
   return (
