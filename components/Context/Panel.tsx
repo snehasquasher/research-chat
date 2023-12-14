@@ -1,6 +1,5 @@
 import React, { ChangeEvent, useCallback, useEffect, useState} from "react";
 import UrlButton from "./UrlButton";
-import { Card, ICard } from "./Card";
 import { useRouter } from 'next/router';
 //import { clearIndex, crawlDocument } from "./utils";
 
@@ -151,12 +150,7 @@ export const ContextPanel: React.FC<ContextPanelProps> = ({ className, selected,
           )}
         </div>
       </div>
-      {/*<div className="flex flex-wrap w-full">
-        {cards &&
-          cards.map((card, key) => (
-            <Card key={key} card={card} selected={selected} />
-          ))}
-      </div>*/}
+      
     </div>
   );
 };

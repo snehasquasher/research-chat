@@ -10,7 +10,7 @@ import Textarea from "react-textarea-autosize";
 import * as url from "url";
 import { useRouter } from 'next/router';
 import ScoreDisplay from '../components/ScoreDisplayCard';
-import selectedPDFsContext from '../context/selected-context'
+import selectedPDFsContext from '../context/selectedContext'
 
 const examples = [
   "Compare and contrast the abstracts of the documents I uploaded.",
