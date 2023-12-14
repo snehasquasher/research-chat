@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useCallback, useEffect, useState} from "react";
 import UrlButton from "./UrlButton";
 import { Card, ICard } from "./Card";
-import { clearIndex, crawlDocument } from "./utils";
+//import { clearIndex, crawlDocument } from "./utils";
 
 import { Button } from "./Button";
 interface ContextProps {
@@ -42,6 +42,27 @@ export const Context: React.FC<ContextProps> = ({ className, selected, uploads }
     </div>
   ));
 
+  
+
+  const clearIndex = async(e: Event) => {
+    e.preventDefault();
+    let req = await fetch('/api/clear_index', {
+      method: 'post',
+    });
+  
+    let response = await req.json();
+    console.log(response);
+  
+    if (req.ok) {
+      // status code was 200-299
+      console.log("OK");
+    }
+    else {
+      // status was something else
+      console.log("error");
+    }
+  }
+
   return (
     <div
       className={`flex flex-col border-2 overflow-y-auto rounded-lg border-gray-500 w-full ${className}`}
@@ -58,7 +79,7 @@ export const Context: React.FC<ContextProps> = ({ className, selected, uploads }
               backgroundColor: "#4f6574",
               color: "white",
             }}
-            //onClick={void}
+            onClick={clearIndex}
           >
             Clear Index
           </Button>
