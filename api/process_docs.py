@@ -2,6 +2,7 @@ import pinecone
 from utils.chunked_upsert import chunked_upsert
 from dataclasses import dataclass
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.text_splitter import CharacterTextSplitter
 import os
 from hashlib import md5
 from langchain.document_loaders import PyPDFLoader
@@ -55,7 +56,7 @@ async def upload_and_generate_embedding(file, index_name: str, options: SeedOpti
         index = pinecone.Index(index_name)
         logging.debug("Initialized Pinecone Index")
         
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=options.chunk_size, chunk_overlap=options.chunk_overlap, length_function=len, is_separator_regex=False)
+        text_splitter = CharacterTextSplitter(chunk_size=options.chunk_size, chunk_overlap=options.chunk_overlap, length_function=len, is_separator_regex=False)
         chunked_pdf = await asyncio.gather(*[chunk_pdf(x, text_splitter) for x in parsed_pdf])
         chunked_pdf = [item for sublist in chunked_pdf for item in sublist]
         logging.debug("Chunked PDF and obtained vectors")

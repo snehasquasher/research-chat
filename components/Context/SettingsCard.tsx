@@ -10,7 +10,7 @@ interface ContextProps {
   uploads: Array<string>
 }
 
-export const Context: React.FC<ContextProps> = ({ className, selected, uploads }) => {
+export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uploads }) => {
   /*const [entries, setEntries] = useState([]);*/
   console.log("UPLOADS ", uploads);
   const [cards, setCards] = useState<ICard[]>([]);
