@@ -29,6 +29,15 @@ logger.addHandler(handler)
 logger.setLevel(logging.DEBUG)
 import routes
 import evaluate
+from dataclasses import dataclass
+
+@dataclass
+class SeedOptions:
+    chunk_size: int = 1500
+    chunk_overlap: int = 50
+    method: str ='character'
+
+
 @app.route("/api/chat", methods = ["POST"])
 async def chat():
     """
@@ -153,54 +162,34 @@ def clear_index():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route("/api/generate_embeddings", methods = ["POST"])
+@app.route("/api/generate_embeddings", methods=["POST"])
 async def generate_embeddings():
-    """
-    This endpoint processes a POST request to generate embeddings from a provided PDF file.
-
-    Request Body:
-    -------------
-    The request must include pdf files in the form-data, containing the PDF files from which embeddings will be generated.
-
-    Process:
-    --------
-    1. The function checks if any files are included in the request. If not, it returns a 400 status code with an error message.
-    2. If some files are present, it calls the `upload_and_generate_embedding` function, passing each file and an environment variable "PINECONE_INDEX".
-    3. The `upload_and_generate_embedding` function is responsible for handling each PDF file, generating embeddings, and potentially interacting with the Pinecone service or similar.
-
-    Response:
-    ---------
-    - Success: Returns a JSON containing the list of successfully uploaded and unsuccessfully uploaded files.
-    - Failure: If any exception occurs, the function returns a JSON response with the error message and a 500 status code.
-
-    Note:
-    -----
-    Ensure that the files are provided in the correct PDF format and that the "PINECONE_INDEX" environment variable is properly set for the function to execute successfully.
-    
-    Example Usage:
-    --------------
-    curl -X POST -F 'pdf=@path_to_pdf_file.pdf' http://<your_api_url>/api/generate_embeddings
-
-    """
     data = request.json
-    
 
     if not data or "files" not in data:
         logger.debug("Invalid data format or missing 'files' key")
         return jsonify({"error": "Invalid data format or missing 'files' key"}), 400
 
+    chunk_size = data.get('chunk_size', 1500)
+    chunk_overlap = data.get('chunk_overlap', 50)
+    method = data.get('method', 'character')  # Default to 'character' if not specified
+
     try:
         success_files = []
         unsuccessful_files = []
-        # if not request.files:
-        #     return jsonify({"error": "No files uploaded."}), 400
-        
+
         for file in data['files']:
-            response = await upload_and_generate_embedding(file, os.getenv("PINECONE_INDEX"))
+            response = await upload_and_generate_embedding(
+                file,
+                os.getenv("PINECONE_INDEX"),
+                SeedOptions(chunk_size=chunk_size, chunk_overlap=chunk_overlap,method=method)
+                
+            )
             if response["success"]:
                 success_files.append(response["filename"])
             else:
-                unsuccessful_files.append(request.files[file].filename)
+                unsuccessful_files.append(file)
+
         return jsonify({"success": True, "successful_uploads": success_files, "unsuccessful_uploads": unsuccessful_files}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500

@@ -48,7 +48,11 @@ const FileUploadForm = () => {
             setUploadStatus("Upload successful! Generating embeddings...");
 
             // Prepare data for generate_embeddings
-            const dataForEmbeddings = { files: uploadedFiles };
+            const dataForEmbeddings = { files: uploadedFiles,
+                method: "recursive", // Replace with the actual method name
+                chunk_size: 256, // or any other value you might want to set
+                chunk_overlap: 1, // or any other value you might want to set };
+            }
             console.log("Data for generate_embeddings:", dataForEmbeddings);
 
             // Call the generate_embeddings endpoint
