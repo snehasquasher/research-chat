@@ -1,6 +1,6 @@
 
 import React, { FormEvent, useRef, useState, useEffect } from "react";
-import { ContextPanel } from "@/components/Context/Panel";
+import { SettingsCard } from "@/components/Context/SettingsCard";
 import { useChat, Message } from "ai/react";
 import { loadEvaluator } from "langchain/evaluation";
 import va from "@vercel/analytics";
@@ -169,10 +169,10 @@ export default function Chat() {
 
   return (
     <selectedPDFsContext.Provider value={selectedValue}>
-    <main className="flex flex-row justify-between">
-       
-    <div className="p-5 flex flex-col items-center justify-between pb-40">
-      <div className="absolute top-5 hidden w-full justify-between px-5 sm:flex">
+    <main className="p-5 px-8 flex flex-row justify-between">
+    
+    <div className="flex  flex-grow flex-col items-center justify-between pb-40">
+      <div className=" hidden w-full justify-between px-5 sm:flex">
         <a
           href="/deploy"
           target="_blank"
@@ -220,7 +220,7 @@ export default function Chat() {
         </div>
       ))
       ) : (
-         <div className="border-gray-200sm:mx-0 mx-5 mt-20 max-w-screen-md rounded-md border sm:w-full">
+         <div className="border-gray-200sm:mx-0 mx-5  max-w-screen-md rounded-md border sm:w-full">
           <div className="flex flex-col space-y-4 p-7 sm:p-10">
             <h1 className="text-lg font-semibold ">
               Chat with your documents now!
@@ -247,7 +247,7 @@ export default function Chat() {
           </div>
         </div>
       )}
-      <div className="fixed-bottom flex w-full flex-col items-center space-y-3 bg-gradient-to-b from-transparent via-gray-100 to-gray-100 p-5 pb-3 sm:px-0">
+      <div className="-bottom flex w-full flex-col items-center space-y-3  fromfixed-transparent via-gray-100 to-gray-100 p-5 pb-3 sm:px-0">
         <form
           ref={formRef}
           onSubmit={handleSubmit}
@@ -283,50 +283,14 @@ export default function Chat() {
             
           </button>
         </form>
-        <p className="text-center text-xs text-gray-400">
-          Built with{" "}
-          <a
-            href="https://platform.openai.com/docs/guides/gpt/function-calling"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-black"
-          >
-            OpenAI Functions
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://sdk.vercel.ai/docs"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-black"
-          >
-            Vercel AI SDK
-          </a>
-          .{" "}
-          <a
-            href="https://github.com/steven-tey/chathn"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-black"
-          >
-            View the repo
-          </a>{" "}
-          or{" "}
-          <a
-            href="https://vercel.com/templates/next.js/chathn"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-black"
-          >
-            deploy your own
-          </a>
-          .
-        </p>
+        
       </div>
+      
       </div>
-      <div className="sticky-top top-5 transform  ease-in-out right-0 w-1/3 h-full bg-gray-700 lg:static lg:translate-x-0 lg:w-2/5 lg:mx-2 rounded-lg">
-          <ContextPanel className="" selected={selectedPDFs} uploads={uploadedFiles} />
+      <div> 
+          <SettingsCard className="max-w-md" selected={selectedPDFs} uploads={uploadedFiles} />
         </div>
+      
     </main>
     </selectedPDFsContext.Provider>
   );
