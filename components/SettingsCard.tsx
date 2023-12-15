@@ -1,8 +1,8 @@
 import React, { useContext ,ChangeEvent, useCallback, useEffect, useState} from "react";
 import UrlButton from "./UrlButton";
-import { Card, ICard } from "./Card";
-import { clearIndex, crawlDocument } from "./utils";
-import selectedPDFsContext from '../context/selected-context';
+import selectedPDFsContext from '../context/selectedContext';
+import { useRouter } from 'next/router';
+
 import { Button } from "./Button";
 interface ContextProps {
   className: string;
@@ -13,8 +13,8 @@ interface ContextProps {
 export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uploads }) => {
   /*const [entries, setEntries] = useState([]);*/
   console.log("UPLOADS ", uploads);
-  const [cards, setCards] = useState<ICard[]>([]);
   const { selectedPDFs, setSelectedPDFs } = useContext(selectedPDFsContext);
+  const router = useRouter();
   const [splittingMethod, setSplittingMethod] = useState("markdown");
   const [chunkSize, setChunkSize] = useState(256);
   const [overlap, setOverlap] = useState(1);
@@ -76,6 +76,44 @@ export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uplo
     </div>
   ));
 
+  const clearIndex = async(e: Event) => {
+    e.preventDefault();
+    let req = await fetch('/api/clear_index', {
+      method: 'post',
+    });
+  
+    let response = await req.json();
+    console.log(response);
+  
+    if (req.ok) {
+      // status code was 200-299
+      console.log("OK");
+    }
+    else {
+      // status was something else
+      console.log("error");
+    }
+
+    let reqDeleteFiles = await fetch('/api/clearFileNames', {
+      method: 'post',
+    });
+  
+    let resDeleteFiles = await reqDeleteFiles.json();
+    console.log(resDeleteFiles);
+  
+    if (reqDeleteFiles.ok) {
+      // status code was 200-299
+      console.log("OK");
+    }
+    else {
+      // status was something else
+      console.log("error");
+    }
+
+    router.push("/")
+  }
+
+
   return (
     <div
       className={`flex flex-col border-2 overflow-y-auto rounded-lg border-gray-500 w-full ${className}`}
@@ -92,7 +130,7 @@ export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uplo
               backgroundColor: "#4f6574",
               color: "white",
             }}
-            //onClick={void}
+            onClick={clearIndex}
           >
             Clear Index
           </Button>
@@ -158,12 +196,6 @@ export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uplo
         </div>
         
       </div>
-      {/*<div className="flex flex-wrap w-full">
-        {cards &&
-          cards.map((card, key) => (
-            <Card key={key} card={card} selected={selected} />
-          ))}
-      </div>*/}
     </div>
   );
 };
