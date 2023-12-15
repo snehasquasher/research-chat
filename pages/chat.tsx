@@ -10,7 +10,7 @@ import Textarea from "react-textarea-autosize";
 import * as url from "url";
 import { useRouter } from 'next/router';
 import ScoreDisplay from '../components/ScoreDisplayCard';
-import selectedPDFsContext from '../context/selected-context'
+import selectedPDFsContext from '../context/selectedContext'
 
 const examples = [
   "Compare and contrast the abstracts of the documents I uploaded.",
@@ -30,7 +30,6 @@ export default function Chat() {
   const [contextRelevanceScore, setContextRelevanceScore] = useState(0);
   const [answerRelevanceScore, setAnswerRelevanceScore] = useState(0);
   const [uploadedFiles, setUploadedFiles] = useState([]);
-  const [context, setContext] = useState<string[] | null>(null);
 
   const [selectedPDFs, setSelectedPDFs] = useState<string[]>([]);
   const selectedValue = { selectedPDFs, setSelectedPDFs };
@@ -43,7 +42,7 @@ export default function Chat() {
         if (response.ok) {
           const files = await response.json();
           setUploadedFiles(files); // Set fetched files as selected
-          setSelectedPDFs(files);
+          setSelectedPDFs(files); // default: set all uploads as selected
           setPDFCount(files.length); // Update PDFCount based on the number of files
           console.log("FILES: ", files);
         } else {

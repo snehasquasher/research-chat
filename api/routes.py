@@ -2,7 +2,7 @@ from flask import request, jsonify
 from index import app  # Import the app instance
 import requests 
 import sys
-import os
+import os, shutil
 
 import logging 
 
@@ -56,5 +56,31 @@ def fetch_file_names():
         uploaded_files = [f for f in os.listdir(upload_directory) if os.path.isfile(os.path.join(upload_directory, f))]
         
         return jsonify(uploaded_files), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    
+# create API to delete vector index
+@app.route("/api/clearFileNames", methods=['POST'])
+def delete_file_names():
+    try:
+        # Define the directory path where files are uploaded
+        upload_directory = 'user-uploads'
+
+        # Check if the directory exists
+        if not os.path.exists(upload_directory):
+            return jsonify("Directory does not exist."), 200  # Return an empty list if the directory doesn't exist
+
+        # List files in the directory and filter out subdirectories
+        for filename in os.listdir(upload_directory):
+            file_path = os.path.join(upload_directory, filename)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                return jsonify({"failed to delete file. error": str(e)}), 500
+        
+        return jsonify("Cleared folder successfully"), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
