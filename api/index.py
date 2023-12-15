@@ -173,6 +173,7 @@ async def generate_embeddings():
     chunk_size = data.get('chunk_size', 1500)
     chunk_overlap = data.get('chunk_overlap', 50)
     method = data.get('method', 'character')  # Default to 'character' if not specified
+    print(method)
 
     try:
         success_files = []
