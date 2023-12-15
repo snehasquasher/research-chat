@@ -35,6 +35,7 @@ from dataclasses import dataclass
 class SeedOptions:
     chunk_size: int = 1500
     chunk_overlap: int = 50
+    method: str ='character'
 
 
 @app.route("/api/chat", methods = ["POST"])
@@ -169,20 +170,20 @@ async def generate_embeddings():
         logger.debug("Invalid data format or missing 'files' key")
         return jsonify({"error": "Invalid data format or missing 'files' key"}), 400
 
-    # Retrieve the chunk parameters from the request
-    chunk_size = data.get('chunk_size', 1500)  # Default value if not provided
-    chunk_overlap = data.get('chunk_overlap', 50)  # Default value if not provided
+    chunk_size = data.get('chunk_size', 1500)
+    chunk_overlap = data.get('chunk_overlap', 50)
+    method = data.get('method', 'character')  # Default to 'character' if not specified
 
     try:
         success_files = []
         unsuccessful_files = []
 
         for file in data['files']:
-            # Pass the chunk parameters to the function
             response = await upload_and_generate_embedding(
                 file,
                 os.getenv("PINECONE_INDEX"),
-                SeedOptions(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
+                SeedOptions(chunk_size=chunk_size, chunk_overlap=chunk_overlap,method=method)
+                
             )
             if response["success"]:
                 success_files.append(response["filename"])

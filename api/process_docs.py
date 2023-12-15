@@ -55,8 +55,12 @@ async def upload_and_generate_embedding(file, index_name: str, options: SeedOpti
         
         index = pinecone.Index(index_name)
         logging.debug("Initialized Pinecone Index")
-        
-        text_splitter = CharacterTextSplitter(chunk_size=options.chunk_size, chunk_overlap=options.chunk_overlap, length_function=len, is_separator_regex=False)
+            
+            # Choose the splitter based on the method
+        if SeedOptions.method == 'recursive':
+            text_splitter = RecursiveCharacterTextSplitter(chunk_size=options.chunk_size, chunk_overlap=options.chunk_overlap)
+        elif SeedOptions.method == 'character':  # Default to character splitter
+            text_splitter = CharacterTextSplitter(chunk_size=options.chunk_size, chunk_overlap=options.chunk_overlap)
         chunked_pdf = await asyncio.gather(*[chunk_pdf(x, text_splitter) for x in parsed_pdf])
         chunked_pdf = [item for sublist in chunked_pdf for item in sublist]
         logging.debug("Chunked PDF and obtained vectors")

@@ -24,9 +24,10 @@ export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uplo
       files: selectedPDFs, // Assuming selectedPDFs is an array of filenames
       chunk_size: chunkSize,
       chunk_overlap: overlap,
+      method: splittingMethod,
     };
 
-    console.log(selectedPDFs,chunkSize,overlap);
+    console.log(selectedPDFs,chunkSize,overlap,splittingMethod);
   
     try {
       const response = await fetch('/api/generate_embeddings', {
@@ -110,10 +111,9 @@ export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uplo
               onChange={(e) => setSplittingMethod(e.target.value)}
             >
               <option value="recursive">Recursive Text Splitting</option>
-              <option value="markdown">Markdown Splitting</option>
+              <option value="character">Character Text Splitting</option> 
             </select>
           </div>
-          {splittingMethod === "recursive" && (
             <div className="my-4 flex flex-col">
               <div className="flex flex-col w-full">
                 <DropdownLabel htmlFor="chunkSize">
@@ -142,7 +142,7 @@ export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uplo
                 />
               </div>
             </div>
-          )}
+      
            <div className="w-full px-4 py-2">
         <Button
           className="w-full my-2 uppercase active:scale-[98%] transition-transform duration-100"
