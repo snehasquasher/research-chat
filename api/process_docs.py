@@ -24,6 +24,7 @@ logging.basicConfig(
 class SeedOptions:
     chunk_size: int = 1500
     chunk_overlap: int = 50
+    method: str ='character'
 
 async def parse_pdf(pdf_file):
     logging.debug(f"Type of pdf_file: {type(pdf_file)}")
