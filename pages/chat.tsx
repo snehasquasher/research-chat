@@ -1,6 +1,6 @@
 
 import React, { FormEvent, useRef, useState, useEffect } from "react";
-import { SettingsCard } from "@/components/Context/SettingsCard";
+import { SettingsCard } from "@/components/SettingsCard";
 import { useChat, Message } from "ai/react";
 import { loadEvaluator } from "langchain/evaluation";
 import va from "@vercel/analytics";
