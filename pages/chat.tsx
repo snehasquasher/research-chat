@@ -36,12 +36,14 @@ export default function Chat() {
 
   const [selectedPDFs, setSelectedPDFs] = useState<string[]>([]);
   const selectedValue = { selectedPDFs, setSelectedPDFs };
-  const {useMetaPrompt, setUseMetaPrompt} = useContext(metaPromptContext);
+  const [useMetaPrompt, setUseMetaPrompt] = useState(false);
+  const [metaPrompt, setMetaPrompt] = useState("");
+  const [metaPromptGenerated, setMetaPromptGenerated] = useState(false);
+  const metaPromptValue = {useMetaPrompt, setUseMetaPrompt}
 
   useEffect(() => {
     // Fetch the list of uploaded file names and set them as selected
     console.log("HI");
-    console.log(useMetaPrompt);
     const fetchUploadedFiles = async () => {
       try {
         const response = await fetch('/api/fetchFileNames');
@@ -118,7 +120,13 @@ export default function Chat() {
     let oldInput = input;
     setInput("");
     setIsLoading(true); // Set loading to true before the request
-    console.log(useMetaPrompt);
+    console.log("use meta prompt? ", useMetaPrompt);
+    console.log(selectedPDFs)
+
+    if (useMetaPrompt && !metaPromptGenerated) {
+      console.log("will generate metaPrompt");
+      setMetaPromptGenerated(true);
+    }
   
     // Check if any elements in uploadedFiles are None
     if (selectedPDFs.some(file => !file)) {
@@ -178,6 +186,7 @@ export default function Chat() {
 
   return (
     <selectedPDFsContext.Provider value={selectedValue}>
+    <metaPromptContext.Provider value={metaPromptValue}>
     <main className="p-5 px-8 flex flex-row justify-between">
     
     <div className="flex  flex-grow flex-col items-center justify-between pb-40">
@@ -302,6 +311,7 @@ export default function Chat() {
         </div>
       
     </main>
+    </metaPromptContext.Provider>
     </selectedPDFsContext.Provider>
   );
 }

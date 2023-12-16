@@ -27,7 +27,7 @@ export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uplo
   console.log("UPLOADS ", uploads);
   
   const { selectedPDFs, setSelectedPDFs } = useContext(selectedPDFsContext);
-  const [useMetaPrompt, setUseMetaPrompt] = useState(false);
+  const {useMetaPrompt, setUseMetaPrompt} = useContext(metaPromptContext);
   const router = useRouter();
   const [splittingMethod, setSplittingMethod] = useState("markdown");
   const [chunkSize, setChunkSize] = useState(256);
@@ -126,7 +126,6 @@ export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uplo
 
 
   return (
-    <metaPromptContext.Provider value={metaPromptValue}>
     <div
       className={`flex flex-col border-2 overflow-y-auto rounded-lg border-gray-500 w-full ${className}`}
     >
@@ -224,6 +223,5 @@ export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uplo
         
       </div>
     </div>
-    </metaPromptContext.Provider>
   );
 };
