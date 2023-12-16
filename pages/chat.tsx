@@ -1,5 +1,5 @@
 
-import React, { FormEvent, useRef, useState, useEffect } from "react";
+import React, { FormEvent, useRef, useState, useEffect, useContext } from "react";
 import { SettingsCard } from "@/components/SettingsCard";
 import { useChat, Message } from "ai/react";
 import { loadEvaluator } from "langchain/evaluation";
@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 import ScoreDisplay from '../components/ScoreDisplayCard';
 import selectedPDFsContext from '../context/selectedContext'
 import LoadingAnimation from '../components/LoadingAnimation';
+import {metaPromptContext} from '../components/SettingsCard';
 
 const examples = [
   "Compare and contrast the abstracts of the documents I uploaded.",
@@ -35,9 +36,12 @@ export default function Chat() {
 
   const [selectedPDFs, setSelectedPDFs] = useState<string[]>([]);
   const selectedValue = { selectedPDFs, setSelectedPDFs };
+  const {useMetaPrompt, setUseMetaPrompt} = useContext(metaPromptContext);
 
   useEffect(() => {
     // Fetch the list of uploaded file names and set them as selected
+    console.log("HI");
+    console.log(useMetaPrompt);
     const fetchUploadedFiles = async () => {
       try {
         const response = await fetch('/api/fetchFileNames');
@@ -114,7 +118,7 @@ export default function Chat() {
     let oldInput = input;
     setInput("");
     setIsLoading(true); // Set loading to true before the request
-
+    console.log(useMetaPrompt);
   
     // Check if any elements in uploadedFiles are None
     if (selectedPDFs.some(file => !file)) {
@@ -128,6 +132,7 @@ export default function Chat() {
       messages: [{ role: "user", content: oldInput }],
       filenames: selectedPDFs // Send array of selected filenames
     });
+
   
     let req = await fetch('/api/chat', {
       method: 'post',
