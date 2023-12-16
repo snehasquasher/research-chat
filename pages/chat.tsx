@@ -11,6 +11,7 @@ import * as url from "url";
 import { useRouter } from 'next/router';
 import ScoreDisplay from '../components/ScoreDisplayCard';
 import selectedPDFsContext from '../context/selectedContext'
+import LoadingAnimation from '../components/LoadingAnimation';
 
 const examples = [
   "Compare and contrast the abstracts of the documents I uploaded.",
@@ -30,6 +31,7 @@ export default function Chat() {
   const [contextRelevanceScore, setContextRelevanceScore] = useState(0);
   const [answerRelevanceScore, setAnswerRelevanceScore] = useState(0);
   const [uploadedFiles, setUploadedFiles] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [selectedPDFs, setSelectedPDFs] = useState<string[]>([]);
   const selectedValue = { selectedPDFs, setSelectedPDFs };
@@ -90,7 +92,7 @@ export default function Chat() {
 
 
 
-  const { input, setInput, isLoading } = useChat({
+  const { input, setInput } = useChat({
     onResponse: (response) => {
       if (response.status === 429) {
         va.track("Rate limited");
@@ -111,6 +113,8 @@ export default function Chat() {
     e.preventDefault();
     let oldInput = input;
     setInput("");
+    setIsLoading(true); // Set loading to true before the request
+
   
     // Check if any elements in uploadedFiles are None
     if (selectedPDFs.some(file => !file)) {
@@ -135,7 +139,7 @@ export default function Chat() {
   
     let response = await req.json();
     console.log(response);
-  
+    setIsLoading(false);
     if (req.ok) {
       // status code was 200-299
       console.log("OK");
@@ -271,6 +275,7 @@ export default function Chat() {
             spellCheck={false}
             className="textarea w-full pr-10 focus:outline-none text-dark"
           />
+          {isLoading && <LoadingAnimation />}
           <button
             className={clsx(
               "absolute inset-y-0 right-3 my-auto flex h-8 w-8 items-center justify-center rounded-md transition-all",

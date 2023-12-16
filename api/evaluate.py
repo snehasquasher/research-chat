@@ -62,29 +62,38 @@ def evaluate_faithfulness(client, model_name, context, answer):
 
 
 
-def evaluate_context_relevance(client, model_name, context, answer):
+def evaluate_context_relevance(client, model_name, question, context):
     prompt = (
-        "Please rate the context relevance of the response to the research paper based on the given question on a scale from 0 to 1, where 0 is not relevant and 0.9 is highly relevant. If answer is perfect than give it a 1. Higher values indicate better relevancy.\n"
-        "Example 1:\nQuestion: How do renewable energy policies impact carbon emissions?\nContext: Analysis of renewable energy policies.\nAnswer: The response discusses the impact of these policies on reducing carbon emissions.\nRating: 0.8\n"
-        "Example 2:\nQuestion: What are the key factors in cognitive development during childhood?\nContext: Research on cognitive development in children.\nAnswer: The response talks about general educational methods, not specific cognitive development factors.\nRating: 0.5\n"
-        "Example 3:\nQuestion: What are the latest findings on gravitational waves?\nContext: Study on gravitational waves.\nAnswer: The response discusses the history of astronomy, not recent findings on gravitational waves.\nRating: 0\n"
-        "Example 4:\nQuestion: What role does diet play in managing diabetes?\nContext: Research on diet and diabetes management.\nAnswer: The response accurately discusses how diet affects blood sugar control in diabetic patients.\nRating: 0.9\n"
-        "Example 5:\nQuestion: What are the implications of blockchain in finance beyond cryptocurrencies?\nContext: Blockchain technology in financial applications.\nAnswer: The response mainly focuses on blockchain for cryptocurrencies, not other financial applications.\nRating: 0.5\n"
-        "Example 6:\nQuestion: Can regular physical activity improve mental health?\nContext: Studies on exercise and mental health.\nAnswer: The response details how regular exercise contributes to better mental health and stress reduction.\nRating: 1\n"
-        f"Your Turn:\nQuestion: {context}\nAnswer: {answer}\nRating:"
+        "Please rate the context relevance to the question asked on a scale from 0 to 1, where 0 is not relevant and 1 is highly relevant. Higher values indicate better relevancy.\n"
+        "Example 1:\nQuestion: What are the environmental impacts of deforestation?\nContext: The study focuses on the loss of habitat and biodiversity due to deforestation.\nRating: 0.9\n"
+        "Example 2:\nQuestion: How does meditation affect mental health?\nContext: Research on physical exercise and mental wellness.\nRating: 0.3\n"
+        "Example 3:\nQuestion: What advancements have been made in electric vehicle technology?\nContext: Overview of renewable energy sources and their applications.\nRating: 0.6\n"
+        "Example 4:\nQuestion: What is the significance of the Hubble Space Telescope's discoveries?\nContext: Detailed review of major astronomical discoveries made by the Hubble Space Telescope.\nRating: 1\n"
+        "Example 5:\nQuestion: What are the latest treatments for type 2 diabetes?\nContext: General information on lifestyle diseases, including diabetes and heart diseases.\nRating: 0.4\n"
+        "Example 6:\nQuestion: What role do microorganisms play in ecosystems?\nContext: The role of microorganisms in soil nutrient cycling and ecosystem stability.\nRating: 0.9\n"
+        f"Your Turn:\nQuestion: {question}\nContext: {context}\nRating:"
     )
     return get_evaluation_score(client, model_name, prompt)
+
+
 
 
 def evaluate_answer_relevance(client, model_name, question, answer):
     prompt = (
-        "Please rate the relevance of the response to specific questions about the research paper on a scale from 0 to 1, where 0 is not relevant and 1 is highly relevant.\n"
-        "Example 1:\nQuestion: What are the novel contributions of the paper?\nAnswer: The response accurately outlines the unique contributions and how they advance the field.\nRating: 1\n"
-        "Example 2:\nQuestion: How does the paper support its hypotheses?\nAnswer: The response vaguely refers to the methodologies used but lacks specifics.\nRating: 0.5\n"
-        "Example 3:\nQuestion: What implications does the research have for future studies?\nAnswer: The response diverts to a different topic unrelated to future implications.\nRating: 0\n"
+        "Please rate the relevance of the response to the specific question on a scale from 0 to 1, where 0 is not relevant at all and 1 is highly relevant. Provide a score based on how well the answer addresses the question asked.\n"
+        "Example 1:\nQuestion: What are the health benefits of regular exercise?\nAnswer: Regular exercise helps in maintaining healthy body weight and improving cardiovascular health.\nRating: 0.9\n"
+        "Example 2:\nQuestion: What is blockchain technology?\nAnswer: Blockchain technology involves advanced computing techniques and cryptography.\nRating: 0.7\n"
+        "Example 3:\nQuestion: How does photosynthesis work?\nAnswer: Photosynthesis is a biological process in plants involving sunlight, carbon dioxide, and water.\nRating: 0.9\n"
+        "Example 4:\nQuestion: Who wrote 'Pride and Prejudice'?\nAnswer: 'Pride and Prejudice' is a novel by Jane Austen focusing on themes of marriage, morality, and manners.\nRating: 1\n"
+        "Example 5:\nQuestion: What causes rain?\nAnswer: Rain occurs due to climate change and global warming.\nRating: 0.3\n"
+        "Example 6:\nQuestion: Can you name a famous physicist?\nAnswer: Albert Einstein is known for his theory of relativity.\nRating: 0.8\n"
+        "Example 7:\nQuestion: What is the capital of France?\nAnswer: Paris is the capital and most populous city of France.\nRating: 1\n"
+        "Example 8:\nQuestion: What was the first question asked?\nAnswer: The first question was about the health benefits of regular exercise.\nRating: 0.9\n"
         f"Your Turn:\nQuestion: {question}\nAnswer: {answer}\nRating:"
     )
     return get_evaluation_score(client, model_name, prompt)
+
+
 
 def get_evaluation_score(client, model_name, prompt):
     try:
