@@ -29,3 +29,25 @@ body {
 textarea {
   color: darkslategray;
 }
+/* index.css or globals.css */
+
+/* Custom keyframes for blinking effect */
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Tailwind utility class for the animation */
+.animate-blink {
+  animation: blink 1.4s infinite;
+}
+
+/* Styling for the dots */
+.dot {
+  display: inline-block;
+}
+
