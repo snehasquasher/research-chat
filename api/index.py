@@ -47,6 +47,7 @@ async def chat():
     -------------
     - messages (array): An array of message objects. Each object should have 'role' (user/system) and 'content'.
     - filename (List[str]): A list of filenames that are used for fetching context relevant to the conversation.
+    - metaPrompt (string): (OPTIONAL) A string that represents the metaprompt that should be used, default = None
 
     Process:
     --------
@@ -77,7 +78,8 @@ async def chat():
             {"role": "user", "content": "Hello, AI!"},
             ...
         ],
-        "filenames": ["context_file.txt"]
+        "filenames": ["context_file.txt"],
+        "metaPrompt": string,
     }
     ```
     """
@@ -92,35 +94,52 @@ async def chat():
         print(data, file=sys.stderr)
         messages = data['messages']
         filenames = data['filenames']
+        metaPrompt = data['metaPrompt']
+        print("metaPrompt: ", metaPrompt)
         last_message = messages[-1]
         context = await get_context(last_message["content"], filenames=filenames)
-        prompt = [
-    {
-        "role": "system",
-        "content": f"""
-            START CONTEXT BLOCK
-            The user has uploaded documents with specific contents. The AI is expected to summarize or refer to the information contained within these documents when responding to user queries related to them. 
-            {context}
-            END OF CONTEXT BLOCK
-            In responses:
-            - You MUST include headings. Use two asterisks (**) to bold your headings. 
-            - You MUST split information into digestable paragraphs.
-            - Where appropriate, you MUST write information as bullet-points.
-            - When providing detailed explanations, use clear and concise language, structuring the answer in an easy-to-understand manner.
-            - If directly quoting from the provided context, use 'quotation marks' to highlight these sections.
-            - Avoid long paragraphs; break text into smaller, digestible parts.
-            - If the context does not provide sufficient information to answer a question, clearly state, "I'm sorry, but I don't have enough information to answer that question".
-            - Do not apologize for previous responses but indicate when new information was gained.
-            - Do not fabricate responses; strictly adhere to the context provided.
-        """
-    },
-]
+        
         user_messages = [message for message in messages if message['role'] == 'user']
         print("MESSAGES", user_messages, file=sys.stderr)
-        response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages= prompt + user_messages
-        )
+
+        if metaPrompt == "":
+            # use default prompt
+            prompt = [
+            {
+            "role": "system",
+            "content": f"""
+                START CONTEXT BLOCK
+                The user has uploaded documents with specific contents. The AI is expected to summarize or refer to the information contained within these documents when responding to user queries related to them. 
+                {context}
+                END OF CONTEXT BLOCK
+                In responses:
+                - You MUST include headings. Use two asterisks (**) to bold your headings. 
+                - You MUST split information into digestable paragraphs.
+                - Where appropriate, you MUST write information as bullet-points.
+                - When providing detailed explanations, use clear and concise language, structuring the answer in an easy-to-understand manner.
+                - If directly quoting from the provided context, use 'quotation marks' to highlight these sections.
+                - Avoid long paragraphs; break text into smaller, digestible parts.
+                - If the context does not provide sufficient information to answer a question, clearly state, "I'm sorry, but I don't have enough information to answer that question".
+                - Do not apologize for previous responses but indicate when new information was gained.
+                - Do not fabricate responses; strictly adhere to the context provided.
+            """
+            },
+    ]  
+            response = client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages= prompt + user_messages
+            )
+        else:
+            preQueryPrompt = metaPrompt.split('{query_str}')[0]
+            prompt = [{"role": "system",
+            "content": preQueryPrompt.format(context=context)}]
+            print(prompt)
+
+            response = client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages= prompt + user_messages
+            )
+
         print("RESPONSE", response.choices[0].message.content, file=sys.stderr)
         return jsonify({
             "response": response.choices[0].message.content,
@@ -175,7 +194,6 @@ async def generate_embeddings():
     chunk_size = data.get('chunk_size', 1500)
     chunk_overlap = data.get('chunk_overlap', 50)
     method = data.get('method', 'character')  # Default to 'character' if not specified
-    print(method)
 
     try:
         success_files = []

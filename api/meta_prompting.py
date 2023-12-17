@@ -71,7 +71,7 @@ def createMetaTemplate():
     """
 
     meta_tmpl = PromptTemplate(meta_tmpl_str)
-    return meta_tmpl
+    return meta_tmpl.template
 
 
 async def metaPrompt():
@@ -314,6 +314,7 @@ async def optimize_prompts(
     return max_instr_score_pair[0], prev_instr_score_pairs
 
 def runMetaPrompt():
+    return 'Given the context information and not prior knowledge, provide a detailed and comprehensive response to the query.\nContext information is below.\n---------------------\n{context_str}\n---------------------\nGiven the context information and not prior knowledge, answer the query.\nQuery: {query_str}\nAnswer: '
     nest_asyncio.apply()
     newPrompt = asyncio.run(metaPrompt())
     return newPrompt

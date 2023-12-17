@@ -124,8 +124,26 @@ export default function Chat() {
     console.log(selectedPDFs)
 
     if (useMetaPrompt && !metaPromptGenerated) {
-      console.log("will generate metaPrompt");
-      setMetaPromptGenerated(true);
+      console.log("need generate metaPrompt");
+
+      let metaReq = await fetch('/api/generateMetaPrompt', {
+        method: 'get'
+      });
+
+      console.log(metaReq)
+    
+      let metaResponse = await metaReq.json();
+      console.log(metaResponse);
+      let cleanedMetaPrompt = metaResponse.replace("{context_str}", '{context}');
+      if (metaReq.ok) {
+        // status code was 200-299
+        console.log("OK ", cleanedMetaPrompt);
+        setMetaPrompt(cleanedMetaPrompt);
+        setMetaPromptGenerated(true);
+      } else {
+        // status was something else
+        console.log("error: could not generate metaResponse");
+      } 
     }
   
     // Check if any elements in uploadedFiles are None
@@ -138,10 +156,12 @@ export default function Chat() {
   
     let data = JSON.stringify({
       messages: [{ role: "user", content: oldInput }],
-      filenames: selectedPDFs // Send array of selected filenames
+      filenames: selectedPDFs, // Send array of selected filenames
+      metaPrompt: metaPrompt,
     });
 
-  
+    console.log(data);
+
     let req = await fetch('/api/chat', {
       method: 'post',
       headers: {

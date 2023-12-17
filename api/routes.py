@@ -3,6 +3,7 @@ from index import app  # Import the app instance
 import requests 
 import sys
 import os, shutil
+from meta_prompting import runMetaPrompt
 
 import logging 
 
@@ -82,5 +83,15 @@ def delete_file_names():
                 return jsonify({"failed to delete file. error": str(e)}), 500
         
         return jsonify("Cleared folder successfully"), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    
+# create API to delete vector index
+@app.route("/api/generateMetaPrompt", methods=['GET'])
+def generate_meta_prompt():
+    try:
+        metaPrompt = runMetaPrompt()
+        print("meta prompt", metaPrompt)
+        return jsonify(metaPrompt), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
