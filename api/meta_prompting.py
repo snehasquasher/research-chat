@@ -2,7 +2,6 @@
 import openai
 import nest_asyncio
 
-
 import os
 
 from pathlib import Path
@@ -71,12 +70,11 @@ def createMetaTemplate():
     """
 
     meta_tmpl = PromptTemplate(meta_tmpl_str)
-    return meta_tmpl.template
+    return meta_tmpl
 
 
 async def metaPrompt():
     openai.api_key = os.getenv("OPENAI_API_KEY")
-    print(openai.api_key)
     base_nodes = loadPDFs()
     rag_service_context = ServiceContext.from_defaults(
         llm=OpenAI(model="gpt-3.5-turbo", api_key = os.getenv("OPENAI_API_KEY"))
@@ -147,7 +145,7 @@ async def metaPrompt():
     )
 
     print(new_qa_prompt, avg_correctness_new)
-    return new_qa_prompt
+    return new_qa_prompt.template
 
 def loadPDFs():
     print("Begin loading PDFs")
@@ -313,8 +311,15 @@ async def optimize_prompts(
     # return the instruction
     return max_instr_score_pair[0], prev_instr_score_pairs
 
-def runMetaPrompt():
-    return 'Given the context information and not prior knowledge, provide a detailed and comprehensive response to the query.\nContext information is below.\n---------------------\n{context_str}\n---------------------\nGiven the context information and not prior knowledge, answer the query.\nQuery: {query_str}\nAnswer: '
+async def runMetaPrompt():
+    #return 'Given the context information and not prior knowledge, provide a detailed and comprehensive response to the query.\nContext information is below.\n---------------------\n{context_str}\n---------------------\nGiven the context information and not prior knowledge, answer the query.\nQuery: {query_str}\nAnswer: '
     nest_asyncio.apply()
-    newPrompt = asyncio.run(metaPrompt())
-    return newPrompt
+    try:
+        newPrompt = await metaPrompt()
+        #newPrompt = asyncio.run(metaPrompt())
+        print(newPrompt)
+        return newPrompt
+    except Exception as e:
+        print(e)
+        return ""
+

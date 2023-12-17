@@ -88,9 +88,9 @@ def delete_file_names():
     
 # create API to delete vector index
 @app.route("/api/generateMetaPrompt", methods=['GET'])
-def generate_meta_prompt():
+async def generate_meta_prompt():
     try:
-        metaPrompt = runMetaPrompt()
+        metaPrompt = await runMetaPrompt()
         print("meta prompt", metaPrompt)
         return jsonify(metaPrompt), 200
     except Exception as e:
