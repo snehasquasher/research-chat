@@ -1,4 +1,4 @@
-import React, { useContext ,ChangeEvent, useCallback, useEffect, useState} from "react";
+import React, { useContext ,ChangeEvent, useCallback, useEffect, useState, Dispatch, SetStateAction} from "react";
 import UrlButton from "./UrlButton";
 import selectedPDFsContext from '../context/selectedContext';
 import { useRouter } from 'next/router';
@@ -10,14 +10,31 @@ interface ContextProps {
   uploads: Array<string>
 }
 
+// Define a type for the context value
+type MetaPromptContextType = {
+  useMetaPrompt: boolean;
+  setUseMetaPrompt: Dispatch<SetStateAction<boolean>>;
+};
+
+// Create the context with the default value and type
+export const metaPromptContext = React.createContext<MetaPromptContextType>({
+  useMetaPrompt: false,
+  setUseMetaPrompt: () => {},
+});
+
 export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uploads }) => {
   /*const [entries, setEntries] = useState([]);*/
   console.log("UPLOADS ", uploads);
+  
   const { selectedPDFs, setSelectedPDFs } = useContext(selectedPDFsContext);
+  const {useMetaPrompt, setUseMetaPrompt} = useContext(metaPromptContext);
   const router = useRouter();
   const [splittingMethod, setSplittingMethod] = useState("markdown");
   const [chunkSize, setChunkSize] = useState(256);
   const [overlap, setOverlap] = useState(1);
+  const metaPromptValue = {useMetaPrompt, setUseMetaPrompt}
+
+  console.log(useMetaPrompt);
 
   const handleSaveSettings = async () => {
     const payload = {
@@ -52,12 +69,6 @@ export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uplo
     }
   };
   
-
-  // Scroll to selected card
-  /*useEffect(() => {
-    const element = selected && document.getElementById(selected[0]);
-    element?.scrollIntoView({ behavior: "smooth" });
-  }, [selected]);*/
 
   const DropdownLabel: React.FC<
     React.PropsWithChildren<{ htmlFor: string }>
@@ -179,9 +190,24 @@ export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uplo
                   onChange={(e) => setOverlap(parseInt(e.target.value))}
                 />
               </div>
+              <div className="flex flex-row w-full">              
+              <label  className="text-white p-2 font-bold"> 
+                  Prompt optimization </label>
+                    <input
+                       className="p-2"
+                        type="checkbox" 
+                        // value={}
+                        name="time" 
+                        onChange={(e) => setUseMetaPrompt(e.target.checked)}
+                        id="promptOptimization"
+                        // checked={item.checked}
+                        />
+                  
+              </div>
             </div>
       
            <div className="w-full px-4 py-2">
+       
         <Button
           className="w-full my-2 uppercase active:scale-[98%] transition-transform duration-100"
           style={{

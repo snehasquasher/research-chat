@@ -1,5 +1,5 @@
 
-import React, { FormEvent, useRef, useState, useEffect } from "react";
+import React, { FormEvent, useRef, useState, useEffect, useContext } from "react";
 import { SettingsCard } from "@/components/SettingsCard";
 import { useChat, Message } from "ai/react";
 import { loadEvaluator } from "langchain/evaluation";
@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 import ScoreDisplay from '../components/ScoreDisplayCard';
 import selectedPDFsContext from '../context/selectedContext'
 import LoadingAnimation from '../components/LoadingAnimation';
+import {metaPromptContext} from '../components/SettingsCard';
 
 const examples = [
   "Compare and contrast the abstracts of the documents I uploaded.",
@@ -35,9 +36,14 @@ export default function Chat() {
 
   const [selectedPDFs, setSelectedPDFs] = useState<string[]>([]);
   const selectedValue = { selectedPDFs, setSelectedPDFs };
+  const [useMetaPrompt, setUseMetaPrompt] = useState(false);
+  const [metaPrompt, setMetaPrompt] = useState("");
+  const [metaPromptGenerated, setMetaPromptGenerated] = useState(false);
+  const metaPromptValue = {useMetaPrompt, setUseMetaPrompt}
 
   useEffect(() => {
     // Fetch the list of uploaded file names and set them as selected
+    console.log("HI");
     const fetchUploadedFiles = async () => {
       try {
         const response = await fetch('/api/fetchFileNames');
@@ -114,7 +120,31 @@ export default function Chat() {
     let oldInput = input;
     setInput("");
     setIsLoading(true); // Set loading to true before the request
+    console.log("use meta prompt? ", useMetaPrompt);
+    console.log(selectedPDFs)
 
+    if (useMetaPrompt && !metaPromptGenerated) {
+      console.log("need generate metaPrompt");
+
+      let metaReq = await fetch('/api/generateMetaPrompt', {
+        method: 'get'
+      });
+
+      console.log(metaReq)
+    
+      let metaResponse = await metaReq.json();
+      console.log(metaResponse);
+      let cleanedMetaPrompt = metaResponse.replace("{context_str}", '{context}');
+      if (metaReq.ok) {
+        // status code was 200-299
+        console.log("OK ", cleanedMetaPrompt);
+        setMetaPrompt(cleanedMetaPrompt);
+        setMetaPromptGenerated(true);
+      } else {
+        // status was something else
+        console.log("error: could not generate metaResponse");
+      } 
+    }
   
     // Check if any elements in uploadedFiles are None
     if (selectedPDFs.some(file => !file)) {
@@ -126,9 +156,12 @@ export default function Chat() {
   
     let data = JSON.stringify({
       messages: [{ role: "user", content: oldInput }],
-      filenames: selectedPDFs // Send array of selected filenames
+      filenames: selectedPDFs, // Send array of selected filenames
+      metaPrompt: metaPrompt,
     });
-  
+
+    console.log(data);
+
     let req = await fetch('/api/chat', {
       method: 'post',
       headers: {
@@ -173,6 +206,7 @@ export default function Chat() {
 
   return (
     <selectedPDFsContext.Provider value={selectedValue}>
+    <metaPromptContext.Provider value={metaPromptValue}>
     <main className="p-5 px-8 flex flex-row justify-between">
     
     <div className="flex  flex-grow flex-col items-center justify-between pb-40">
@@ -297,6 +331,7 @@ export default function Chat() {
         </div>
       
     </main>
+    </metaPromptContext.Provider>
     </selectedPDFsContext.Provider>
   );
 }

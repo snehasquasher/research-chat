@@ -14,11 +14,11 @@ evaluator = CriteriaEvalChain.from_llm(llm=llm, criteria=criteria,api_key=api_ke
 # Hardcoded test data
 test_input = "Explain the concept of gravity"
 test_answer = "Gravityts center."
-print(test_input)
+#print(test_input)
 # Evaluate conciseness
 try:
     scores = evaluator.evaluate_strings(prediction=test_answer, input=test_input,api_key=api_key)
-    print("Evaluation scores:", scores)
+    #print("Evaluation scores:", scores)
 except Exception as error:
     print("Error during evaluation:", error)
 
