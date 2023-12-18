@@ -2,8 +2,8 @@ import React, { useContext ,ChangeEvent, useCallback, useEffect, useState, Dispa
 import UrlButton from "./UrlButton";
 import selectedPDFsContext from '../context/selectedContext';
 import { useRouter } from 'next/router';
-
 import { Button } from "./Button";
+
 interface ContextProps {
   className: string;
   selected: string[] | null;
@@ -161,6 +161,7 @@ export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uplo
             >
               <option value="recursive">Recursive Text Splitting</option>
               <option value="character">Character Text Splitting</option> 
+              <option value="sentence">Sentence Text Splitting - spaCy</option> 
             </select>
           </div>
             <div className="my-4 flex flex-col">
@@ -174,6 +175,7 @@ export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uplo
                   id="chunkSize"
                   min={1}
                   max={2048}
+                  value={chunkSize}
                   onChange={(e) => setChunkSize(parseInt(e.target.value))}
                 />
               </div>
@@ -187,6 +189,7 @@ export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uplo
                   id="overlap"
                   min={1}
                   max={200}
+                  value={overlap}
                   onChange={(e) => setOverlap(parseInt(e.target.value))}
                 />
               </div>
