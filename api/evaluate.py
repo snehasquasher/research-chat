@@ -49,7 +49,7 @@ def evaluate_answers():
 
 def evaluate_faithfulness(client, model_name, context, answer):
     prompt = (
-        "Please rate the faithfulness of the answer in terms of how accurately and faithfully it reflects the specific context retrieved, on a scale from 0 to 0.9, where 0 is completely unfaithful and 1 is completely faithful.\n"
+        "Please rate the faithfulness of the answer in terms of how accurately and faithfully it reflects the specific context retrieved, on a scale from 0 to 1, where 0 is completely unfaithful and 1 is completely faithful.\n"
         "Example 1:\nContext: Retrieval-augmented generation reduces hallucinations significantly.\nAnswer: Retrieval-augmented generation was found to be helpful in reducing model hallucination.\nRating: 0.9\n"
         "Example 2:\nContext: Recent studies show a correlation between sleep patterns and learning efficiency.\nAnswer: There is evidence suggesting that diet affects learning abilities.\nRating: 0.5\n"
         "Example 3:\nContext: Advancements in AI have led to more efficient natural language processing algorithms.\nAnswer: Modern AI developments have mainly focused on improving computer vision.\nRating: 0\n"
