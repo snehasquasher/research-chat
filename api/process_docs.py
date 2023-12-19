@@ -2,6 +2,7 @@ import pinecone
 from utils.chunked_upsert import chunked_upsert
 from dataclasses import dataclass
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.text_splitter import SpacyTextSplitter
 from langchain.text_splitter import CharacterTextSplitter
 import os
 from hashlib import md5
@@ -11,6 +12,7 @@ import asyncio
 from utils.embeddings import get_embeddings
 from flask import jsonify
 import logging 
+from enum import Enum
 
 logging.basicConfig(
     level=logging.DEBUG,  # Set the desired log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
@@ -20,11 +22,17 @@ logging.basicConfig(
         logging.StreamHandler()  # Log to the console
     ]
 )
+
+class SplittingOptions(Enum):
+    SENTENCE = 'sentence'
+    CHAR = 'character'
+    RECUR = 'recursive'
+
 @dataclass
 class SeedOptions:
     chunk_size: int = 1500
     chunk_overlap: int = 50
-    method: str ='character'
+    method: SplittingOptions = SplittingOptions.CHAR
 
 async def parse_pdf(pdf_file):
     logging.debug(f"Type of pdf_file: {type(pdf_file)}")
@@ -58,10 +66,12 @@ async def upload_and_generate_embedding(file, index_name: str, options: SeedOpti
         logging.debug("Initialized Pinecone Index")
             
             # Choose the splitter based on the method
-        if SeedOptions.method == 'recursive':
+        if SeedOptions.method == SplittingOptions.RECUR:
             text_splitter = RecursiveCharacterTextSplitter(chunk_size=options.chunk_size, chunk_overlap=options.chunk_overlap)
-        elif SeedOptions.method == 'character':  # Default to character splitter
+        elif SeedOptions.method == SplittingOptions.CHAR:  # Default to character splitter
             text_splitter = CharacterTextSplitter(chunk_size=options.chunk_size, chunk_overlap=options.chunk_overlap)
+        elif SeedOptions.method == SplittingOptions.SENTENCE:
+            text_splitter = SpacyTextSplitter(chunk_size=options.chunk_size, chunk_overlap=options.chunk_overlap)
         chunked_pdf = await asyncio.gather(*[chunk_pdf(x, text_splitter) for x in parsed_pdf])
         chunked_pdf = [item for sublist in chunked_pdf for item in sublist]
         logging.debug("Chunked PDF and obtained vectors")

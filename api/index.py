@@ -6,6 +6,7 @@ from process_docs import upload_and_generate_embedding
 from dotenv import load_dotenv
 from hashlib import md5
 from utils.context import get_context
+from process_docs import SplittingOptions, SeedOptions
 import sys
 import json
 import logging
@@ -31,11 +32,11 @@ import routes
 import evaluate
 from dataclasses import dataclass
 
-@dataclass
-class SeedOptions:
-    chunk_size: int = 1500
-    chunk_overlap: int = 50
-    method: str ='character'
+# @dataclass
+# class SeedOptions:
+#     chunk_size: int = 1500
+#     chunk_overlap: int = 50
+#     method: SplittingOptions = SplittingOptions.CHAR
 
 
 @app.route("/api/chat", methods = ["POST"])
@@ -105,26 +106,27 @@ async def chat():
         if metaPrompt == "":
             # use default prompt
             prompt = [
-            {
-            "role": "system",
-            "content": f"""
-                START CONTEXT BLOCK
-                The user has uploaded documents with specific contents. The AI is expected to summarize or refer to the information contained within these documents when responding to user queries related to them. 
-                {context}
-                END OF CONTEXT BLOCK
-                In responses:
-                - You MUST include headings. Use two asterisks (**) to bold your headings. 
-                - You MUST split information into digestable paragraphs.
-                - Where appropriate, you MUST write information as bullet-points.
-                - When providing detailed explanations, use clear and concise language, structuring the answer in an easy-to-understand manner.
-                - If directly quoting from the provided context, use 'quotation marks' to highlight these sections.
-                - Avoid long paragraphs; break text into smaller, digestible parts.
-                - If the context does not provide sufficient information to answer a question, clearly state, "I'm sorry, but I don't have enough information to answer that question".
-                - Do not apologize for previous responses but indicate when new information was gained.
-                - Do not fabricate responses; strictly adhere to the context provided.
-            """
-            },
-    ]  
+                {
+                "role": "system",
+                "content": f"""
+                    START CONTEXT BLOCK
+                    The user has uploaded documents with specific contents. The AI is expected to summarize or refer to the information contained within these documents when responding to user queries related to them. 
+                    {context}
+                    END OF CONTEXT BLOCK
+                    In responses:
+                    - You MUST include headings. Use two asterisks (**) to bold your headings. 
+                    - You MUST split information into digestable paragraphs.
+                    - Where appropriate, you MUST write information as bullet-points.
+                    - When providing detailed explanations, use clear and concise language, structuring the answer in an easy-to-understand manner.
+                    - If directly quoting from the provided context, use 'quotation marks' to highlight these sections.
+                    - Avoid long paragraphs; break text into smaller, digestible parts.
+                    - If the context does not provide sufficient information to answer a question, clearly state, "I'm sorry, but I don't have enough information to answer that question".
+                    - Do not apologize for previous responses but indicate when new information was gained.
+                    - Do not fabricate responses; strictly adhere to the context provided.
+                """
+                },
+            ]  
+            logging.debug(context)
             response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages= prompt + user_messages
@@ -149,6 +151,7 @@ async def chat():
     except Exception as e:
         print("ERROR", file=sys.stderr)
         return jsonify({"error": str(e)}), 500
+
 @app.route("/api/clear_index", methods = ["POST"])
 def clear_index():
     """
@@ -203,7 +206,7 @@ async def generate_embeddings():
             response = await upload_and_generate_embedding(
                 file,
                 os.getenv("PINECONE_INDEX"),
-                SeedOptions(chunk_size=chunk_size, chunk_overlap=chunk_overlap,method=method)
+                SeedOptions(chunk_size=chunk_size, chunk_overlap=chunk_overlap, method=method)
                 
             )
             if response["success"]:
