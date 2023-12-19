@@ -195,7 +195,7 @@ export const SettingsCard: React.FC<ContextProps> = ({ className, selected, uplo
               </div>
               <div className="flex flex-row w-full">              
               <label  className="text-white p-2 font-bold"> 
-                  Prompt optimization </label>
+                  Use Meta-Prompting (Warning: Takes long to run) </label>
                     <input
                        className="p-2"
                         type="checkbox" 
