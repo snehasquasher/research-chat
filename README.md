@@ -48,10 +48,6 @@ More focused and relevant responses
 Ability to summarize documents and synthesize ideas
 RAG helps overcome some limitations of large language models while retaining their fluency and coherence. The modular architecture also allows for customization to specific use cases.
 
-## Demo
-
-https://nextjs-flask-starter.vercel.app/
-
 ## Running Locally
 In order to run the app locally, first ensure you have the npm CLI installed. 
 Then set up the .env fle as per the example in .env.example.
