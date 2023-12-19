@@ -3,10 +3,6 @@
 
 > A Retrieval Augmented Generation powered application to chat with your research papers. While you can directly start playing with ChatLore, you can also experiment with its various model settings (Chunk Size, Chunk Overlaps, Retrieval Methods and Text Splitter Methods). ChatLore provides evaluations after each response going off three major criteria: Answer Relevance, Context Relevance and Faithfulness.
 
-## Introduction
-
-This is a hybrid Next.js + Python app that uses Next.js as the frontend and Flask as the API backend. One great use case of this is to write Next.js apps that use Python AI libraries on the backend.
-
 ## How It Works
 
 ![image](https://github.com/snehasquasher/research-chat/assets/65848151/1bbbd3c8-d50b-4642-9ecb-5a0863e282ab)
@@ -59,13 +55,3 @@ pnpm dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 The Flask server will be running on [http://127.0.0.1:5328](http://127.0.0.1:5328) – feel free to change the port in `package.json` (you'll also need to update it in `next.config.js`).
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/) - learn about Flask features and API.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
