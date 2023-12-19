@@ -18,15 +18,7 @@ export default function Home() {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						By{' '}
-						<Image
-							src="/vercel.svg"
-							alt="Vercel Logo"
-							className="dark:invert"
-							width={100}
-							height={24}
-							priority
-						/>
+						
 					</a>
 				</div>
 			</div>
@@ -54,7 +46,7 @@ export default function Home() {
 				</a>
 
 				<a
-					href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+					href="https://github.com/snehasquasher/research-chat"
 					className="group rounded-lg border border-transparent px-8 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
 					target="_blank"
 					rel="noopener noreferrer"
