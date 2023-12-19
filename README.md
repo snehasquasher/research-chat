@@ -11,6 +11,7 @@
 ## Tech Stack 🛠️
 - Front-End: TypeScript & TailWind CSS 🚀
 - Back-End: Flask
+- Vector Database: Pinecone DB
 - ChatBot: Open AI API 💬 & LangChain API & llama Index API
 - Deployment: Vercel 
 
