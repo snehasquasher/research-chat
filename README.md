@@ -1,16 +1,66 @@
 
-<p style="text-align: center;"># ChatLore </p>
-
+# ChatLore
 > A Retrieval Augmented Generation powered application to chat with your research papers. While you can directly start playing with ChatLore, you can also experiment with its various model settings (Chunk Size, Chunk Overlaps, Retrieval Methods and Text Splitter Methods). ChatLore provides evaluations after each response going off three major criteria: Answer Relevance, Context Relevance and Faithfulness.
 
-## How It Works
+Full Research Paper: Italicized text is the *link to research paper*.
 
-![image](https://github.com/snehasquasher/research-chat/assets/65848151/1bbbd3c8-d50b-4642-9ecb-5a0863e282ab)
+## Tech Stack 🛠️
+- Front-End: TypeScript & TailWind CSS 🚀
+- Back-End: Flask
+- ChatBot: Open AI API 💬 & LangChain API & llama Index API
+- Deployment: Vercel 
+
+
+#### Installation Instructions 
+In order to run the app locally, first ensure you have the npm CLI installed. 
+Then set up the .env fle as per the example in frontend/.env.example.
+(NOTE: Please email anushka.nijhawan@yale.edu if you need the variables.)
+ Then, run
+```bash
+# navigate to frontend
+# install dependencies
+$ npm install
+# run app
+$ pnpm run dev
+```
 
 The Python/Flask server is mapped into to Next.js app under `/api/`.
 This is implemented using [`next.config.js` rewrites](https://github.com/vercel/examples/blob/main/python/nextjs-flask/next.config.js) to map any request to `/api/:path*` to the Flask API, which is hosted in the `/api` folder.
 On localhost, the rewrite will be made to the `127.0.0.1:5328` port, which is where the Flask server is running.
 In production, the Flask server is hosted as [Python serverless functions](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python) on Vercel.
+
+## Code Structure
+Below is an overview of the key components of our repository:
+
+### Key Components
+
+- `api/`: This directory contains all of our backend Flask endpoints.
+- `utils/`: This directory contains our helper functions for backend Flask endpoints. 
+- `components/`: This directory contains the components that we used to construct the frontend of the application
+- `requirements.txt/`: The file contains the list of python modules to install in order to get the project running
+- `pages`: This directory contains all the major routing logic and the different pages. 
+- `.env.example`: Provides a template for setting up environment variables.
+- `.gitignore`: Configures files and directories that should not be tracked by Git.
+- `README.md`: The document you are reading now. It provides an overview of the project, instructions for setup, usage, and contribution guidelines.
+- `pull_request_template.md`: Pull request template for PRs  
+
+
+## How It Works
+
+### Retrieval Augmented Generation Pipeline 
+![image](https://github.com/snehasquasher/research-chat/assets/65848151/1bbbd3c8-d50b-4642-9ecb-5a0863e282ab)
+
+RAG is a technique that combines a retrieval model and a generative model to produce coherent text.
+
+The retrieval model fetches relevant information from a database of documents. This provides context to the generative model.
+The generative model, usually a large language model like GPT-3, uses the retrieved information to craft a response.
+Together, these components allow RAG systems to leverage both external knowledge and natural language generation abilities. Benefits include:
+
+Access to up-to-date, factual information
+More focused and relevant responses
+Ability to summarize documents and synthesize ideas
+RAG helps overcome some limitations of large language models while retaining their fluency and coherence. The modular architecture also allows for customization to specific use cases.
+
 
 ## Demo
 
