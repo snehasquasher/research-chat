@@ -8,6 +8,9 @@
 <p align="center">Simple Next.js boilerplate that uses <a href="https://flask.palletsprojects.com/">Flask</a> as the API backend.</p>
 
 <br/>
+# ChatLore 
+
+> A Retrieval Augmented Generation powered application to chat with your research papers. While you can directly start playing with ChatLore, you can also experiment with its various model settings (Chunk Size, Chunk Overlaps, Retrieval Methods and Text Splitter Methods). ChatLore provides evaluations after each response going off three major criteria: Answer Relevance, Context Relevance and Faithfulness.
 
 ## Introduction
 
@@ -15,12 +18,11 @@ This is a hybrid Next.js + Python app that uses Next.js as the frontend and Flas
 
 ## How It Works
 
+![image](https://github.com/snehasquasher/research-chat/assets/65848151/1bbbd3c8-d50b-4642-9ecb-5a0863e282ab)
+
 The Python/Flask server is mapped into to Next.js app under `/api/`.
-
 This is implemented using [`next.config.js` rewrites](https://github.com/vercel/examples/blob/main/python/nextjs-flask/next.config.js) to map any request to `/api/:path*` to the Flask API, which is hosted in the `/api` folder.
-
 On localhost, the rewrite will be made to the `127.0.0.1:5328` port, which is where the Flask server is running.
-
 In production, the Flask server is hosted as [Python serverless functions](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python) on Vercel.
 
 ## Demo
