@@ -2,6 +2,13 @@
 # ChatLore
 > A Retrieval Augmented Generation powered application to chat with your research papers. While you can directly start playing with ChatLore, you can also experiment with its various model settings (Chunk Size, Chunk Overlaps, Retrieval Methods and Text Splitter Methods). ChatLore provides evaluations after each response going off three major criteria: Answer Relevance, Context Relevance and Faithfulness.
 
+
+📝 Key Features:
+- upload & chat with research papers
+- model response evaluation on heuristics
+- parameter tuning on the UI 
+
+
 Full Research Paper: Italicized text is the *link to research paper*.
 
 ## Tech Stack 🛠️
