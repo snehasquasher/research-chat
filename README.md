@@ -26,7 +26,7 @@ Below is an overview of the key components of our repository:
 - `components/`: This directory contains the components that we used to construct the frontend of the application
 - `requirements.txt/`: The file contains the list of python modules to install in order to get the project running
 - `pages`: This directory contains all the major routing logic and the different pages. 
-- `.env.example`: Provides a template for setting up environment variables.
+- `.env.example`: Provides a template for setting up environment variables. Set up the .env file in the same directory as this one.
 - `.gitignore`: Configures files and directories that should not be tracked by Git.
 - `README.md`: The document you are reading now. It provides an overview of the project, instructions for setup, usage, and contribution guidelines.
 - `pull_request_template.md`: Pull request template for PRs  
