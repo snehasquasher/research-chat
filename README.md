@@ -57,7 +57,7 @@ In order to run the app locally, first ensure you have the npm CLI installed.
 Then set up the .env fle as per the example in .env.example.
 (NOTE: Please email anushka.nijhawan@yale.edu if you need the variables.)
 
-First, install the dependencies:
+First, install the Node dependencies:
 
 ```bash
 npm install
@@ -65,6 +65,11 @@ npm install
 yarn
 # or
 pnpm install
+```
+
+Then, install the python dependencies for the flask backend:
+```bash
+pip install -r requirements.txt
 ```
 
 Then, run the development server:
