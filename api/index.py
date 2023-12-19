@@ -12,6 +12,7 @@ import json
 import logging
 import os
 os.environ['FLASK_ENV'] = 'development'
+
 # Define the global variable here, at the top level
 processed_filenames = []
 
@@ -31,13 +32,6 @@ logger.setLevel(logging.DEBUG)
 import routes
 import evaluate
 from dataclasses import dataclass
-
-# @dataclass
-# class SeedOptions:
-#     chunk_size: int = 1500
-#     chunk_overlap: int = 50
-#     method: SplittingOptions = SplittingOptions.CHAR
-
 
 @app.route("/api/chat", methods = ["POST"])
 async def chat():
